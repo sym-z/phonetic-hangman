@@ -1,0 +1,158 @@
+[gd_scene load_steps=2 format=3 uid="uid://cerariugi700o"]
+
+[ext_resource type="PackedScene" uid="uid://bjgxtks4ntivg" path="res://prefabs/phoneme_selection.tscn" id="1_bonwk"]
+
+[node name="Phonetic Builder" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Phoneme Selection" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection2" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection3" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection4" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection5" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection6" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection7" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection8" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection9" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection10" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection11" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection12" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection13" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection14" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection15" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection16" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection17" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection18" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection19" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection20" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection21" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection22" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection23" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection24" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection25" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection26" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection27" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection28" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection29" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection30" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection31" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection32" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection33" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection34" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection35" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection36" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection37" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection38" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection39" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection40" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection41" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection42" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection43" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
+
+[node name="Phoneme Selection44" parent="MarginContainer/HFlowContainer" instance=ExtResource("1_bonwk")]
+layout_mode = 2
