@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg1gefmtbt4ao"]
+
+[ext_resource type="Script" uid="uid://cdcmdfen6xt8h" path="res://prefabs/phoneme_assembler/phoneme_assembler.gd" id="1_ml0e0"]
+
+[node name="Phoneme Assembler" type="Node"]
+script = ExtResource("1_ml0e0")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cerariugi700o"]
 
-[ext_resource type="PackedScene" uid="uid://bjgxtks4ntivg" path="res://prefabs/phoneme_selection.tscn" id="1_bonwk"]
+[ext_resource type="PackedScene" uid="uid://bjgxtks4ntivg" path="res://prefabs/phoneme_selection/phoneme_selection.tscn" id="1_bonwk"]
 
 [node name="Phonetic Builder" type="Control"]
 layout_mode = 3
