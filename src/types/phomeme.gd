@@ -7,6 +7,7 @@ var example_word : String = "NONE"
 var sound_clip : AudioStreamMP3 = null
 var sprite_frames : SpriteFrames = null
 var frames : Array[Texture2D]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	create_frames()
