@@ -4,17 +4,8 @@ const TOTAL_PHONEMES : int = 44
 
 @export var container_to_fill : Container
 
-# Holds the sounds that get assigned to the phonemes
-@export var sound_lib : Array[AudioStreamMP3]
-# Holds the letter representations of the phonemes
-@export var letter_lib : Array[String]
-# Holds the word examples of the phonemes
-@export var word_lib : Array[String]
+var phoneme_selection_scene : PackedScene = preload("res://prefabs/phoneme_selection/phoneme_selection.tscn")
 
-var frame_lib : Dictionary[int,Array] = {
-	0 : [],
-	1 : []
-}
 # Each Phoneme Selection will be built uising a Phoneme Object
 var phoneme_arr : Array[Phoneme]
 
@@ -22,17 +13,21 @@ var phoneme_arr : Array[Phoneme]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for i in range(TOTAL_PHONEMES):
+		var curr_select = phoneme_selection_scene.instantiate()
+		# Instantiate id, letter, word, sound, and animation
+		curr_select.id = i
+		curr_select.letters = Libraries.letter_lib[i]
+		curr_select.word = Libraries.word_lib[i]
+		container_to_fill.add_child(curr_select)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func build_frame_lib():
-	# Make empty array for the frames of each phoneme
-	for i in range(TOTAL_PHONEMES):
-		frame_lib[i] = []
+
 	
 	
 func assemble():
