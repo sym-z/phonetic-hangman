@@ -1,0 +1,3 @@
+- [ ] Add a division between consonants and vowels
+- [ ] Make word preview
+- [ ] Add text entry

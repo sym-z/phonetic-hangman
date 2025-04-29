@@ -19,14 +19,14 @@ animations = [{
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eacn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi4rm"]
-size = Vector2(70, 65)
+size = Vector2(64, 63.5)
 
 [node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button")]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
-anchor_right = 0.075
-anchor_bottom = 0.133
-offset_bottom = 0.239998
+anchor_right = 0.05
+anchor_bottom = 0.089
+offset_bottom = -0.0800018
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -47,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
-scale = Vector2(0.75, 0.726563)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_r67pn")
 centered = false
 
@@ -67,16 +67,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -24.0
-offset_right = 18.0
-offset_bottom = 26.0
+offset_left = -13.0
+offset_top = -17.0
+offset_right = 13.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="Letter Name" type="Label" parent="Tips/Tip Container"]
 layout_mode = 2
 mouse_filter = 1
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_mi4rm")
 text = "B"
 horizontal_alignment = 1
@@ -85,17 +87,20 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 mouse_filter = 1
+theme_override_font_sizes/font_size = 12
 text = "ADD"
 
 [node name="Play" type="Button" parent="Tips/Tip Container"]
 visible = false
 layout_mode = 2
 mouse_filter = 1
+theme_override_font_sizes/font_size = 12
 text = "PLAY"
 
 [node name="Word Example" type="Label" parent="Tips/Tip Container"]
 layout_mode = 2
 mouse_filter = 1
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_eacn2")
 text = "BUG"
 horizontal_alignment = 1
@@ -103,7 +108,7 @@ horizontal_alignment = 1
 [node name="Mouse Detector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse Detector"]
-position = Vector2(49, 48.5)
+position = Vector2(32, 32.25)
 shape = SubResource("RectangleShape2D_mi4rm")
 
 [connection signal="mouse_entered" from="Mouse Detector" to="." method="_on_mouse_detector_mouse_entered"]
