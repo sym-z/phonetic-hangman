@@ -29,3 +29,21 @@ func _on_next_sound_pressed():
 	if(current_selection != NO_SELECTION && current_selection < selections.size()-1):
 		current_selection += 1
 		print(selections, " currently selecting: ", selections[current_selection])
+
+# Update frame, sound that plays
+func selection_changed():
+	pass
+
+func _on_delete_pressed():
+	if(current_selection != NO_SELECTION):
+		selections.remove_at(current_selection)
+	# Deleted from the end
+	if(current_selection == selections.size()):
+		current_selection = selections.size() - 1
+	# Deleted from the front
+	if(current_selection == -1 && selections.size() > 0):
+		current_selection = 0
+	if(current_selection != NO_SELECTION):
+		print(selections, " currently selecting: ", selections[current_selection])
+	else:
+		print(selections, " no current selection")

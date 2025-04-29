@@ -120,3 +120,4 @@ text = "DONE"
 
 [connection signal="pressed" from="Buttons/Previous Sound" to="." method="_on_previous_sound_pressed"]
 [connection signal="pressed" from="Buttons/Next Sound" to="." method="_on_next_sound_pressed"]
+[connection signal="pressed" from="Buttons/Delete" to="." method="_on_delete_pressed"]
