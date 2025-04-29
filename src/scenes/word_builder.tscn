@@ -61,34 +61,62 @@ position = Vector2(955, 63)
 scale = Vector2(4.44585, 0.416008)
 sprite_frames = SubResource("SpriteFrames_7nyya")
 
-[node name="Delete" type="Button" parent="."]
-layout_mode = 0
-offset_left = 707.0
-offset_top = 643.0
-offset_right = 772.0
-offset_bottom = 674.0
-text = "DELETE SOUND"
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.997
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 0.159973
 
-[node name="Play Sound" type="Button" parent="."]
+[node name="Previous Sound" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 915.0
+offset_left = 67.0
+offset_top = 97.0
+offset_right = 227.0
+offset_bottom = 128.0
+text = "PREVIOUS SOUND"
+
+[node name="Next Sound" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 98.0
+offset_right = 558.0
+offset_bottom = 129.0
+text = "NEXT SOUND"
+
+[node name="Play Sound" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 266.0
 offset_top = 562.0
-offset_right = 1024.0
+offset_right = 375.0
 offset_bottom = 593.0
 text = "PLAY SOUND"
 
-[node name="Play Whole Word" type="Button" parent="."]
+[node name="Play Whole Word" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 889.0
+offset_left = 240.0
 offset_top = 599.0
-offset_right = 1051.0
+offset_right = 402.0
 offset_bottom = 630.0
 text = "PLAY WHOLE WORD"
 
-[node name="Done" type="Button" parent="."]
+[node name="Delete" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 1140.0
+offset_left = 58.0
 offset_top = 643.0
-offset_right = 1148.0
-offset_bottom = 651.0
+offset_right = 184.0
+offset_bottom = 674.0
+text = "DELETE SOUND"
+
+[node name="Done" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 643.0
+offset_right = 545.0
+offset_bottom = 674.0
 text = "DONE"
+
+[connection signal="pressed" from="Buttons/Previous Sound" to="." method="_on_previous_sound_pressed"]
+[connection signal="pressed" from="Buttons/Next Sound" to="." method="_on_next_sound_pressed"]
