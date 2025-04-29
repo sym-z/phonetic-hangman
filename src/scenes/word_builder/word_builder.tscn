@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cerariugi700o"]
 
-[ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder.gd" id="1_b2vsm"]
+[ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder/word_builder.gd" id="1_b2vsm"]
 [ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_wkrb8"]
 [ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="2_wkrb8"]
 [ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="4_b2vsm"]
@@ -118,6 +118,15 @@ offset_right = 545.0
 offset_bottom = 674.0
 text = "DONE"
 
+[node name="Cancel" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 683.0
+offset_right = 458.0
+offset_bottom = 714.0
+text = "CANCEL AND QUIT TO MAIN MENU"
+
 [connection signal="pressed" from="Buttons/Previous Sound" to="." method="_on_previous_sound_pressed"]
 [connection signal="pressed" from="Buttons/Next Sound" to="." method="_on_next_sound_pressed"]
 [connection signal="pressed" from="Buttons/Delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="Buttons/Cancel" to="." method="_on_cancel_pressed"]

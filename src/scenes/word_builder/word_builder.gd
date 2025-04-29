@@ -1,5 +1,7 @@
 extends Control
 
+var main_menu_scene : String = "uid://cxg5bb4sk08en"
+
 @export var selection_container : HFlowContainer
 var selections : Array[int] = []
 const NO_SELECTION = -1
@@ -47,3 +49,10 @@ func _on_delete_pressed():
 		print(selections, " currently selecting: ", selections[current_selection])
 	else:
 		print(selections, " no current selection")
+
+func back_to_main_menu():
+	get_tree().change_scene_to_file(main_menu_scene)
+
+func _on_cancel_pressed():
+	# Reset Globals!
+	call_deferred("back_to_main_menu")

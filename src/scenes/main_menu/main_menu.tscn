@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxg5bb4sk08en"]
+[gd_scene load_steps=3 format=3 uid="uid://cxg5bb4sk08en"]
 
 [ext_resource type="Theme" uid="uid://mu1h0xpxq6v0" path="res://themes/full_screen_button_margin_container.tres" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://crsmlman418qm" path="res://scenes/main_menu/main_menu.gd" id="2_ekxnf"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_l6cm7")
+script = ExtResource("2_ekxnf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -37,3 +39,5 @@ text = "Decode A Message"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Create" to="." method="_on_create_pressed"]

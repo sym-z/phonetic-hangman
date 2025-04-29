@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b3y7s18uwane8"]
+[gd_scene load_steps=2 format=3 uid="uid://b3y7s18uwane8"]
+
+[ext_resource type="Script" uid="uid://cf0ki61yxg4fr" path="res://scenes/word_typer/word_typer.gd" id="1_ce1km"]
 
 [node name="Word Typer" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ce1km")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -33,9 +36,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "FINISHED"
 
-[node name="Back" type="Button" parent="VBoxContainer"]
+[node name="Cancel" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "CANCEL
 "
+
+[connection signal="pressed" from="VBoxContainer/Finished" to="." method="_on_finished_pressed"]
+[connection signal="pressed" from="VBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
