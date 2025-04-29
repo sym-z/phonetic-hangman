@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cerariugi700o"]
+[gd_scene load_steps=4 format=3 uid="uid://cerariugi700o"]
 
 [ext_resource type="PackedScene" uid="uid://bjgxtks4ntivg" path="res://prefabs/phoneme_selection/phoneme_selection.tscn" id="1_m88uk"]
+[ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_wkrb8"]
 [ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="2_wkrb8"]
 
 [node name="Word Builder" type="Control"]
@@ -10,18 +11,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundReference" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_wkrb8")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.65
 anchor_bottom = 1.0
-offset_top = 5.0
-offset_right = -469.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 9
+theme_override_constants/margin_top = 25
 
 [node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
 layout_mode = 2
