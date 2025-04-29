@@ -111,5 +111,6 @@ horizontal_alignment = 1
 position = Vector2(32, 32.25)
 shape = SubResource("RectangleShape2D_mi4rm")
 
+[connection signal="pressed" from="Tips/Tip Container/Add" to="." method="_on_add_pressed"]
 [connection signal="mouse_entered" from="Mouse Detector" to="." method="_on_mouse_detector_mouse_entered"]
 [connection signal="mouse_exited" from="Mouse Detector" to="." method="_on_mouse_detector_mouse_exited"]

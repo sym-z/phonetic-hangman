@@ -8,6 +8,8 @@ extends Control
 @export var play_button : Button
 var letters : String = ""
 var word : String = ""
+
+signal added
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	letter_representation.text = letters
@@ -31,3 +33,8 @@ func _on_mouse_detector_mouse_exited():
 	print("Mouse exited: ", letter_representation.text)
 	play_button.visible = false
 	add_button.visible = false
+
+
+func _on_add_pressed():
+	added.emit(id)
+	pass # Replace with function body.
