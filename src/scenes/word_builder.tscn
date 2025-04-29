@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cerariugi700o"]
+[gd_scene load_steps=6 format=3 uid="uid://cerariugi700o"]
 
 [ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder.gd" id="1_b2vsm"]
 [ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_wkrb8"]
 [ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="2_wkrb8"]
+[ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="4_b2vsm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nyya"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_b2vsm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Word Builder" type="Control" node_paths=PackedStringArray("selection_container")]
 layout_mode = 3
@@ -38,3 +50,45 @@ alignment = 1
 
 [node name="Phoneme Assembler" parent="." node_paths=PackedStringArray("container_to_fill") instance=ExtResource("2_wkrb8")]
 container_to_fill = NodePath("../MarginContainer/HFlowContainer")
+
+[node name="Current Phoneme Choice" type="AnimatedSprite2D" parent="."]
+position = Vector2(967, 345)
+scale = Vector2(3.18216, 3.26333)
+sprite_frames = SubResource("SpriteFrames_7nyya")
+
+[node name="Progress Through Selections" type="AnimatedSprite2D" parent="."]
+position = Vector2(955, 63)
+scale = Vector2(4.44585, 0.416008)
+sprite_frames = SubResource("SpriteFrames_7nyya")
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 643.0
+offset_right = 772.0
+offset_bottom = 674.0
+text = "DELETE SOUND"
+
+[node name="Play Sound" type="Button" parent="."]
+layout_mode = 0
+offset_left = 915.0
+offset_top = 562.0
+offset_right = 1024.0
+offset_bottom = 593.0
+text = "PLAY SOUND"
+
+[node name="Play Whole Word" type="Button" parent="."]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 599.0
+offset_right = 1051.0
+offset_bottom = 630.0
+text = "PLAY WHOLE WORD"
+
+[node name="Done" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1140.0
+offset_top = 643.0
+offset_right = 1148.0
+offset_bottom = 651.0
+text = "DONE"
