@@ -1,8 +1,10 @@
 extends Control
 
 var main_menu_scene : String = "uid://cxg5bb4sk08en"
+var password_export_scene : String = "uid://bgglhgm3wyfwx"
 
 @export var selection_container : HFlowContainer
+# The id's of all selected words.
 var selections : Array[int] = []
 const NO_SELECTION = -1
 # Which sound is displayed in the right window, if -1, make sound sprite invisible.
@@ -32,7 +34,7 @@ func _on_next_sound_pressed():
 		current_selection += 1
 		print(selections, " currently selecting: ", selections[current_selection])
 
-# Update frame, sound that plays
+# Update right side frame, sound that plays to the currently selected ID
 func selection_changed():
 	pass
 
@@ -55,4 +57,13 @@ func back_to_main_menu():
 
 func _on_cancel_pressed():
 	# Reset Globals!
+	Globals.reset_player_word()
 	call_deferred("back_to_main_menu")
+
+func export_password():
+	get_tree().change_scene_to_file(password_export_scene)
+	
+func _on_done_pressed():
+	if(selections.size() > 0):
+		Globals.player_built_word = selections
+		call_deferred("export_password")
