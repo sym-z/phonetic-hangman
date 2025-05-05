@@ -139,7 +139,7 @@ var word_lib : Dictionary[int,String] = {
 	40 : "p(ER)fect",
 	41 : "ch(ORE)",
 	42 : "cl(EAR)",
-	43 : "p(ure)",
+	43 : "p(URE)",
 }
 var frame_lib : Dictionary[int,Array] = {
 	0 : [],
