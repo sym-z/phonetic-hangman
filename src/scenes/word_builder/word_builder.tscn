@@ -16,7 +16,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Builder" type="Control" node_paths=PackedStringArray("selection_container")]
+[node name="Word Builder" type="Control" node_paths=PackedStringArray("selection_container", "selection_speaker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +27,7 @@ size_flags_horizontal = 4
 mouse_filter = 1
 script = ExtResource("1_b2vsm")
 selection_container = NodePath("MarginContainer/HFlowContainer")
+selection_speaker = NodePath("Selection Speaker")
 metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
@@ -126,8 +127,13 @@ offset_right = 458.0
 offset_bottom = 714.0
 text = "CANCEL AND QUIT TO MAIN MENU"
 
+[node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Buttons/Previous Sound" to="." method="_on_previous_sound_pressed"]
 [connection signal="pressed" from="Buttons/Next Sound" to="." method="_on_next_sound_pressed"]
+[connection signal="pressed" from="Buttons/Play Sound" to="." method="_on_play_sound_pressed"]
+[connection signal="pressed" from="Buttons/Play Whole Word" to="." method="_on_play_whole_word_pressed"]
 [connection signal="pressed" from="Buttons/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="Buttons/Done" to="." method="_on_done_pressed"]
 [connection signal="pressed" from="Buttons/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="finished" from="Selection Speaker" to="." method="_on_selection_speaker_finished"]

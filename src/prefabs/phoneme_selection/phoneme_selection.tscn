@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi4rm"]
 size = Vector2(64, 63.5)
 
-[node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button")]
+[node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button", "speaker")]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchor_right = 0.05
@@ -35,6 +35,7 @@ letter_representation = NodePath("Tips/Tip Container/Letter Name")
 word_example = NodePath("Tips/Tip Container/Word Example")
 add_button = NodePath("Tips/Tip Container/Add")
 play_button = NodePath("Tips/Tip Container/Play")
+speaker = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -112,5 +113,6 @@ position = Vector2(32, 32.25)
 shape = SubResource("RectangleShape2D_mi4rm")
 
 [connection signal="pressed" from="Tips/Tip Container/Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="Tips/Tip Container/Play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="Mouse Detector" to="." method="_on_mouse_detector_mouse_entered"]
 [connection signal="mouse_exited" from="Mouse Detector" to="." method="_on_mouse_detector_mouse_exited"]
