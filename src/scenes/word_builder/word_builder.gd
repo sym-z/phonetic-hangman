@@ -92,18 +92,18 @@ func _on_play_whole_word_pressed():
 		current_selection_backup = current_selection
 		current_selection = 0
 		playing_whole_word = true
-		selection_changed()
+		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 		selection_speaker.play()
 
 func _on_selection_speaker_finished():
 	if(playing_whole_word):
 		if(current_selection < selections.size()-1):
 			current_selection += 1
-			selection_changed()
+			selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 			selection_speaker.play()
 		else:
 			playing_whole_word = false
 			# Reset speaker to be selecting the current selection
 			current_selection = current_selection_backup
-			selection_changed()
+			selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 #endregion
