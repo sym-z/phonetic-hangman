@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=6 format=3 uid="uid://dt671ex55ahu4"]
 
+[ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_qtlm4"]
 [ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="2_5xsg4"]
 [ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="3_5xsg4"]
@@ -15,13 +16,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Guesser" type="Control"]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_example")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_510jw")
+num_letters = NodePath("Guess State/Number of Letters")
+num_guesses = NodePath("Guess State/Guesses Left")
+guess_container = NodePath("Guess State/Current Guesses Container")
+selected_example = NodePath("Guessing Window/Word Example")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("1_qtlm4")
@@ -53,6 +59,7 @@ offset_top = 16.0
 offset_right = 1008.0
 offset_bottom = 39.0
 text = "? ? ? ? ? ? ? ? ?"
+horizontal_alignment = 1
 
 [node name="Guesses Left" type="Label" parent="Guess State"]
 offset_left = 1118.0
@@ -101,7 +108,6 @@ scale = Vector2(1.39758, 1.30159)
 
 [node name="Current Guess" type="AnimatedSprite2D" parent="Guessing Window"]
 position = Vector2(99.4576, -29.7318)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_510jw")
 
 [node name="Info Label" type="Label" parent="Guessing Window"]
