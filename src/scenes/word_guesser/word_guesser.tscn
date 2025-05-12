@@ -65,11 +65,11 @@ text = "? ? ? ? ? ? ? ? ?"
 horizontal_alignment = 1
 
 [node name="Guesses Left" type="Label" parent="Guess State"]
-offset_left = 1118.0
-offset_top = 17.0
-offset_right = 1241.0
-offset_bottom = 40.0
-text = "GUESSES LEFT: ?"
+offset_left = 1075.0
+offset_top = 16.0
+offset_right = 1254.0
+offset_bottom = 39.0
+text = "INCORRECT GUESSES: 3"
 
 [node name="Guess Word Info" type="Label" parent="Guess State"]
 offset_left = 1067.0
@@ -82,9 +82,9 @@ HIT THIS BUTTON !"
 [node name="Current Guesses Container" type="HFlowContainer" parent="Guess State"]
 offset_left = 679.0
 offset_top = 48.0
-offset_right = 719.0
-offset_bottom = 88.0
-scale = Vector2(14.277, 5.33808)
+offset_right = 1252.0
+offset_bottom = 249.0
+alignment = 1
 
 [node name="Hear Correct Guesses" type="Button" parent="Guess State"]
 offset_left = 868.0
