@@ -9,12 +9,16 @@ var guesses : int = 3
 @export var guess_container : HFlowContainer
 @export var selected_letters : Label
 @export var selected_example : Label
+@export var phoneme_container : HFlowContainer
+
 
 const NO_SELECTION : int = -1
 var current_selection :  int = NO_SELECTION
 var selected_sound : AudioStreamMP3
 
 func _ready() -> void:
+	for child in phoneme_container.get_children():
+		child.added.connect(_on_selection_added)
 	if(debug):
 		Globals.decoded_built_word = [5,24,6]
 		Globals.decoded_typed_word = "JACK"
@@ -26,7 +30,6 @@ func count_letters():
 	num_letters.text = ""
 	for letter in Globals.decoded_typed_word.length():
 		num_letters.text += "? "
-		print(num_letters.text)
 	if(num_letters.text.length() > 0):
 		num_letters.text.erase(num_letters.text.length()-1,1)
 
@@ -39,3 +42,7 @@ func phoneme_selected():
 		selected_letters.text = Libraries.letter_lib[current_selection]
 		selected_example.text = Libraries.word_lib[current_selection]
 		selected_sound = Libraries.sound_lib[current_selection]
+
+func _on_selection_added(id):
+	current_selection = id
+	phoneme_selected()

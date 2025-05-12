@@ -16,18 +16,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_example")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_510jw")
 num_letters = NodePath("Guess State/Number of Letters")
 num_guesses = NodePath("Guess State/Guesses Left")
 guess_container = NodePath("Guess State/Current Guesses Container")
+selected_letters = NodePath("Guessing Window/Phoeneme Sound")
 selected_example = NodePath("Guessing Window/Word Example")
+phoneme_container = NodePath("MarginContainer/HFlowContainer")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("1_qtlm4")
@@ -123,13 +126,15 @@ offset_top = -55.0854
 offset_right = -34.0184
 offset_bottom = -32.0854
 text = "PHONEME SOUND"
+horizontal_alignment = 1
 
 [node name="Word Example" type="Label" parent="Guessing Window"]
-offset_left = -167.432
-offset_top = -29.9634
-offset_right = -25.4322
-offset_bottom = -6.96343
+offset_left = -174.587
+offset_top = -31.4999
+offset_right = -32.5877
+offset_bottom = -8.49994
 text = "WORD EXAMPLE"
+horizontal_alignment = 1
 
 [node name="Guess Sound" type="Button" parent="Guessing Window"]
 offset_left = 41.5003
@@ -138,9 +143,16 @@ offset_right = 161.5
 offset_bottom = 84.0122
 text = "GUESS SOUND"
 
-[node name="Cancel" type="Button" parent="Guessing Window"]
-offset_left = -161.708
-offset_top = 53.0122
-offset_right = -92.7079
-offset_bottom = 84.0122
-text = "CANCEL"
+[node name="Hear Sound" type="Button" parent="Guessing Window"]
+offset_left = -163.139
+offset_top = 10.7561
+offset_right = -43.1395
+offset_bottom = 41.7561
+text = "HEAR SOUND"
+
+[node name="Exit" type="Button" parent="Guessing Window"]
+offset_left = -228.252
+offset_top = 105.256
+offset_right = -109.252
+offset_bottom = 136.256
+text = "EXIT TO MENU"
