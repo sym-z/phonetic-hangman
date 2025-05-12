@@ -65,11 +65,11 @@ text = "? ? ? ? ? ? ? ? ?"
 horizontal_alignment = 1
 
 [node name="Guesses Left" type="Label" parent="Guess State"]
-offset_left = 1075.0
+offset_left = 1047.0
 offset_top = 16.0
-offset_right = 1254.0
+offset_right = 1265.0
 offset_bottom = 39.0
-text = "INCORRECT GUESSES: 3"
+text = "INCORRECT GUESSES LEFT: 3"
 
 [node name="Guess Word Info" type="Label" parent="Guess State"]
 offset_left = 1067.0
@@ -156,3 +156,5 @@ offset_top = 105.256
 offset_right = -109.252
 offset_bottom = 136.256
 text = "EXIT TO MENU"
+
+[connection signal="pressed" from="Guessing Window/Guess Sound" to="." method="_on_guess_sound_pressed"]

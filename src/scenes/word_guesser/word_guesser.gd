@@ -37,7 +37,7 @@ func _ready() -> void:
 	phoneme_selected()
 	# Initialize guess container with mystery guesses
 	initialize_guess_container()
-	
+
 
 func count_letters():
 	num_letters.text = ""
@@ -47,7 +47,10 @@ func count_letters():
 		num_letters.text.erase(num_letters.text.length()-1,1)
 
 func guesses_changed():
-	num_guesses.text = "INCORRECT GUESSES LEFT: " + str(guesses)
+	if guesses == 0:
+		print("GAME OVER")
+	else:
+		num_guesses.text = "INCORRECT GUESSES LEFT: " + str(guesses)
 
 func phoneme_selected():
 	if current_selection != NO_SELECTION:
@@ -61,13 +64,25 @@ func _on_selection_added(id):
 	phoneme_selected()
 
 func guess(guess_id : int):
-	for id in Globals.decoded_built_word:
-		if guess_id == id:
-			pass
-	pass
+	#TODO: Handle guessing a correct guess multiple times? Does it matter?
+	var amount_correct : int = 0
+	for i in range(0, Globals.decoded_built_word.size()):
+		if guess_id == Globals.decoded_built_word[i]:
+			# change guess container in the same spot
+			guess_container.get_children()[i].set_phoneme_by_id(guess_id)
+			amount_correct += 1
+	if amount_correct == 0:
+		guesses -= 1
+		guesses_changed()
 
 func initialize_guess_container():
 	for sound in Globals.decoded_built_word:
 		var mystery_sound = mystery_guess.instantiate()
+		mystery_sound.is_guess = true
 		guess_container.add_child(mystery_sound)
 	print(guess_container.get_children())
+
+
+func _on_guess_sound_pressed() -> void:
+	if current_selection != NO_SELECTION:
+		guess(current_selection)
