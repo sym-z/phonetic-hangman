@@ -16,7 +16,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container", "speaker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +31,7 @@ guess_container = NodePath("Guess State/Current Guesses Container")
 selected_letters = NodePath("Guessing Window/Phoeneme Sound")
 selected_example = NodePath("Guessing Window/Word Example")
 phoneme_container = NodePath("MarginContainer/HFlowContainer")
+speaker = NodePath("AudioStreamPlayer")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("1_qtlm4")
@@ -157,4 +158,7 @@ offset_right = -109.252
 offset_bottom = 136.256
 text = "EXIT TO MENU"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Guessing Window/Guess Sound" to="." method="_on_guess_sound_pressed"]
+[connection signal="pressed" from="Guessing Window/Hear Sound" to="." method="_on_hear_sound_pressed"]
