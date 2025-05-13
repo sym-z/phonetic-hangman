@@ -7,12 +7,13 @@ extends Control
 @export var add_button : Button
 @export var play_button : Button
 @export var speaker : AudioStreamPlayer
+@export var animation : AnimatedSprite2D
 
 # Initialize these before instantiation
 var letters : String = ""
 var word : String = ""
 var sound : AudioStreamMP3
-
+var frames : SpriteFrames
 signal added
 
 var is_guess : bool = false
@@ -22,6 +23,7 @@ func _ready():
 		letter_representation.text = letters
 		word_example.text = word
 		speaker.stream = sound
+		animation.sprite_frames = frames
 	else:
 		letter_representation.text = "???"
 		word_example.text = "???"

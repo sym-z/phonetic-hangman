@@ -94,7 +94,7 @@ func _on_hear_sound_pressed() -> void:
 	speaker.play()
 	
 
-
+#TODO: WORK ON HEARING ONLY CORRECT GUESSES
 var playing_guesses : bool = false
 func _on_hear_correct_guesses_pressed() -> void:
 	playing_guesses = true

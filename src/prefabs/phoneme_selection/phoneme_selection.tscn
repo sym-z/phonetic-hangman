@@ -1,18 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjgxtks4ntivg"]
+[gd_scene load_steps=6 format=3 uid="uid://bjgxtks4ntivg"]
 
 [ext_resource type="Script" uid="uid://dnwjtlg0iyy1h" path="res://prefabs/phoneme_selection/phoneme_selection.gd" id="1_mi4rm"]
-[ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="1_o4bd8"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_r67pn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_o4bd8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://lwhg6aa22q0b" path="res://assets/sprite_frames/0-B.tres" id="2_mi4rm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mi4rm"]
 
@@ -21,7 +10,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi4rm"]
 size = Vector2(64, 63.5)
 
-[node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button", "speaker")]
+[node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button", "speaker", "animation")]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchor_right = 0.05
@@ -36,6 +25,7 @@ word_example = NodePath("Tips/Tip Container/Word Example")
 add_button = NodePath("Tips/Tip Container/Add")
 play_button = NodePath("Tips/Tip Container/Play")
 speaker = NodePath("AudioStreamPlayer")
+animation = NodePath("Animation/AnimatedSprite2D")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -48,8 +38,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_r67pn")
+scale = Vector2(0.198142, 0.284444)
+sprite_frames = ExtResource("2_mi4rm")
+autoplay = "default"
+frame_progress = 0.224674
 centered = false
 
 [node name="Tips" type="Control" parent="."]

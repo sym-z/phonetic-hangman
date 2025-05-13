@@ -20,6 +20,7 @@ func _ready():
 		curr_select.letters = Libraries.letter_lib[i]
 		curr_select.word = Libraries.word_lib[i]
 		curr_select.sound = Libraries.sound_lib[i]
+		curr_select.frames = Libraries.frame_lib[i]
 		container_to_fill.add_child(curr_select)
 
 
