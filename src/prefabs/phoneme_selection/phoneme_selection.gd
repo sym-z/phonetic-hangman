@@ -32,6 +32,10 @@ func set_phoneme_by_id(id : int):
 	letter_representation.text = Libraries.letter_lib[id]
 	word_example.text = Libraries.word_lib[id]
 	speaker.stream = Libraries.sound_lib[id]
+	letters = Libraries.letter_lib[id]
+	word = Libraries.word_lib[id]
+	sound = Libraries.sound_lib[id]
+	self.id = id
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -90,22 +90,44 @@ func _on_guess_sound_pressed() -> void:
 #endregion
 
 func _on_hear_sound_pressed() -> void:
-	speaker.stream = selected_sound
-	speaker.play()
+	if(!playing_guesses):
+		speaker.stream = selected_sound
+		speaker.play()
 	
 
 #TODO: WORK ON HEARING ONLY CORRECT GUESSES
 var playing_guesses : bool = false
+# Which index of guess are we playing
+var guess_index : int = 0
 func _on_hear_correct_guesses_pressed() -> void:
 	playing_guesses = true
 	#TODO: Make sure someone cant make a word with no sounds
-	for child in guess_container.get_children():
-		if child.id != -1:
-			speaker.stream = guess_container.get_children()[0].sound
+	for i in range(0, guess_container.get_children().size()):
+		if guess_container.get_children()[i].id != -1:
+			speaker.stream = guess_container.get_children()[i].sound
+			#print(speaker.stream, guess_container.get_children()[i].id)
+			guess_index = i
+			speaker.play()
 			break
-		
-	pass # Replace with function body.
-
+			
 # Check if playing guesses, play sound, check if is the last guess, turn playing guesses off
 func _on_audio_stream_player_finished() -> void:
-	pass # Replace with function body.
+
+	if(playing_guesses):
+
+		if(guess_index < guess_container.get_children().size()-1):
+			guess_index += 1
+			if guess_container.get_children()[guess_index].id != -1:
+				print(guess_container.get_children()[guess_index].id)
+				speaker.stream = guess_container.get_children()[guess_index].sound
+				speaker.play()
+			else:
+				while(guess_index < guess_container.get_children().size()-1 && guess_container.get_children()[guess_index].id == -1):
+					guess_index += 1
+					print("YO")
+				if(guess_index < guess_container.get_children().size()):
+					speaker.stream = guess_container.get_children()[guess_index].sound
+					speaker.play()
+		else:
+			playing_guesses = false
+			guess_index = 0
