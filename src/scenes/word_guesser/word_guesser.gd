@@ -13,6 +13,7 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var selected_example : Label
 @export var phoneme_container : HFlowContainer
 @export var speaker : AudioStreamPlayer
+@export var type_submission_parent : Control
 
 var debug := true
 
@@ -94,8 +95,7 @@ func _on_hear_sound_pressed() -> void:
 		speaker.stream = selected_sound
 		speaker.play()
 	
-
-#TODO: WORK ON HEARING ONLY CORRECT GUESSES
+#region Hearing Correct Guesses
 var playing_guesses : bool = false
 # Which index of guess are we playing
 var guess_index : int = 0
@@ -112,9 +112,7 @@ func _on_hear_correct_guesses_pressed() -> void:
 			
 # Check if playing guesses, play sound, check if is the last guess, turn playing guesses off
 func _on_audio_stream_player_finished() -> void:
-
 	if(playing_guesses):
-
 		if(guess_index < guess_container.get_children().size()-1):
 			guess_index += 1
 			if guess_container.get_children()[guess_index].id != -1:
@@ -131,3 +129,14 @@ func _on_audio_stream_player_finished() -> void:
 		else:
 			playing_guesses = false
 			guess_index = 0
+			
+#endregion
+
+
+#region Final Submission
+func _on_guess_whole_word_pressed() -> void:
+	type_submission_parent.visible = true
+
+func _on_submission_cancel_pressed() -> void:
+	type_submission_parent.visible = false
+#endregion
