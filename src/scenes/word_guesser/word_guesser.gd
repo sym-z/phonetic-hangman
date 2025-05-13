@@ -55,6 +55,7 @@ func initialize_guess_container():
 
 #region Phoneme Selection
 func phoneme_selected():
+	#TODO: CHANGE THE ANIMATION ON THE BOTTOM RIGHT
 	if current_selection != NO_SELECTION:
 		# Assign sound, frames and text on click
 		selected_letters.text = Libraries.letter_lib[current_selection]

@@ -41,7 +41,6 @@ grow_vertical = 2
 scale = Vector2(0.198142, 0.284444)
 sprite_frames = ExtResource("2_mi4rm")
 autoplay = "default"
-frame_progress = 0.224674
 centered = false
 
 [node name="Tips" type="Control" parent="."]
