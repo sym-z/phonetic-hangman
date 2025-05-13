@@ -92,3 +92,20 @@ func _on_guess_sound_pressed() -> void:
 func _on_hear_sound_pressed() -> void:
 	speaker.stream = selected_sound
 	speaker.play()
+	
+
+
+var playing_guesses : bool = false
+func _on_hear_correct_guesses_pressed() -> void:
+	playing_guesses = true
+	#TODO: Make sure someone cant make a word with no sounds
+	for child in guess_container.get_children():
+		if child.id != -1:
+			speaker.stream = guess_container.get_children()[0].sound
+			break
+		
+	pass # Replace with function body.
+
+# Check if playing guesses, play sound, check if is the last guess, turn playing guesses off
+func _on_audio_stream_player_finished() -> void:
+	pass # Replace with function body.

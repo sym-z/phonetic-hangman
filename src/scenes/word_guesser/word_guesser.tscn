@@ -160,5 +160,7 @@ text = "EXIT TO MENU"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[connection signal="pressed" from="Guess State/Hear Correct Guesses" to="." method="_on_hear_correct_guesses_pressed"]
 [connection signal="pressed" from="Guessing Window/Guess Sound" to="." method="_on_guess_sound_pressed"]
 [connection signal="pressed" from="Guessing Window/Hear Sound" to="." method="_on_hear_sound_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

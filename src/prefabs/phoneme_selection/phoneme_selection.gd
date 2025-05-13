@@ -1,7 +1,7 @@
 extends Control
 
 # Used when building the hash
-@export var id : int
+@export var id : int = -1
 @export var letter_representation : Label
 @export var word_example : Label
 @export var add_button : Button
