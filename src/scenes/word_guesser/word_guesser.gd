@@ -124,7 +124,6 @@ func _on_audio_stream_player_finished() -> void:
 			else:
 				while(guess_index < guess_container.get_children().size()-1 && guess_container.get_children()[guess_index].id == -1):
 					guess_index += 1
-					print("YO")
 				if(guess_index < guess_container.get_children().size()):
 					speaker.stream = guess_container.get_children()[guess_index].sound
 					speaker.play()

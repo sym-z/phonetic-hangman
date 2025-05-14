@@ -8,7 +8,7 @@ extends Control
 @export var play_button : Button
 @export var speaker : AudioStreamPlayer
 @export var animation : AnimatedSprite2D
-
+@export var anim_marker : Marker2D
 # Initialize these before instantiation
 var letters : String = ""
 var word : String = ""
@@ -24,17 +24,28 @@ func _ready():
 		word_example.text = word
 		speaker.stream = sound
 		animation.sprite_frames = frames
+		animation.position = anim_marker.position
+		animation.play()
 	else:
 		letter_representation.text = "???"
 		word_example.text = "???"
+		#SET MYSTERY SPRITE FRAMES HERE
 
 func set_phoneme_by_id(id : int):
-	letter_representation.text = Libraries.letter_lib[id]
-	word_example.text = Libraries.word_lib[id]
-	speaker.stream = Libraries.sound_lib[id]
 	letters = Libraries.letter_lib[id]
+	letter_representation.text = letters
+	
 	word = Libraries.word_lib[id]
+	word_example.text = word
+	
 	sound = Libraries.sound_lib[id]
+	speaker.stream = sound
+	
+	frames = Libraries.frame_lib[id]
+	animation.sprite_frames = frames
+	animation.position = anim_marker.position
+	animation.play()
+	
 	self.id = id
 	
 

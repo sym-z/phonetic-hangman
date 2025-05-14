@@ -143,12 +143,12 @@ var word_lib : Dictionary[int,String] = {
 }
 var frame_lib : Dictionary[int,SpriteFrames] = {
 	0 : preload("res://assets/sprite_frames/0-B.tres"),
-	1 : preload("res://assets/sprite_frames/0-B.tres"),
-	2 : preload("res://assets/sprite_frames/0-B.tres"),
-	3 : preload("res://assets/sprite_frames/0-B.tres"),
-	4 : preload("res://assets/sprite_frames/0-B.tres"),
-	5 : preload("res://assets/sprite_frames/0-B.tres"),
-	6 : preload("res://assets/sprite_frames/0-B.tres"),
+	1 : preload("res://assets/sprite_frames/1-D.tres"),
+	2 : preload("res://assets/sprite_frames/2-F.tres"),
+	3 : preload("res://assets/sprite_frames/3-G.tres"),
+	4 : preload("res://assets/sprite_frames/4-H.tres"),
+	5 : preload("res://assets/sprite_frames/5-J.tres"),
+	6 : preload("res://assets/sprite_frames/6-K.tres"),
 	7 : preload("res://assets/sprite_frames/0-B.tres"),
 	8 : preload("res://assets/sprite_frames/0-B.tres"),
 	9 : preload("res://assets/sprite_frames/0-B.tres"),

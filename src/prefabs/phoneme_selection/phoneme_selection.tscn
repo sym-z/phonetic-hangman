@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjgxtks4ntivg"]
+[gd_scene load_steps=5 format=3 uid="uid://bjgxtks4ntivg"]
 
 [ext_resource type="Script" uid="uid://dnwjtlg0iyy1h" path="res://prefabs/phoneme_selection/phoneme_selection.gd" id="1_mi4rm"]
-[ext_resource type="SpriteFrames" uid="uid://lwhg6aa22q0b" path="res://assets/sprite_frames/0-B.tres" id="2_mi4rm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mi4rm"]
 
@@ -10,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi4rm"]
 size = Vector2(64, 63.5)
 
-[node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button", "speaker", "animation")]
+[node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button", "speaker", "animation", "anim_marker")]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchor_right = 0.05
@@ -26,22 +25,25 @@ add_button = NodePath("Tips/Tip Container/Add")
 play_button = NodePath("Tips/Tip Container/Play")
 speaker = NodePath("AudioStreamPlayer")
 animation = NodePath("Animation/AnimatedSprite2D")
+anim_marker = NodePath("Animation/Marker2D")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Animation" type="Control" parent="."]
+clip_contents = true
 layout_mode = 1
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
-scale = Vector2(0.198142, 0.284444)
-sprite_frames = ExtResource("2_mi4rm")
+position = Vector2(32, 32)
+scale = Vector2(0.25, 0.25)
 autoplay = "default"
-centered = false
+
+[node name="Marker2D" type="Marker2D" parent="Animation"]
+position = Vector2(32, 32)
 
 [node name="Tips" type="Control" parent="."]
 layout_mode = 1

@@ -5,6 +5,8 @@
 - [x] Identify the difference between the word builder menu, and the guessing menu.
 - [ ] Put in temporary gifs and get all SpriteFrames created so they can just be remade easily.
 - [ ] Better password creation algorithm
+- [ ] If someone uses all guesses, pull up type guess menu and do not allow them to close it
+- [ ] Make Mystery Default sprite frame for phoneme selection
 
 ## Scenes to make
 - Single Player

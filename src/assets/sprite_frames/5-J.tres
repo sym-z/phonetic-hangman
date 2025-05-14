@@ -1,0 +1,144 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://bol0lxofd6b3d"]
+
+[ext_resource type="Texture2D" uid="uid://d2mf3cowb1wxh" path="res://assets/phoneme_sheets/5-J-Sheet.png" id="1_bdc11"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj4fi"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(0, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2b4h"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(252, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_recya"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(504, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahsxs"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(756, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6i3y"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(1008, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wvba"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(1260, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vw2a"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(1512, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a34tb"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(1764, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4djn"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(2016, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7dnt"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(2268, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssvmp"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(2520, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs7jn"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(2772, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mum4a"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(3024, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1brkv"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(3276, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn6rp"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(3528, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwrxn"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(3780, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7juey"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(4032, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nbsl"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(4284, 0, 252, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1cdo"]
+atlas = ExtResource("1_bdc11")
+region = Rect2(4536, 0, 252, 225)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj4fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2b4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_recya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahsxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6i3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wvba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vw2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a34tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4djn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7dnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssvmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs7jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mum4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1brkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn6rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwrxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7juey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nbsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1cdo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
