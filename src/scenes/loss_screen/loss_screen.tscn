@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://d221d5cugjyy2"]
+[gd_scene load_steps=2 format=3 uid="uid://d221d5cugjyy2"]
+
+[ext_resource type="Script" uid="uid://dtos87grfo2sl" path="res://scenes/loss_screen/loss_screen.gd" id="1_4ggvd"]
 
 [node name="Loss Screen" type="Control"]
 layout_mode = 3
@@ -7,3 +9,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4ggvd")
+
+[node name="You Lose Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 195.0
+offset_right = 683.0
+offset_bottom = 218.0
+text = "YOU LOSE"
+
+[node name="Back to Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 239.0
+offset_right = 735.0
+offset_bottom = 270.0
+text = "BACK TO MAIN MENU"
+
+[connection signal="pressed" from="Back to Menu" to="." method="_on_back_to_menu_pressed"]

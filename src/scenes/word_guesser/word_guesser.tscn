@@ -16,7 +16,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container", "speaker", "type_submission_parent")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container", "speaker", "type_submission_parent", "submission_field")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,6 +33,7 @@ selected_example = NodePath("Guessing Window/Word Example")
 phoneme_container = NodePath("MarginContainer/HFlowContainer")
 speaker = NodePath("AudioStreamPlayer")
 type_submission_parent = NodePath("Type Submission")
+submission_field = NodePath("Type Submission/LineEdit")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("1_qtlm4")
@@ -184,6 +185,8 @@ offset_left = 341.0
 offset_top = 345.0
 offset_right = 986.0
 offset_bottom = 376.0
+placeholder_text = "TYPE GUESS HERE!"
+alignment = 1
 
 [node name="Submit" type="Button" parent="Type Submission"]
 layout_mode = 0
@@ -205,5 +208,7 @@ text = "BACK"
 [connection signal="pressed" from="Guess State/Guess Whole Word" to="." method="_on_guess_whole_word_pressed"]
 [connection signal="pressed" from="Guessing Window/Guess Sound" to="." method="_on_guess_sound_pressed"]
 [connection signal="pressed" from="Guessing Window/Hear Sound" to="." method="_on_hear_sound_pressed"]
+[connection signal="pressed" from="Guessing Window/Exit" to="." method="_on_exit_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="Type Submission/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="Type Submission/Submission Cancel" to="." method="_on_submission_cancel_pressed"]

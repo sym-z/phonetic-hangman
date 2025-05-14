@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2ujlbxsjyk4w"
-path="res://.godot/imported/0-B-Sheet.png-d0fe7cc6e942949330b6a68d1bed875b.ctex"
+path="res://.godot/imported/0-B-Sheet.png-0262c26619081168e215211a79067678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/0-B-Sheet.png"
-dest_files=["res://.godot/imported/0-B-Sheet.png-d0fe7cc6e942949330b6a68d1bed875b.ctex"]
+source_file="res://assets/phoneme_sheets/0-B-Sheet.png"
+dest_files=["res://.godot/imported/0-B-Sheet.png-0262c26619081168e215211a79067678.ctex"]
 
 [params]
 

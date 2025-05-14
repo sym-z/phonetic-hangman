@@ -16,6 +16,10 @@ func encode_password():
 	password_holder.text += "#"
 	password_holder.text += Globals.player_typed_word
 	print(password_holder.text)
+	## TODO: Create a button for copying to clipboard
+	# Learned about Display server from here:
+	## https://www.reddit.com/r/godot/comments/ikr2iy/is_there_any_way_to_copy_text_to_clipboard_from/
+	#DisplayServer.clipboard_set(password_holder.text)
 
 
 #region Scene Transitions

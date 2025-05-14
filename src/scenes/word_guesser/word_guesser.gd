@@ -14,6 +14,7 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var phoneme_container : HFlowContainer
 @export var speaker : AudioStreamPlayer
 @export var type_submission_parent : Control
+@export var submission_field : LineEdit
 
 var debug := true
 
@@ -132,12 +133,26 @@ func _on_audio_stream_player_finished() -> void:
 			guess_index = 0
 			
 #endregion
+func _on_exit_pressed():
+	Globals.reset_decoded_word()
+	#CHECK: Do I need to reset player word?
+	SceneTransition.main_menu()
 
 
 #region Final Submission
 func _on_guess_whole_word_pressed() -> void:
 	type_submission_parent.visible = true
+	submission_field.grab_focus()
 
 func _on_submission_cancel_pressed() -> void:
 	type_submission_parent.visible = false
+	submission_field.clear()
+
+func _on_submit_pressed():
+	var submitted_answer : String = submission_field.text.to_upper()
+	#TODO: Remove spaces, handle parsing in some way
+	if submitted_answer == Globals.decoded_typed_word:
+		SceneTransition.win_screen()
+	else:
+		SceneTransition.loss_screen()
 #endregion

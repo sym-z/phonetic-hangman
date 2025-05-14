@@ -1,19 +1,42 @@
 ## Goals
 - [ ] Add a division between consonants and vowels
-- [ ] Make word preview
-- [ ] Add text entry
-- [ ] Identify the difference between the word builder menu, and the guessing menu.
+- [x] Make word preview
+- [x] Add text entry
+- [x] Identify the difference between the word builder menu, and the guessing menu.
+- [ ] Put in temporary gifs and get all SpriteFrames created so they can just be remade easily.
+- [ ] Better password creation algorithm
 
 ## Scenes to make
-- Password Import
 - Single Player
-- Win Screen
-- Loss Screen
 
 ## Scenes in Progress
 - Word builder
+  - Consonant and vowel divider
+- Word guesser
+  - Animation playing when word is selected 
+  - Consonant and vowel divider
 - Word typer
 - Password Export
 - Main Menu
+- Password Import
+- Win Screen
+- Loss Screen
 
 ## Scenes done, but needing polish
+
+## Art Needed
+- Font
+- Finalize choice for how I want to animate the mouths
+- Button Icons
+- Backgrounds
+- UI Sounds
+  - Incorrect Guess
+  - Improper Input
+  - Win Game
+  - Lose Game
+  - Music
+  - Final Guess Music
+
+## UI Changes
+- Selections need to display word, letter and animation clearly
+- Buttons to add and listen should be symbols, not words
