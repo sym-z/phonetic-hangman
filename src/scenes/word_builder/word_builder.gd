@@ -1,8 +1,5 @@
 extends Control
 
-var main_menu_scene : String = "uid://cxg5bb4sk08en"
-var password_export_scene : String = "uid://bgglhgm3wyfwx"
-
 @export var selection_container : HFlowContainer
 @export var selection_speaker : AudioStreamPlayer
 
@@ -63,21 +60,14 @@ func _on_delete_pressed():
 #endregion
 
 #region Scene Transitions
-func back_to_main_menu():
-	get_tree().change_scene_to_file(main_menu_scene)
-	
 func _on_cancel_pressed():
 	# Reset Globals!
 	Globals.reset_player_word()
-	call_deferred("back_to_main_menu")
-
-func export_password():
-	get_tree().change_scene_to_file(password_export_scene)
-	
+	SceneTransition.main_menu()
 func _on_done_pressed():
 	if(selections.size() > 0):
 		Globals.player_built_word = selections
-		call_deferred("export_password")
+		SceneTransition.password_export()
 #endregion
 
 #region Sound Playing
