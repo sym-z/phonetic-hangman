@@ -22,6 +22,7 @@ var guesses : int = 3
 const NO_SELECTION : int = -1
 var current_selection :  int = NO_SELECTION
 var selected_sound : AudioStreamMP3
+var selected_anim : AnimatedSprite2D
 var correct_guesses : Array[int]
 
 #TODO: Fill container of guesses with question marks = to the number of sounds in the word
