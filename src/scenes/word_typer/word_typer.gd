@@ -12,7 +12,8 @@ func to_word_builder():
 
 func _on_cancel_pressed():
 	Globals.reset_player_word()
-	call_deferred("back_to_menu")
+	SceneTransition.main_menu()
+	#call_deferred("back_to_menu")
 	
 func _on_finished_pressed():
 	# CHECK FOR IMPROPER INPUT HERE
