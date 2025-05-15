@@ -16,7 +16,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container", "speaker", "type_submission_parent", "submission_field")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container", "speaker", "type_submission_parent", "submission_field", "big_animation", "animation_marker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,6 +34,8 @@ phoneme_container = NodePath("MarginContainer/HFlowContainer")
 speaker = NodePath("AudioStreamPlayer")
 type_submission_parent = NodePath("Type Submission")
 submission_field = NodePath("Type Submission/LineEdit")
+big_animation = NodePath("Guessing Window/Big Animation Window/Current Guess")
+animation_marker = NodePath("Guessing Window/Big Animation Window/Animation Marker")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("1_qtlm4")
@@ -112,10 +114,6 @@ sprite_frames = SubResource("SpriteFrames_510jw")
 position = Vector2(966, 536)
 scale = Vector2(1.39758, 1.30159)
 
-[node name="Current Guess" type="AnimatedSprite2D" parent="Guessing Window"]
-position = Vector2(99.4576, -29.7318)
-sprite_frames = SubResource("SpriteFrames_510jw")
-
 [node name="Info Label" type="Label" parent="Guessing Window"]
 offset_left = -61.5349
 offset_top = -131.378
@@ -159,6 +157,21 @@ offset_top = 105.256
 offset_right = -109.252
 offset_bottom = 136.256
 text = "EXIT TO MENU"
+
+[node name="Big Animation Window" type="Control" parent="Guessing Window"]
+clip_contents = true
+layout_mode = 3
+offset_left = 36.0
+offset_top = -94.0
+offset_right = 163.0
+offset_bottom = 34.0
+
+[node name="Current Guess" type="AnimatedSprite2D" parent="Guessing Window/Big Animation Window"]
+position = Vector2(63.4576, 64.2682)
+scale = Vector2(0.45, 0.45)
+
+[node name="Animation Marker" type="Marker2D" parent="Guessing Window/Big Animation Window"]
+position = Vector2(63.4576, 64.0366)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

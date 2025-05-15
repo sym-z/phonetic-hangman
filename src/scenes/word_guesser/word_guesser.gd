@@ -15,6 +15,9 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var speaker : AudioStreamPlayer
 @export var type_submission_parent : Control
 @export var submission_field : LineEdit
+@export var big_animation : AnimatedSprite2D
+@export var animation_marker : Marker2D
+
 
 var debug := true
 
@@ -63,6 +66,9 @@ func phoneme_selected():
 		selected_letters.text = Libraries.letter_lib[current_selection]
 		selected_example.text = Libraries.word_lib[current_selection]
 		selected_sound = Libraries.sound_lib[current_selection]
+		big_animation.sprite_frames = Libraries.frame_lib[current_selection]
+		big_animation.position = animation_marker.position
+		big_animation.play()
 
 func _on_selection_chosen(id):
 	current_selection = id
