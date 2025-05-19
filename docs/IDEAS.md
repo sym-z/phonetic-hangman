@@ -10,3 +10,8 @@
 
 ### Word Builder
 - Let the player more easily tell the difference between the divisions between vowels and consonants.
+
+### Art Ideas
+- Great Experimentation with Aesprite, I can import a spritesheet and apply the following effects for a VHS feel, that I think I want to go with.
+  - Apply Texturize
+  - Apply Sharpen 3x3
