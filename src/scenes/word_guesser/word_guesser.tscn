@@ -161,6 +161,7 @@ text = "EXIT TO MENU"
 [node name="Big Animation Window" type="Control" parent="Guessing Window"]
 clip_contents = true
 layout_mode = 3
+anchors_preset = 0
 offset_left = 36.0
 offset_top = -94.0
 offset_right = 163.0
