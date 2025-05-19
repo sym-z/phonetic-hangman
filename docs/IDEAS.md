@@ -15,3 +15,9 @@
 - Great Experimentation with Aesprite, I can import a spritesheet and apply the following effects for a VHS feel, that I think I want to go with.
   - Apply Texturize
   - Apply Sharpen 3x3
+- VHS Aesthetic
+  - Record button for making a word
+  - CRT Fuzz
+  - Tearing with shader?
+- Old PC Aesthetic
+- Could mix the two into a fake tape based computer system
