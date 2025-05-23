@@ -1,4 +1,6 @@
 extends Node
+const CONSONANT_START : int = 0
+const VOWEL_START : int = 24
 # Holds the sounds that get assigned to the phonemes
 # Change this to preloads once the sounds are recorded.
 var sound_lib : Dictionary[int,Variant] = {
