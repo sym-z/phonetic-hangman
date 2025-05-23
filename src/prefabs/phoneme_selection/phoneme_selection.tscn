@@ -20,10 +20,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_mi4rm")
-letter_representation = NodePath("Tips/Tip Container/Letter Name")
-word_example = NodePath("Tips/Tip Container/Word Example")
-add_button = NodePath("Tips/Tip Container/Add")
-play_button = NodePath("Tips/Tip Container/Play")
+letter_representation = NodePath("Animation/Tips/Tip Container/Letter Name")
+word_example = NodePath("Animation/Tips/Tip Container/Word Example")
+add_button = NodePath("Animation/Tips/Tip Container/Add")
+play_button = NodePath("Animation/Tips/Tip Container/Play")
 speaker = NodePath("AudioStreamPlayer")
 animation = NodePath("Animation/AnimatedSprite2D")
 anim_marker = NodePath("Animation/Marker2D")
@@ -47,7 +47,7 @@ autoplay = "default"
 [node name="Marker2D" type="Marker2D" parent="Animation"]
 position = Vector2(40, 40)
 
-[node name="Tips" type="Control" parent="."]
+[node name="Tips" type="Control" parent="Animation"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Tip Container" type="VBoxContainer" parent="Tips"]
+[node name="Tip Container" type="VBoxContainer" parent="Animation/Tips"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -71,7 +71,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="Letter Name" type="Label" parent="Tips/Tip Container"]
+[node name="Letter Name" type="Label" parent="Animation/Tips/Tip Container"]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 12
@@ -79,21 +79,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mi4rm")
 text = "B"
 horizontal_alignment = 1
 
-[node name="Add" type="Button" parent="Tips/Tip Container"]
+[node name="Add" type="Button" parent="Animation/Tips/Tip Container"]
 visible = false
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 12
 text = "ADD"
 
-[node name="Play" type="Button" parent="Tips/Tip Container"]
+[node name="Play" type="Button" parent="Animation/Tips/Tip Container"]
 visible = false
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 12
 text = "PLAY"
 
-[node name="Word Example" type="Label" parent="Tips/Tip Container"]
+[node name="Word Example" type="Label" parent="Animation/Tips/Tip Container"]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 12
@@ -101,13 +101,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_eacn2")
 text = "BUG"
 horizontal_alignment = 1
 
-[node name="Mouse Detector" type="Area2D" parent="."]
+[node name="Mouse Detector" type="Area2D" parent="Animation"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse Detector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Mouse Detector"]
 position = Vector2(40, 40)
 shape = SubResource("RectangleShape2D_mi4rm")
 
-[connection signal="pressed" from="Tips/Tip Container/Add" to="." method="_on_add_pressed"]
-[connection signal="pressed" from="Tips/Tip Container/Play" to="." method="_on_play_pressed"]
-[connection signal="mouse_entered" from="Mouse Detector" to="." method="_on_mouse_detector_mouse_entered"]
-[connection signal="mouse_exited" from="Mouse Detector" to="." method="_on_mouse_detector_mouse_exited"]
+[connection signal="pressed" from="Animation/Tips/Tip Container/Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="Animation/Tips/Tip Container/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Animation/Mouse Detector" to="." method="_on_mouse_detector_mouse_entered"]
+[connection signal="mouse_exited" from="Animation/Mouse Detector" to="." method="_on_mouse_detector_mouse_exited"]

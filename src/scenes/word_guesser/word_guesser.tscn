@@ -177,6 +177,11 @@ offset_right = 671.0
 offset_bottom = 456.0
 text = "BACK"
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="Guess State/Hear Correct Guesses" to="." method="_on_hear_correct_guesses_pressed"]
 [connection signal="pressed" from="Guess State/Guess Whole Word" to="." method="_on_guess_whole_word_pressed"]
 [connection signal="pressed" from="Guessing Window/Guess Sound" to="." method="_on_guess_sound_pressed"]
