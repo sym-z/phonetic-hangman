@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
-[ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_qtlm4"]
+[ext_resource type="Texture2D" uid="uid://b5d6cyjv0hplq" path="res://assets/prototyping/default-framing.png" id="2_510jw"]
 [ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="3_5xsg4"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 
@@ -38,7 +38,7 @@ big_animation = NodePath("Guessing Window/Big Animation Window/Current Guess")
 animation_marker = NodePath("Guessing Window/Big Animation Window/Animation Marker")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
-texture = ExtResource("1_qtlm4")
+texture = ExtResource("2_510jw")
 centered = false
 
 [node name="Guess State" type="Node2D" parent="."]
@@ -88,6 +88,7 @@ offset_bottom = 328.0
 text = "GUESS WHOLE WORD"
 
 [node name="Divider" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(960, 360)
 scale = Vector2(4.99011, -0.0144905)
 sprite_frames = SubResource("SpriteFrames_510jw")
@@ -159,6 +160,7 @@ position = Vector2(63.4576, 64.0366)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Word Bank" parent="." instance=ExtResource("4_510jw")]
+visible = false
 layout_mode = 1
 
 [node name="Type Submission" type="Control" parent="."]

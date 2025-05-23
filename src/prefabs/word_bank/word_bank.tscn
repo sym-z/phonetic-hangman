@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bymrqbk1dvbjv"]
+[gd_scene load_steps=6 format=3 uid="uid://bymrqbk1dvbjv"]
 
 [ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="1_0hpp7"]
 [ext_resource type="Script" uid="uid://bw0cuftbbl4ow" path="res://prefabs/word_bank/word_bank.gd" id="1_7kiyc"]
+[ext_resource type="Texture2D" uid="uid://7w1klyw5i7mq" path="res://assets/prototyping/word_bank-temp.png" id="2_kkt4e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wjod"]
+texture = ExtResource("2_kkt4e")
+
+[sub_resource type="Theme" id="Theme_6shj8"]
+Panel/styles/panel = SubResource("StyleBoxTexture_0wjod")
 
 [node name="Word Bank" type="Control" node_paths=PackedStringArray("consonant_container", "vowel_container")]
 layout_mode = 3
@@ -22,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_6shj8")
 
 [node name="Vowel Assembler" parent="." node_paths=PackedStringArray("container_to_fill") instance=ExtResource("1_0hpp7")]
 container_to_fill = NodePath("../Vowels/HFlowContainer")
@@ -39,14 +47,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 45
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 625
 theme_override_constants/margin_bottom = 30
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Consonants"]
 layout_mode = 2
-theme_override_constants/h_separation = 20
 alignment = 1
 
 [node name="Vowels" type="MarginContainer" parent="."]
@@ -58,11 +65,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 675
-theme_override_constants/margin_top = 140
-theme_override_constants/margin_right = 35
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 80
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Vowels"]
 layout_mode = 2
-theme_override_constants/h_separation = 35
-theme_override_constants/v_separation = 35
 alignment = 1
