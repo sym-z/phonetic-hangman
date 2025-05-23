@@ -21,3 +21,14 @@
   - Tearing with shader?
 - Old PC Aesthetic
 - Could mix the two into a fake tape based computer system
+- Monitor is connected to tape system and buttons
+- Buttons are phyiscal buttons on the device
+- Computer should look like a NEXT station, but say SYMZ
+
+## Scoring Refactor
+- Scoring should count number of guesses instead of incorrect guesses
+  - Scoring ranks you instead of ending the game
+  - Minimum best score threshold will be something like (num of phonemes) + 10
+- Remove guessed letters
+- Maybe tell user number of vowels and consonants?
+- Maybe remove random sounds that aren't a part of the word
