@@ -7,7 +7,8 @@
 - [ ] Better password creation algorithm
 - [ ] If someone uses all guesses, pull up type guess menu and do not allow them to close it
 - [ ] Make Mystery Default sprite frame for phoneme selection
-- [ ] Guess Phoneme shows selection animation Big Style, NEED A CONTROL THAT CLIPS CHILDREN FOR NORMALIZED SIZES
+- [x] Guess Phoneme shows selection animation Big Style, NEED A CONTROL THAT CLIPS CHILDREN FOR NORMALIZED SIZES
+- [ ] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
 
 ## Scenes to make
 - Single Player
