@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjgxtks4ntivg"]
+[gd_scene load_steps=5 format=3 uid="uid://bjgxtks4ntivg"]
 
 [ext_resource type="Script" uid="uid://dnwjtlg0iyy1h" path="res://prefabs/phoneme_selection/phoneme_selection.gd" id="1_mi4rm"]
-[ext_resource type="SpriteFrames" uid="uid://b5c68sli8vxaf" path="res://assets/sprite_frames/23-Y.tres" id="2_mi4rm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mi4rm"]
 
@@ -41,9 +40,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
-position = Vector2(32, 32)
-scale = Vector2(0.4, 0.4)
-sprite_frames = ExtResource("2_mi4rm")
+position = Vector2(40, 40)
+scale = Vector2(0.34, 0.34)
 autoplay = "default"
 
 [node name="Marker2D" type="Marker2D" parent="Animation"]

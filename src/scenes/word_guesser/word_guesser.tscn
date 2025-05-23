@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_qtlm4"]
-[ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="2_5xsg4"]
 [ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="3_5xsg4"]
+[ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_510jw"]
 animations = [{
@@ -16,7 +16,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container", "speaker", "type_submission_parent", "submission_field", "big_animation", "animation_marker")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "word_bank", "speaker", "type_submission_parent", "submission_field", "big_animation", "animation_marker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +30,7 @@ num_guesses = NodePath("Guess State/Guesses Left")
 guess_container = NodePath("Guess State/Current Guesses Container")
 selected_letters = NodePath("Guessing Window/Phoeneme Sound")
 selected_example = NodePath("Guessing Window/Word Example")
-phoneme_container = NodePath("MarginContainer/HFlowContainer")
+word_bank = NodePath("Word Bank")
 speaker = NodePath("AudioStreamPlayer")
 type_submission_parent = NodePath("Type Submission")
 submission_field = NodePath("Type Submission/LineEdit")
@@ -40,24 +40,6 @@ animation_marker = NodePath("Guessing Window/Big Animation Window/Animation Mark
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("1_qtlm4")
 centered = false
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.5
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_top = 25
-
-[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 33
-theme_override_constants/v_separation = 23
-alignment = 1
-
-[node name="Phoneme Assembler" parent="." node_paths=PackedStringArray("container_to_fill") instance=ExtResource("2_5xsg4")]
-container_to_fill = NodePath("../MarginContainer/HFlowContainer")
 
 [node name="Guess State" type="Node2D" parent="."]
 
@@ -175,6 +157,9 @@ scale = Vector2(0.45, 0.45)
 position = Vector2(63.4576, 64.0366)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Word Bank" parent="." instance=ExtResource("4_510jw")]
+layout_mode = 1
 
 [node name="Type Submission" type="Control" parent="."]
 visible = false

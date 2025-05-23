@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder/word_builder.gd" id="1_b2vsm"]
 [ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_wkrb8"]
-[ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="2_wkrb8"]
+[ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_8jq4x"]
 [ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="4_b2vsm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7nyya"]
@@ -16,7 +16,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Builder" type="Control" node_paths=PackedStringArray("selection_container", "selection_speaker")]
+[node name="Word Builder" type="Control" node_paths=PackedStringArray("word_bank", "selection_speaker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,31 +26,13 @@ grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
 script = ExtResource("1_b2vsm")
-selection_container = NodePath("MarginContainer/HFlowContainer")
+word_bank = NodePath("Word Bank")
 selection_speaker = NodePath("Selection Speaker")
 metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
 texture = ExtResource("1_wkrb8")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.5
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_top = 25
-
-[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 33
-theme_override_constants/v_separation = 23
-alignment = 1
-
-[node name="Phoneme Assembler" parent="." node_paths=PackedStringArray("container_to_fill") instance=ExtResource("2_wkrb8")]
-container_to_fill = NodePath("../MarginContainer/HFlowContainer")
 
 [node name="Current Phoneme Choice" type="AnimatedSprite2D" parent="."]
 position = Vector2(967, 345)
@@ -128,6 +110,9 @@ offset_bottom = 714.0
 text = "CANCEL AND QUIT TO MAIN MENU"
 
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
+
+[node name="Word Bank" parent="." instance=ExtResource("4_8jq4x")]
+layout_mode = 1
 
 [connection signal="pressed" from="Buttons/Previous Sound" to="." method="_on_previous_sound_pressed"]
 [connection signal="pressed" from="Buttons/Next Sound" to="." method="_on_next_sound_pressed"]

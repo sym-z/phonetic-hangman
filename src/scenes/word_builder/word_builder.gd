@@ -1,6 +1,6 @@
 extends Control
 
-@export var selection_container : HFlowContainer
+@export var word_bank : Control
 @export var selection_speaker : AudioStreamPlayer
 
 # The id's of all selected words.
@@ -11,7 +11,9 @@ const NO_SELECTION = -1
 var current_selection : int = NO_SELECTION
 
 func _ready():
-	for child in selection_container.get_children():
+	for child in word_bank.vowel_container.get_children():
+		child.added.connect(_on_selection_added)
+	for child in word_bank.consonant_container.get_children():
 		child.added.connect(_on_selection_added)
 
 #region Modifying Selections

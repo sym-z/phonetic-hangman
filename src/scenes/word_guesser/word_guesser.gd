@@ -11,7 +11,7 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var guess_container : HFlowContainer
 @export var selected_letters : Label
 @export var selected_example : Label
-@export var phoneme_container : HFlowContainer
+@export var word_bank : Control
 @export var speaker : AudioStreamPlayer
 @export var type_submission_parent : Control
 @export var submission_field : LineEdit
@@ -31,7 +31,9 @@ var correct_guesses : Array[int]
 #TODO: Fill container of guesses with question marks = to the number of sounds in the word
 
 func _ready() -> void:
-	for child in phoneme_container.get_children():
+	for child in word_bank.vowel_container.get_children():
+		child.added.connect(_on_selection_chosen)
+	for child in word_bank.consonant_container.get_children():
 		child.added.connect(_on_selection_chosen)
 	if(debug):
 		Globals.decoded_built_word = [5,24,6]
@@ -61,6 +63,7 @@ func initialize_guess_container():
 #region Phoneme Selection
 func phoneme_selected():
 	#TODO: CHANGE THE ANIMATION ON THE BOTTOM RIGHT
+
 	if current_selection != NO_SELECTION:
 		# Assign sound, frames and text on click
 		selected_letters.text = Libraries.letter_lib[current_selection]
