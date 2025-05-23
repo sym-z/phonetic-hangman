@@ -131,9 +131,25 @@ position = Vector2(63.4576, 64.0366)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="Open Bank" type="Button" parent="."]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 548.0
+offset_right = 544.0
+offset_bottom = 579.0
+text = "WORD BANK"
+
 [node name="Word Bank" parent="." instance=ExtResource("4_510jw")]
 visible = false
 layout_mode = 1
+
+[node name="Close Bank" type="Button" parent="Word Bank"]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 603.0
+offset_right = 1103.0
+offset_bottom = 634.0
+text = "CLOSE WORD BANK"
 
 [node name="Type Submission" type="Control" parent="."]
 visible = false
@@ -177,16 +193,13 @@ offset_right = 671.0
 offset_bottom = 456.0
 text = "BACK"
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
 [connection signal="pressed" from="Guess State/Hear Correct Guesses" to="." method="_on_hear_correct_guesses_pressed"]
 [connection signal="pressed" from="Guess State/Guess Whole Word" to="." method="_on_guess_whole_word_pressed"]
 [connection signal="pressed" from="Guessing Window/Guess Sound" to="." method="_on_guess_sound_pressed"]
 [connection signal="pressed" from="Guessing Window/Hear Sound" to="." method="_on_hear_sound_pressed"]
 [connection signal="pressed" from="Guessing Window/Exit" to="." method="_on_exit_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="Open Bank" to="." method="_on_open_bank_pressed"]
+[connection signal="pressed" from="Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]
 [connection signal="pressed" from="Type Submission/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="Type Submission/Submission Cancel" to="." method="_on_submission_cancel_pressed"]

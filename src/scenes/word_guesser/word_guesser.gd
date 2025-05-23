@@ -77,6 +77,7 @@ func _on_selection_chosen(id):
 	current_selection = id
 	phoneme_selected()
 	guess(id)
+	word_bank.visible = false
 #endregion
 
 #region Guess Management
@@ -166,3 +167,13 @@ func _on_submit_pressed():
 	else:
 		SceneTransition.loss_screen()
 #endregion
+
+
+func _on_open_bank_pressed():
+	word_bank.visible = true
+	pass # Replace with function body.
+
+
+func _on_close_bank_pressed():
+	word_bank.visible = false
+	pass # Replace with function body.
