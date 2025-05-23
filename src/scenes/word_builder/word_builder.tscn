@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cerariugi700o"]
 
 [ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder/word_builder.gd" id="1_b2vsm"]
-[ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_wkrb8"]
+[ext_resource type="Texture2D" uid="uid://b5d6cyjv0hplq" path="res://assets/prototyping/default-framing.png" id="2_8jq4x"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_8jq4x"]
 [ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="4_b2vsm"]
 
@@ -32,7 +32,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-texture = ExtResource("1_wkrb8")
+texture = ExtResource("2_8jq4x")
 
 [node name="Current Phoneme Choice" type="AnimatedSprite2D" parent="."]
 position = Vector2(967, 345)
@@ -112,6 +112,7 @@ text = "CANCEL AND QUIT TO MAIN MENU"
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
 
 [node name="Word Bank" parent="." instance=ExtResource("4_8jq4x")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Buttons/Previous Sound" to="." method="_on_previous_sound_pressed"]

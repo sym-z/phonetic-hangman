@@ -76,6 +76,7 @@ func phoneme_selected():
 func _on_selection_chosen(id):
 	current_selection = id
 	phoneme_selected()
+	guess(id)
 #endregion
 
 #region Guess Management
