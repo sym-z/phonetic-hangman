@@ -58,6 +58,7 @@ func count_letters():
 		num_letters.text.erase(num_letters.text.length()-1,1)
 
 func initialize_guess_container():
+	#TODO: MAKE SCALING POSSIBLE LIKE WHAT IS DONE IN PHONEME ASSEMBLER
 	for sound in Globals.decoded_built_word:
 		var mystery_sound = mystery_guess.instantiate()
 		mystery_sound.is_guess = true

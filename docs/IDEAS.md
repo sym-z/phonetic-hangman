@@ -36,3 +36,6 @@
   - Correct guess removes x number of sounds/vowel+consonant
   - Incorrect guess removes x-y number of sounds/vowel+consonant
 - I feel like there is too much choice that can lead to it being too repetitive.
+- Maybe user starts with word bank of sounds equal to num of phonemes + x, randomized.
+  - Each guess correct additionally removes more sounds?
+  - More feeling of deciphering a puzzle this way.
