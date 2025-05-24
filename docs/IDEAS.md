@@ -39,3 +39,4 @@
 - Maybe user starts with word bank of sounds equal to num of phonemes + x, randomized.
   - Each guess correct additionally removes more sounds?
   - More feeling of deciphering a puzzle this way.
+  - Phoneme Assemblers have same optional check for given word, which the word bank has a variable of
