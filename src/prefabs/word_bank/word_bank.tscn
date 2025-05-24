@@ -10,7 +10,7 @@ texture = ExtResource("2_kkt4e")
 [sub_resource type="Theme" id="Theme_6shj8"]
 Panel/styles/panel = SubResource("StyleBoxTexture_0wjod")
 
-[node name="Word Bank" type="Control" node_paths=PackedStringArray("consonant_container", "vowel_container")]
+[node name="Word Bank" type="Control" node_paths=PackedStringArray("consonant_container", "consonant_assembler", "vowel_container", "vowel_assembler", "total_container", "total_assembler")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,11 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_7kiyc")
 consonant_container = NodePath("Consonants/HFlowContainer")
+consonant_assembler = NodePath("Consonant Assembler")
 vowel_container = NodePath("Vowels/HFlowContainer")
+vowel_assembler = NodePath("Vowel Assembler")
+total_container = NodePath("All Sounds/HFlowContainer")
+total_assembler = NodePath("Total Assembler")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -39,7 +43,26 @@ vowels_only = true
 container_to_fill = NodePath("../Consonants/HFlowContainer")
 cons_only = true
 
+[node name="Total Assembler" parent="." node_paths=PackedStringArray("container_to_fill") instance=ExtResource("1_0hpp7")]
+container_to_fill = NodePath("../All Sounds/HFlowContainer")
+
+[node name="All Sounds" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 150
+
+[node name="HFlowContainer" type="HFlowContainer" parent="All Sounds"]
+layout_mode = 2
+
 [node name="Consonants" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,6 +80,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Vowels" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

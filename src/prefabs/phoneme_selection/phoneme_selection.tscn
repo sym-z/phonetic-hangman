@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi4rm"]
 size = Vector2(80, 80)
 
-[node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button", "speaker", "animation", "anim_marker")]
+[node name="Phoneme Selection" type="Control" node_paths=PackedStringArray("letter_representation", "word_example", "add_button", "play_button", "speaker", "animation", "anim_marker", "anim_control")]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchor_right = 0.05
@@ -27,6 +27,7 @@ play_button = NodePath("Animation/Tips/Tip Container/Play")
 speaker = NodePath("AudioStreamPlayer")
 animation = NodePath("Animation/AnimatedSprite2D")
 anim_marker = NodePath("Animation/Marker2D")
+anim_control = NodePath("Animation")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

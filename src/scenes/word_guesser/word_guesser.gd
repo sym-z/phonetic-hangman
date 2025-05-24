@@ -31,10 +31,14 @@ var correct_guesses : Array[int]
 #TODO: Fill container of guesses with question marks = to the number of sounds in the word
 
 func _ready() -> void:
-	for child in word_bank.vowel_container.get_children():
-		child.added.connect(_on_selection_chosen)
-	for child in word_bank.consonant_container.get_children():
-		child.added.connect(_on_selection_chosen)
+	if word_bank.split:
+		for child in word_bank.vowel_container.get_children():
+			child.added.connect(_on_selection_chosen)
+		for child in word_bank.consonant_container.get_children():
+			child.added.connect(_on_selection_chosen)
+	else:
+		for child in word_bank.total_container.get_children():
+			child.added.connect(_on_selection_chosen)
 	if(debug):
 		Globals.decoded_built_word = [5,24,6]
 		Globals.decoded_typed_word = "JACK"

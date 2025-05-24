@@ -32,3 +32,7 @@
 - Remove guessed letters
 - Maybe tell user number of vowels and consonants?
 - Maybe remove random sounds that aren't a part of the word
+- Could start with certain number of total phonemes or vowel/consonant separation
+  - Correct guess removes x number of sounds/vowel+consonant
+  - Incorrect guess removes x-y number of sounds/vowel+consonant
+- I feel like there is too much choice that can lead to it being too repetitive.

@@ -9,6 +9,7 @@ extends Control
 @export var speaker : AudioStreamPlayer
 @export var animation : AnimatedSprite2D
 @export var anim_marker : Marker2D
+@export var anim_control : Control
 # Initialize these before instantiation
 var letters : String = ""
 var word : String = ""
