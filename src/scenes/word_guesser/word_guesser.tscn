@@ -167,6 +167,7 @@ rotation = 0.154562
 scale = Vector2(0.71665, 0.76724)
 skew = -0.0202384
 sprite_frames = SubResource("SpriteFrames_7hfr5")
+autoplay = "default"
 frame_progress = 0.808534
 
 [node name="Exit" type="Button" parent="Guessing Window"]
@@ -208,6 +209,7 @@ text = "WORD BANK"
 visible = false
 layout_mode = 1
 scale_items = 1.2
+puzzle_mode = true
 
 [node name="Close Bank" type="Button" parent="Word Bank"]
 layout_mode = 0

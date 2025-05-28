@@ -3,12 +3,13 @@
 - [x] Make word preview
 - [x] Add text entry
 - [x] Identify the difference between the word builder menu, and the guessing menu.
-- [ ] Put in temporary gifs and get all SpriteFrames created so they can just be remade easily.
+- [x] Put in temporary gifs and get all SpriteFrames created so they can just be remade easily.
 - [ ] Better password creation algorithm
 - [ ] If someone uses all guesses, pull up type guess menu and do not allow them to close it
 - [ ] Make Mystery Default sprite frame for phoneme selection
 - [x] Guess Phoneme shows selection animation Big Style, NEED A CONTROL THAT CLIPS CHILDREN FOR NORMALIZED SIZES
-- [ ] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
+- [x] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
+- [ ] Implement word bank in builder
 
 ## Scenes to make
 - Single Player

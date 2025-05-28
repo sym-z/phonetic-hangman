@@ -8,6 +8,9 @@ extends Control
 @export var split : bool
 @export var scale_items : float = 1.0
 
+# Will this show a jumbled up version of the sounds?
+@export var puzzle_mode : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if split == true:
@@ -19,7 +22,17 @@ func _ready():
 
 func get_scale_items() -> float:
 	return scale_items
+func is_puzzle_mode() -> bool:
+	return puzzle_mode
 
+## Refreshes word bank to be the current state of the game
+func add_puzzle():
+	total_assembler.add_puzzle()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+func remove(id):
+	for child in total_container.get_children():
+		if child.id == id:
+			total_container.remove_child(child)
+			child.queue_free()

@@ -31,6 +31,19 @@ var correct_guesses : Array[int]
 #TODO: Fill container of guesses with question marks = to the number of sounds in the word
 
 func _ready() -> void:
+	if(debug):
+		Globals.decoded_built_word = [5,24,6]
+		Globals.decoded_typed_word = "JACK"
+		Globals.puzzle_bank_initialize()
+	# Make ? for each typed letter
+	count_letters()
+	# Initialize guess count
+	guesses_changed()
+	# Initialize guess container with mystery guesses
+	initialize_guess_container()
+	# Add in puzzle
+	word_bank.add_puzzle()
+	# Connect adding signals from word bank to guess system
 	if word_bank.split:
 		for child in word_bank.vowel_container.get_children():
 			child.added.connect(_on_selection_chosen)
@@ -39,16 +52,7 @@ func _ready() -> void:
 	else:
 		for child in word_bank.total_container.get_children():
 			child.added.connect(_on_selection_chosen)
-	if(debug):
-		Globals.decoded_built_word = [5,24,6]
-		Globals.decoded_typed_word = "JACK"
-	# Make ? for each typed letter
-	count_letters()
-	# Initialize guess count
-	guesses_changed()
-	# Initialize guess container with mystery guesses
-	initialize_guess_container()
-
+			
 #region Initialization
 func count_letters():
 	num_letters.text = ""
@@ -78,6 +82,7 @@ func phoneme_selected():
 		big_animation.position = animation_marker.position
 		big_animation.play()
 
+# When add is clicked, guess is automatically made
 func _on_selection_chosen(id):
 	current_selection = id
 	phoneme_selected()
@@ -103,6 +108,7 @@ func guess(guess_id : int):
 	if amount_correct == 0:
 		guesses -= 1
 		guesses_changed()
+	word_bank.remove(guess_id)
 
 func _on_guess_sound_pressed() -> void:
 	if current_selection != NO_SELECTION:
@@ -173,7 +179,7 @@ func _on_submit_pressed():
 		SceneTransition.loss_screen()
 #endregion
 
-
+#region Word Bank
 func _on_open_bank_pressed():
 	word_bank.visible = true
 	pass # Replace with function body.
@@ -182,3 +188,4 @@ func _on_open_bank_pressed():
 func _on_close_bank_pressed():
 	word_bank.visible = false
 	pass # Replace with function body.
+#endregion
