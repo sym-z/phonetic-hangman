@@ -55,7 +55,7 @@ func _ready() -> void:
 			
 #region Initialization
 func count_letters():
-	num_letters.text = ""
+	num_letters.text = "LETTERS: "
 	for letter in Globals.decoded_typed_word.length():
 		num_letters.text += "? "
 	if(num_letters.text.length() > 0):
