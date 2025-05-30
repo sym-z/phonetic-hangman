@@ -21,3 +21,22 @@
   - Tearing with shader?
 - Old PC Aesthetic
 - Could mix the two into a fake tape based computer system
+- Monitor is connected to tape system and buttons
+- Buttons are phyiscal buttons on the device
+- Computer should look like a NEXT station, but say SYMZ
+
+## Scoring Refactor
+- Scoring should count number of guesses instead of incorrect guesses
+  - Scoring ranks you instead of ending the game
+  - Minimum best score threshold will be something like (num of phonemes) + 10
+- Remove guessed letters
+- Maybe tell user number of vowels and consonants?
+- Maybe remove random sounds that aren't a part of the word
+- Could start with certain number of total phonemes or vowel/consonant separation
+  - Correct guess removes x number of sounds/vowel+consonant
+  - Incorrect guess removes x-y number of sounds/vowel+consonant
+- I feel like there is too much choice that can lead to it being too repetitive.
+- Maybe user starts with word bank of sounds equal to num of phonemes + x, randomized.
+  - Each guess correct additionally removes more sounds?
+  - More feeling of deciphering a puzzle this way.
+  - Phoneme Assemblers have same optional check for given word, which the word bank has a variable of

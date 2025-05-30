@@ -9,6 +9,10 @@ extends Control
 @export var speaker : AudioStreamPlayer
 @export var animation : AnimatedSprite2D
 @export var anim_marker : Marker2D
+@export var anim_control : Control
+
+# Customization
+@export var add_text : String = "ADD"
 # Initialize these before instantiation
 var letters : String = ""
 var word : String = ""
@@ -19,6 +23,8 @@ signal added
 var is_guess : bool = false
 # Instantiate scene nodes with values given by the phoneme assembler
 func _ready():
+	# TODO: This might be replaced with an icon.
+	add_button.text = add_text
 	if !is_guess:
 		letter_representation.text = letters
 		word_example.text = word

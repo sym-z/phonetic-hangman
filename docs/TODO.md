@@ -1,16 +1,22 @@
 ## Goals
 - [ ] Add a division between consonants and vowels
+- [ ] Label consonants and vowels
 - [x] Make word preview
 - [x] Add text entry
 - [x] Identify the difference between the word builder menu, and the guessing menu.
-- [ ] Put in temporary gifs and get all SpriteFrames created so they can just be remade easily.
+- [x] Put in temporary gifs and get all SpriteFrames created so they can just be remade easily.
 - [ ] Better password creation algorithm
-- [ ] If someone uses all guesses, pull up type guess menu and do not allow them to close it
+- [x] If someone uses all guesses, pull up type guess menu and do not allow them to close it
 - [ ] Make Mystery Default sprite frame for phoneme selection
 - [x] Guess Phoneme shows selection animation Big Style, NEED A CONTROL THAT CLIPS CHILDREN FOR NORMALIZED SIZES
-- [ ] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
+- [x] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
+- [x] Implement word bank in builder
+- [x] Better progress bar in builder that shows 5 anims
+- [x] Queue Children need to have labels
+- [ ] When all sounds have been guessed correctly, do not allow the word bank to open
+- [ ] Sound effect plays after sound when guess has been made
 
-## Scenes to make
+#  Scenes to make
 - Single Player
 
 ## Scenes in Progress

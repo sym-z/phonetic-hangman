@@ -1,22 +1,66 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=11 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
-[ext_resource type="Texture2D" uid="uid://d3thg83m1dwye" path="res://background_reference.png" id="1_qtlm4"]
-[ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="2_5xsg4"]
-[ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="3_5xsg4"]
+[ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_510jw"]
+[ext_resource type="Texture2D" uid="uid://cejtpw318ss2f" path="res://assets/prototyping/tooth-prototype-Sheet.png" id="3_6l4u6"]
+[ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_510jw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8tt6"]
+atlas = ExtResource("3_6l4u6")
+region = Rect2(0, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw28t"]
+atlas = ExtResource("3_6l4u6")
+region = Rect2(100, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yawx5"]
+atlas = ExtResource("3_6l4u6")
+region = Rect2(200, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jr7e"]
+atlas = ExtResource("3_6l4u6")
+region = Rect2(300, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdecb"]
+atlas = ExtResource("3_6l4u6")
+region = Rect2(400, 0, 100, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hfr5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_5xsg4")
+"texture": SubResource("AtlasTexture_s8tt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw28t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yawx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jr7e")
+}, {
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_bdecb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jr7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yawx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw28t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8tt6")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "phoneme_container", "speaker", "type_submission_parent", "submission_field", "big_animation", "animation_marker")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "selected_letters", "selected_example", "word_bank", "speaker", "type_submission_parent", "submission_field", "big_animation", "animation_marker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +74,7 @@ num_guesses = NodePath("Guess State/Guesses Left")
 guess_container = NodePath("Guess State/Current Guesses Container")
 selected_letters = NodePath("Guessing Window/Phoeneme Sound")
 selected_example = NodePath("Guessing Window/Word Example")
-phoneme_container = NodePath("MarginContainer/HFlowContainer")
+word_bank = NodePath("Word Bank")
 speaker = NodePath("AudioStreamPlayer")
 type_submission_parent = NodePath("Type Submission")
 submission_field = NodePath("Type Submission/LineEdit")
@@ -38,127 +82,104 @@ big_animation = NodePath("Guessing Window/Big Animation Window/Current Guess")
 animation_marker = NodePath("Guessing Window/Big Animation Window/Animation Marker")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
-texture = ExtResource("1_qtlm4")
+texture = ExtResource("2_510jw")
 centered = false
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.5
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_top = 25
-
-[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 33
-theme_override_constants/v_separation = 23
-alignment = 1
-
-[node name="Phoneme Assembler" parent="." node_paths=PackedStringArray("container_to_fill") instance=ExtResource("2_5xsg4")]
-container_to_fill = NodePath("../MarginContainer/HFlowContainer")
 
 [node name="Guess State" type="Node2D" parent="."]
 
 [node name="Number of Letters" type="Label" parent="Guess State"]
-offset_left = 909.0
-offset_top = 16.0
-offset_right = 1008.0
-offset_bottom = 39.0
+offset_left = 588.0
+offset_top = 118.0
+offset_right = 687.0
+offset_bottom = 141.0
 text = "? ? ? ? ? ? ? ? ?"
 horizontal_alignment = 1
 
 [node name="Guesses Left" type="Label" parent="Guess State"]
-offset_left = 1047.0
-offset_top = 16.0
-offset_right = 1265.0
-offset_bottom = 39.0
+offset_left = 526.0
+offset_top = 139.0
+offset_right = 744.0
+offset_bottom = 162.0
 text = "INCORRECT GUESSES LEFT: 3"
 
-[node name="Guess Word Info" type="Label" parent="Guess State"]
-offset_left = 1067.0
-offset_top = 297.0
-offset_right = 1273.0
-offset_bottom = 346.0
-text = "<--- THINK YOU'VE GOT IT? 
-HIT THIS BUTTON !"
-
 [node name="Current Guesses Container" type="HFlowContainer" parent="Guess State"]
-offset_left = 679.0
-offset_top = 48.0
-offset_right = 1252.0
-offset_bottom = 249.0
+offset_left = 357.0
+offset_top = 164.0
+offset_right = 930.0
+offset_bottom = 365.0
 alignment = 1
 
 [node name="Hear Correct Guesses" type="Button" parent="Guess State"]
-offset_left = 868.0
-offset_top = 259.0
-offset_right = 1066.0
-offset_bottom = 290.0
+offset_left = 568.0
+offset_top = 566.0
+offset_right = 766.0
+offset_bottom = 597.0
 text = "HEAR CORRECT GUESSES"
 
 [node name="Guess Whole Word" type="Button" parent="Guess State"]
-offset_left = 882.0
-offset_top = 297.0
-offset_right = 1056.0
-offset_bottom = 328.0
+offset_left = 800.0
+offset_top = 567.0
+offset_right = 974.0
+offset_bottom = 598.0
 text = "GUESS WHOLE WORD"
-
-[node name="Divider" type="AnimatedSprite2D" parent="."]
-position = Vector2(960, 360)
-scale = Vector2(4.99011, -0.0144905)
-sprite_frames = SubResource("SpriteFrames_510jw")
 
 [node name="Guessing Window" type="Node2D" parent="."]
 position = Vector2(966, 536)
 scale = Vector2(1.39758, 1.30159)
 
-[node name="Info Label" type="Label" parent="Guessing Window"]
-offset_left = -61.5349
-offset_top = -131.378
-offset_right = 57.4651
-offset_bottom = -108.378
-text = "GUESS A SOUND"
-
 [node name="Phoeneme Sound" type="Label" parent="Guessing Window"]
-offset_left = -176.018
-offset_top = -55.0854
-offset_right = -34.0184
-offset_bottom = -32.0854
+visible = false
+offset_left = -504.443
+offset_top = -387.219
+offset_right = -362.444
+offset_bottom = -364.219
 text = "PHONEME SOUND"
 horizontal_alignment = 1
 
 [node name="Word Example" type="Label" parent="Guessing Window"]
-offset_left = -174.587
-offset_top = -31.4999
-offset_right = -32.5877
-offset_bottom = -8.49994
+visible = false
+offset_left = -504.443
+offset_top = -358.024
+offset_right = -362.444
+offset_bottom = -335.024
 text = "WORD EXAMPLE"
 horizontal_alignment = 1
 
 [node name="Guess Sound" type="Button" parent="Guessing Window"]
-offset_left = 41.5003
-offset_top = 53.0122
-offset_right = 161.5
-offset_bottom = 84.0122
+visible = false
+offset_left = -274.045
+offset_top = -15.3658
+offset_right = -154.045
+offset_bottom = 15.6342
 text = "GUESS SOUND"
 
 [node name="Hear Sound" type="Button" parent="Guessing Window"]
-offset_left = -163.139
-offset_top = 10.7561
-offset_right = -43.1395
-offset_bottom = 41.7561
+visible = false
+offset_left = -273.33
+offset_top = 19.2073
+offset_right = -153.33
+offset_bottom = 50.2073
 text = "HEAR SOUND"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Guessing Window"]
+position = Vector2(-450.064, 39.1828)
+rotation = 0.154562
+scale = Vector2(0.71665, 0.76724)
+skew = -0.0202384
+sprite_frames = SubResource("SpriteFrames_7hfr5")
+autoplay = "default"
+frame_progress = 0.808534
+
 [node name="Exit" type="Button" parent="Guessing Window"]
-offset_left = -228.252
-offset_top = 105.256
-offset_right = -109.252
-offset_bottom = 136.256
+offset_left = -482.978
+offset_top = 89.1218
+offset_right = -363.978
+offset_bottom = 120.122
+rotation = -1.19082
 text = "EXIT TO MENU"
 
 [node name="Big Animation Window" type="Control" parent="Guessing Window"]
+visible = false
 clip_contents = true
 layout_mode = 3
 anchors_preset = 0
@@ -175,6 +196,29 @@ scale = Vector2(0.45, 0.45)
 position = Vector2(63.4576, 64.0366)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Open Bank" type="Button" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 570.0
+offset_right = 528.0
+offset_bottom = 601.0
+text = "WORD BANK"
+
+[node name="Word Bank" parent="." instance=ExtResource("4_510jw")]
+visible = false
+layout_mode = 1
+split = false
+scale_items = 1.2
+puzzle_mode = true
+
+[node name="Close Bank" type="Button" parent="Word Bank"]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 603.0
+offset_right = 1103.0
+offset_bottom = 634.0
+text = "CLOSE WORD BANK"
 
 [node name="Type Submission" type="Control" parent="."]
 visible = false
@@ -224,5 +268,7 @@ text = "BACK"
 [connection signal="pressed" from="Guessing Window/Hear Sound" to="." method="_on_hear_sound_pressed"]
 [connection signal="pressed" from="Guessing Window/Exit" to="." method="_on_exit_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="Open Bank" to="." method="_on_open_bank_pressed"]
+[connection signal="pressed" from="Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]
 [connection signal="pressed" from="Type Submission/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="Type Submission/Submission Cancel" to="." method="_on_submission_cancel_pressed"]
