@@ -17,6 +17,10 @@ func _ready():
 		total_container.visible = false
 		consonant_container.visible = true
 		vowel_container.visible = true
+	else:
+		total_container.visible = true
+		consonant_container.visible = false
+		vowel_container.visible = false
 	consonant_assembler.scale_mult = scale_items
 	vowel_assembler.scale_mult = scale_items
 	total_assembler.scale_mult = scale_items

@@ -208,6 +208,7 @@ text = "WORD BANK"
 [node name="Word Bank" parent="." instance=ExtResource("4_510jw")]
 visible = false
 layout_mode = 1
+split = false
 scale_items = 1.2
 puzzle_mode = true
 

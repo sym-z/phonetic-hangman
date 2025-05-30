@@ -43,3 +43,5 @@ func puzzle_bank_initialize():
 		else:
 			break
 	puzzle_bank.shuffle()
+func puzzle_bank_clear():
+	puzzle_bank.clear()

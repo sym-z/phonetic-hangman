@@ -24,18 +24,23 @@ func _ready():
 	else:
 		for child in word_bank.total_container.get_children():
 			child.added.connect(_on_selection_added)
-
+	#refresh_phoneme_queue()
+	selection_changed()
 #region Modifying Selections
 
 #WARNING: Make sure that the player cannot modify the word while the whole word is being played.
 # Update right side frame, sound that plays to the currently selected ID
 func selection_changed():
 	if(current_selection != NO_SELECTION && !playing_whole_word):
+		anim.visible = true
 		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 		anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
 		anim.play()
 		refresh_phoneme_queue()
-		
+	if current_selection == NO_SELECTION:
+		anim.visible = false
+		refresh_phoneme_queue()
+	
 func _on_selection_added(id):
 	if(!playing_whole_word):
 		selections.append(id)

@@ -34,7 +34,7 @@ func _ready() -> void:
 	if(debug):
 		Globals.decoded_built_word = [5,24,6]
 		Globals.decoded_typed_word = "JACK"
-		Globals.puzzle_bank_initialize()
+	Globals.puzzle_bank_initialize()
 	# Make ? for each typed letter
 	count_letters()
 	# Initialize guess count
@@ -71,29 +71,31 @@ func initialize_guess_container():
 
 #region Phoneme Selection
 func phoneme_selected():
-	#TODO: CHANGE THE ANIMATION ON THE BOTTOM RIGHT
-
 	if current_selection != NO_SELECTION:
 		# Assign sound, frames and text on click
 		selected_letters.text = Libraries.letter_lib[current_selection]
 		selected_example.text = Libraries.word_lib[current_selection]
 		selected_sound = Libraries.sound_lib[current_selection]
-		big_animation.sprite_frames = Libraries.frame_lib[current_selection]
-		big_animation.position = animation_marker.position
-		big_animation.play()
+		# CODE FOR BIG ANIMATION
+		#big_animation.sprite_frames = Libraries.frame_lib[current_selection]
+		#big_animation.position = animation_marker.position
+		#big_animation.play()
 
 # When add is clicked, guess is automatically made
 func _on_selection_chosen(id):
 	current_selection = id
 	phoneme_selected()
+	#TODO: BUZZER OR DING FOR GUESS CORRECTNESS
+	_on_hear_sound_pressed()
 	guess(id)
 	word_bank.visible = false
 #endregion
 
 #region Guess Management
 func guesses_changed():
+	# Force a typed guess if no guesses are left
 	if guesses == 0:
-		print("GAME OVER")
+		_on_guess_whole_word_pressed()
 	else:
 		num_guesses.text = "INCORRECT GUESSES LEFT: " + str(guesses)
 
@@ -157,6 +159,7 @@ func _on_audio_stream_player_finished() -> void:
 #endregion
 func _on_exit_pressed():
 	Globals.reset_decoded_word()
+	Globals.puzzle_bank_clear()
 	#CHECK: Do I need to reset player word?
 	SceneTransition.main_menu()
 
@@ -167,12 +170,14 @@ func _on_guess_whole_word_pressed() -> void:
 	submission_field.grab_focus()
 
 func _on_submission_cancel_pressed() -> void:
-	type_submission_parent.visible = false
-	submission_field.clear()
+	if guesses > 0:
+		type_submission_parent.visible = false
+		submission_field.clear()
 
 func _on_submit_pressed():
 	var submitted_answer : String = submission_field.text.to_upper()
 	#TODO: Remove spaces, handle parsing in some way
+	Globals.puzzle_bank_clear()
 	if submitted_answer == Globals.decoded_typed_word:
 		SceneTransition.win_screen()
 	else:
