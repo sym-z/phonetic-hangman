@@ -63,6 +63,12 @@ func _on_delete_pressed():
 		else:
 			print(selections, " no current selection")
 		selection_changed()
+func _on_add_pressed() -> void:
+	word_bank.visible = true
+
+func _on_hide_pressed() -> void:
+	word_bank.visible = false
+	
 #endregion
 
 #region Scene Transitions

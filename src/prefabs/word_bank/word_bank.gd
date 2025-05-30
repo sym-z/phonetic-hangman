@@ -15,6 +15,8 @@ extends Control
 func _ready():
 	if split == true:
 		total_container.visible = false
+		consonant_container.visible = true
+		vowel_container.visible = true
 	consonant_assembler.scale_mult = scale_items
 	vowel_assembler.scale_mult = scale_items
 	total_assembler.scale_mult = scale_items

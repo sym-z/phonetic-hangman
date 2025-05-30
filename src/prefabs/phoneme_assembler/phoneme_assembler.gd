@@ -7,12 +7,17 @@ const VERT_SPACING = 30
 @export var vowels_only : bool
 @export var cons_only : bool
 var scale_mult : float = 1.0
+# How much smaller should the scale be from normal if the container is split and showing all of the phonemes
+const SPLIT_SCALE : float = 0.8
 var phoneme_selection_scene : PackedScene = preload("res://prefabs/phoneme_selection/phoneme_selection.tscn")
 
 # Each phoneme needs an ID, Text of it's phonetic pronounciation, an example, a sound, and an animation.
 func _ready():
 	if get_parent().has_method("get_scale_items"):
-		scale_mult = get_parent().get_scale_items()
+		if get_parent().split:
+			scale_mult = get_parent().get_scale_items() * 0.75
+		else:
+			scale_mult = get_parent().get_scale_items()
 	if vowels_only:
 		var start = Libraries.VOWEL_START
 		while start < TOTAL_PHONEMES:
