@@ -2,6 +2,7 @@ extends Control
 
 @export var word_bank : Control
 @export var selection_speaker : AudioStreamPlayer
+@export var anim : AnimatedSprite2D
 
 # The id's of all selected words.
 var selections : Array[int] = []
@@ -27,6 +28,8 @@ func _ready():
 func selection_changed():
 	if(current_selection != NO_SELECTION && !playing_whole_word):
 		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
+		anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
+		anim.play()
 		
 func _on_selection_added(id):
 	if(!playing_whole_word):
@@ -34,6 +37,7 @@ func _on_selection_added(id):
 		current_selection = selections.size() - 1
 		print(selections, " currently selecting: ", selections[current_selection])
 		selection_changed()
+		word_bank.visible = false
 
 func _on_previous_sound_pressed():
 	if(current_selection > 0 && current_selection != NO_SELECTION && !playing_whole_word):

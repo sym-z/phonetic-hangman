@@ -10,8 +10,10 @@
 - [x] Guess Phoneme shows selection animation Big Style, NEED A CONTROL THAT CLIPS CHILDREN FOR NORMALIZED SIZES
 - [x] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
 - [ ] Implement word bank in builder
+- [ ] Better progress bar in builder that shows 5 anims
 
-## Scenes to make
+
+#  Scenes to make
 - Single Player
 
 ## Scenes in Progress

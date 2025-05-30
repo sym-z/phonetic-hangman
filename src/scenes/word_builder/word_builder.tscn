@@ -16,7 +16,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Builder" type="Control" node_paths=PackedStringArray("word_bank", "selection_speaker")]
+[node name="Word Builder" type="Control" node_paths=PackedStringArray("word_bank", "selection_speaker", "anim")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,6 +28,7 @@ mouse_filter = 1
 script = ExtResource("1_b2vsm")
 word_bank = NodePath("Word Bank")
 selection_speaker = NodePath("Selection Speaker")
+anim = NodePath("Current Phoneme Choice")
 metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
@@ -35,8 +36,7 @@ position = Vector2(640, 360)
 texture = ExtResource("2_8jq4x")
 
 [node name="Current Phoneme Choice" type="AnimatedSprite2D" parent="."]
-position = Vector2(632, 397)
-scale = Vector2(3.18216, 3.26333)
+position = Vector2(637, 374)
 sprite_frames = SubResource("SpriteFrames_7nyya")
 
 [node name="Progress Through Selections" type="AnimatedSprite2D" parent="."]
@@ -121,7 +121,6 @@ text = "ADD SOUND"
 [node name="Word Bank" parent="." instance=ExtResource("4_8jq4x")]
 visible = false
 layout_mode = 1
-split = true
 
 [node name="Hide" type="Button" parent="Word Bank"]
 layout_mode = 0

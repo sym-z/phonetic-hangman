@@ -25,7 +25,7 @@ func _ready():
 			start += 1
 	elif cons_only:
 		var start = Libraries.CONSONANT_START
-		while start < TOTAL_PHONEMES:
+		while start < Libraries.VOWEL_START:
 			add_phoneme(start)
 			start += 1
 	else:
