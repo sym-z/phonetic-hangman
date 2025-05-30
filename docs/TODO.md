@@ -11,7 +11,7 @@
 - [x] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
 - [ ] Implement word bank in builder
 - [ ] Better progress bar in builder that shows 5 anims
-
+- [ ] Queue Children need to have labels
 
 #  Scenes to make
 - Single Player

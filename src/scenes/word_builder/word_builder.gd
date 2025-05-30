@@ -3,7 +3,11 @@ extends Control
 @export var word_bank : Control
 @export var selection_speaker : AudioStreamPlayer
 @export var anim : AnimatedSprite2D
+@export var phoneme_queue_parent : Node2D
 
+const PHONEME_QUEUE_SIZE : int = 5
+# How many phonemes can be indexed without falling out of array
+var buffer_size : int = floor(PHONEME_QUEUE_SIZE/2)
 # The id's of all selected words.
 var selections : Array[int] = []
 const NO_SELECTION = -1
@@ -30,6 +34,7 @@ func selection_changed():
 		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 		anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
 		anim.play()
+		refresh_phoneme_queue()
 		
 func _on_selection_added(id):
 	if(!playing_whole_word):
@@ -37,6 +42,7 @@ func _on_selection_added(id):
 		current_selection = selections.size() - 1
 		print(selections, " currently selecting: ", selections[current_selection])
 		selection_changed()
+		selection_speaker.play()
 		word_bank.visible = false
 
 func _on_previous_sound_pressed():
@@ -67,6 +73,7 @@ func _on_delete_pressed():
 		else:
 			print(selections, " no current selection")
 		selection_changed()
+		
 func _on_add_pressed() -> void:
 	word_bank.visible = true
 
@@ -113,3 +120,20 @@ func _on_selection_speaker_finished():
 			current_selection = current_selection_backup
 			selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 #endregion
+
+func refresh_phoneme_queue():
+	var index = -buffer_size
+	for child in phoneme_queue_parent.get_children():
+		print(index)
+		# Avoid negative index or out of bounds index
+		print(current_selection + index)
+		if current_selection + index >= 0 and current_selection + index < selections.size():
+			child.visible = true
+			child.sprite_frames = Libraries.frame_lib[selections[current_selection+index]]
+			child.play()
+			# Make label show alphabetical representation
+			child.get_node("Label").text = Libraries.letter_lib[selections[current_selection+index]]
+		else:
+			child.visible = false
+		index += 1
+			
