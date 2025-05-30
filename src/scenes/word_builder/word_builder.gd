@@ -36,6 +36,7 @@ func selection_changed():
 		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 		anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
 		anim.play()
+		selection_speaker.play()
 		refresh_phoneme_queue()
 	if current_selection == NO_SELECTION:
 		anim.visible = false
@@ -47,7 +48,7 @@ func _on_selection_added(id):
 		current_selection = selections.size() - 1
 		print(selections, " currently selecting: ", selections[current_selection])
 		selection_changed()
-		selection_speaker.play()
+		#selection_speaker.play()
 		word_bank.visible = false
 
 func _on_previous_sound_pressed():
