@@ -19,7 +19,7 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var animation_marker : Marker2D
 
 
-var debug := true
+var debug := false
 
 var guesses : int = 3
 const NO_SELECTION : int = -1
