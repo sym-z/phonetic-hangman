@@ -35,6 +35,7 @@ func _ready():
 	else:
 		letter_representation.text = "???"
 		word_example.text = "???"
+		self.id = -1
 		#SET MYSTERY SPRITE FRAMES HERE
 
 func set_phoneme_by_id(id : int):
