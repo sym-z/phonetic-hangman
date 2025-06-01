@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcjst2l1ryhdg"]
+[gd_scene load_steps=19 format=3 uid="uid://bcjst2l1ryhdg"]
 
 [ext_resource type="Script" uid="uid://7e2uoofk2vjw" path="res://prefabs/tooth_button/tooth_button.gd" id="1_1ri0u"]
 [ext_resource type="Texture2D" uid="uid://cejtpw318ss2f" path="res://assets/prototyping/tooth-prototype-Sheet.png" id="1_edi1c"]
@@ -121,6 +121,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ri0u"]
 radius = 375.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ri0u"]
+size = Vector2(87, 153)
+
 [node name="Tooth Button" type="Node2D" node_paths=PackedStringArray("anim", "label", "label_anchor")]
 script = ExtResource("1_1ri0u")
 anim = NodePath("AnimatedSprite2D")
@@ -132,7 +135,7 @@ sprite_frames = SubResource("SpriteFrames_s8oo4")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Mouse Detection" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1ri0u")
 
 [node name="Label" type="Label" parent="."]
@@ -144,8 +147,14 @@ horizontal_alignment = 1
 
 [node name="Label Anchor" type="Marker2D" parent="."]
 
+[node name="Clickable" type="Area2D" parent="."]
+
+[node name="Clickable Surface" type="CollisionShape2D" parent="Clickable"]
+position = Vector2(4.5, -1.5)
+shape = SubResource("RectangleShape2D_1ri0u")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Clickable" to="." method="_on_clickable_input_event"]

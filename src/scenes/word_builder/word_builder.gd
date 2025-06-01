@@ -169,4 +169,5 @@ func initialize_tooth_buttons():
 func initialize_tooth(tooth_button : Node2D, clicked : Callable, text : String):
 	tooth_button.on_click = clicked
 	tooth_button.label.text = text
+	tooth_button.center_label()
 #endregion
