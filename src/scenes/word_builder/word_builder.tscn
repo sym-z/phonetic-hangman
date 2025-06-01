@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cerariugi700o"]
+[gd_scene load_steps=12 format=3 uid="uid://cerariugi700o"]
 
 [ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder/word_builder.gd" id="1_b2vsm"]
 [ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_8jq4x"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_8jq4x"]
+[ext_resource type="PackedScene" uid="uid://bcjst2l1ryhdg" path="res://prefabs/tooth_button/tooth_button.tscn" id="4_856pw"]
 [ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="4_b2vsm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7nyya"]
@@ -108,6 +109,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Previous Sound" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -118,6 +120,7 @@ offset_bottom = 190.0
 text = "PREVIOUS SOUND"
 
 [node name="Next Sound" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 1014.0
 offset_top = 170.0
@@ -172,6 +175,9 @@ offset_top = 643.0
 offset_right = 755.0
 offset_bottom = 674.0
 text = "ADD SOUND"
+
+[node name="Previous Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(179, 280)
 
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
 

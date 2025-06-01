@@ -2,6 +2,8 @@ extends Node2D
 @export var anim : AnimatedSprite2D
 var mouse_hovering : bool = false
 @export var label : Label
+
+# What does this tooth do when it's clicked? Defaults to printing a string
 var on_click : Callable = debug_click
 
 

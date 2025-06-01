@@ -16,6 +16,7 @@ const NO_SELECTION = -1
 var current_selection : int = NO_SELECTION
 
 func _ready():
+	$"Previous Sound2".on_click = _on_previous_sound_pressed
 	if word_bank.split:
 		for child in word_bank.vowel_container.get_children():
 			child.added.connect(_on_selection_added)
