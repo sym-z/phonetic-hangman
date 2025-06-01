@@ -121,9 +121,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgh2"]
 size = Vector2(90, 152)
 
-[node name="Tooth Button" type="Node2D" node_paths=PackedStringArray("anim")]
+[node name="Tooth Button" type="Node2D" node_paths=PackedStringArray("anim", "button")]
+position = Vector2(217, 191)
 script = ExtResource("1_1ri0u")
 anim = NodePath("AnimatedSprite2D")
+button = NodePath("Button")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s8oo4")
@@ -135,11 +137,13 @@ position = Vector2(3, -4)
 shape = SubResource("RectangleShape2D_3bgh2")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = -41.615
 offset_top = -79.925
 offset_right = 48.55
 offset_bottom = 72.015
 mouse_filter = 1
+text = "PRESS"
 flat = true
 metadata/_edit_use_anchors_ = true
 
