@@ -137,6 +137,7 @@ sprite_frames = SubResource("SpriteFrames_s8oo4")
 
 [node name="Mouse Detection" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1ri0u")
+debug_color = Color(0, 0.6, 0.701961, 0.121569)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 47.0
