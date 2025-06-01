@@ -72,7 +72,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Builder" type="Control" node_paths=PackedStringArray("word_bank", "selection_speaker", "anim", "phoneme_queue_parent")]
+[node name="Word Builder" type="Control" node_paths=PackedStringArray("word_bank", "selection_speaker", "anim", "phoneme_queue_parent", "tb_prev_sound", "tb_next_sound", "tb_play_sound", "tb_play_word", "tb_del_sound", "tb_done", "tb_cancel", "tb_add_sound")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,6 +86,14 @@ word_bank = NodePath("Word Bank")
 selection_speaker = NodePath("Selection Speaker")
 anim = NodePath("Current Phoneme Choice")
 phoneme_queue_parent = NodePath("Phoneme Queue")
+tb_prev_sound = NodePath("Buttons/Prev Sound2")
+tb_next_sound = NodePath("Buttons/Next Sound2")
+tb_play_sound = NodePath("Buttons/Play Sound2")
+tb_play_word = NodePath("Buttons/Play Word2")
+tb_del_sound = NodePath("Buttons/Delete Sound2")
+tb_done = NodePath("Buttons/Done2")
+tb_cancel = NodePath("Buttons/Cancel2")
+tb_add_sound = NodePath("Buttons/Add2")
 metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
@@ -112,6 +120,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Previous Sound" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 110.0
 offset_top = 159.0
@@ -129,6 +138,7 @@ offset_bottom = 201.0
 text = "NEXT SOUND"
 
 [node name="Play Sound" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 512.0
 offset_top = 45.0
@@ -137,6 +147,7 @@ offset_bottom = 76.0
 text = "PLAY SOUND"
 
 [node name="Play Whole Word" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 627.0
 offset_top = 45.0
@@ -145,6 +156,7 @@ offset_bottom = 76.0
 text = "PLAY WHOLE WORD"
 
 [node name="Delete" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 512.0
 offset_top = 640.0
@@ -153,6 +165,7 @@ offset_bottom = 671.0
 text = "DELETE SOUND"
 
 [node name="Done" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 920.0
 offset_top = 630.0
@@ -161,6 +174,7 @@ offset_bottom = 661.0
 text = "DONE"
 
 [node name="Cancel" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 158.0
 offset_top = 631.0
@@ -169,6 +183,7 @@ offset_bottom = 662.0
 text = "CANCEL AND QUIT TO MAIN MENU"
 
 [node name="Add" type="Button" parent="Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 651.0
 offset_top = 643.0
@@ -176,8 +191,35 @@ offset_right = 755.0
 offset_bottom = 674.0
 text = "ADD SOUND"
 
-[node name="Previous Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
-position = Vector2(179, 280)
+[node name="Prev Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(240, 269)
+rotation = 2.01175
+
+[node name="Next Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(1039, 281)
+rotation = -1.9892
+
+[node name="Play Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(571, 123)
+rotation = 3.14159
+
+[node name="Play Word2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(708, 126)
+rotation = 3.14159
+
+[node name="Delete Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(462, 598)
+
+[node name="Done2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(1034, 463)
+rotation = -0.988236
+
+[node name="Cancel2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(253, 477)
+rotation = 1.27234
+
+[node name="Add2" parent="Buttons" instance=ExtResource("4_856pw")]
+position = Vector2(812, 599)
 
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
 

@@ -5,6 +5,16 @@ extends Control
 @export var anim : AnimatedSprite2D
 @export var phoneme_queue_parent : Node2D
 
+@export_category("Tooth Buttons")
+@export var tb_prev_sound : Node2D
+@export var tb_next_sound : Node2D
+@export var tb_play_sound : Node2D
+@export var tb_play_word : Node2D
+@export var tb_del_sound : Node2D
+@export var tb_done : Node2D
+@export var tb_cancel : Node2D
+@export var tb_add_sound : Node2D
+
 const PHONEME_QUEUE_SIZE : int = 5
 # How many phonemes can be indexed without falling out of array
 var buffer_size : int = floor(PHONEME_QUEUE_SIZE/2)
@@ -16,7 +26,6 @@ const NO_SELECTION = -1
 var current_selection : int = NO_SELECTION
 
 func _ready():
-	$"Previous Sound2".on_click = _on_previous_sound_pressed
 	if word_bank.split:
 		for child in word_bank.vowel_container.get_children():
 			child.added.connect(_on_selection_added)
@@ -27,6 +36,7 @@ func _ready():
 			child.added.connect(_on_selection_added)
 	#refresh_phoneme_queue()
 	selection_changed()
+	initialize_tooth_buttons()
 #region Modifying Selections
 
 #WARNING: Make sure that the player cannot modify the word while the whole word is being played.
@@ -143,4 +153,20 @@ func refresh_phoneme_queue():
 		else:
 			child.visible = false
 		index += 1
-			
+
+#region Tooth Buttons
+func initialize_tooth_buttons():
+	initialize_tooth(tb_prev_sound, _on_previous_sound_pressed, "PREVIOUS SOUND")
+	initialize_tooth(tb_next_sound, _on_next_sound_pressed, "NEXT SOUND")
+	initialize_tooth(tb_play_sound, _on_play_sound_pressed, "PLAY SOUND")
+	initialize_tooth(tb_play_word, _on_play_whole_word_pressed, "PLAY WHOLE WORD")
+	initialize_tooth(tb_del_sound, _on_delete_pressed, "DELETE SOUND")
+	initialize_tooth(tb_done, _on_done_pressed, "DONE")
+	initialize_tooth(tb_cancel, _on_cancel_pressed, "CANCEL")
+	initialize_tooth(tb_add_sound, _on_add_pressed, "ADD SOUND")
+	pass
+
+func initialize_tooth(tooth_button : Node2D, clicked : Callable, text : String):
+	tooth_button.on_click = clicked
+	tooth_button.label.text = text
+#endregion

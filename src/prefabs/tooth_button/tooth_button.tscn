@@ -121,10 +121,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgh2"]
 size = Vector2(90, 152)
 
-[node name="Tooth Button" type="Node2D" node_paths=PackedStringArray("anim", "label")]
+[node name="Tooth Button" type="Node2D" node_paths=PackedStringArray("anim", "label", "label_anchor")]
 script = ExtResource("1_1ri0u")
 anim = NodePath("AnimatedSprite2D")
 label = NodePath("Label")
+label_anchor = NodePath("Label Anchor")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s8oo4")
@@ -136,12 +137,13 @@ position = Vector2(3, -4)
 shape = SubResource("RectangleShape2D_3bgh2")
 
 [node name="Label" type="Label" parent="."]
-visible = false
-offset_left = -18.0
-offset_top = -20.0
-offset_right = 22.0
-offset_bottom = 3.0
+offset_right = 47.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "PRESS"
+horizontal_alignment = 1
+
+[node name="Label Anchor" type="Marker2D" parent="."]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
