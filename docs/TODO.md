@@ -17,6 +17,7 @@
 - [ ] Sound effect plays after sound when guess has been made
 - [x] Handle duplicate sounds
 - [ ] Better instructions of how to use tooth buttons
+- [ ] Create and crop filtered versions
 
 #  Scenes to make
 - Single Player
@@ -49,6 +50,7 @@
   - Music
   - Final Guess Music
 - Final Tooth Buttons
+- VHS Tearing
 
 ## UI Changes
 - Selections need to display word, letter and animation clearly
