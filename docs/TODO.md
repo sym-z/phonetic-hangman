@@ -1,5 +1,5 @@
 ## Goals
-- [ ] Add a division between consonants and vowels
+- [x] Add a division between consonants and vowels
 - [x] Label consonants and vowels
 - [x] Make word preview
 - [x] Add text entry
@@ -18,6 +18,8 @@
 - [x] Handle duplicate sounds
 - [ ] Better instructions of how to use tooth buttons
 - [ ] Create and crop filtered versions
+- [ ] Teeth in the main menu change words on the monitor in the mouth
+- [ ] Start up animation with the VHS
 
 #  Scenes to make
 - Single Player
@@ -55,3 +57,5 @@
 ## UI Changes
 - Selections need to display word, letter and animation clearly
 - Buttons to add and listen should be symbols, not words
+- Menus need style
+- Create styleboxes and custom fonts
