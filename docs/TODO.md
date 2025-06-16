@@ -22,6 +22,7 @@
 - [ ] Start up animation with the VHS
 - [x] Menu buttons are triggering behind word bank
 - [ ] Add new tooth buttons to guesser
+- [ ] Apply tint to buttons that are not idling
 
 #  Scenes to make
 - Single Player

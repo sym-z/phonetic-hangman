@@ -4,6 +4,14 @@
 
 ### Password Generation
 - Could hashes be made using the name of your opponent?
+- The seed for the randomizer should take in the size of the typed word
+- EX:
+  - JACK -> Seed Rand w 4
+  - J + Rand()
+  - A + Rand()
+  - C + Rand()
+  - K + Rand()
+  - Do the same thing but subtract to decode.
 
 ### Word Typer
 - Force case of entered word, do not allow symbols, numbers, or spaces.

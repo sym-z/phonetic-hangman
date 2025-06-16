@@ -144,7 +144,7 @@ var word_lib : Dictionary[int,String] = {
 	43 : "p(URE)",
 }
 var frame_lib : Dictionary[int,SpriteFrames] = {
-	0 : preload("res://assets/sprite_frames/0-B.tres"),
+	0 : preload("res://assets/sprite_frames_edited/0-B.tres"),
 	1 : preload("res://assets/sprite_frames/1-D.tres"),
 	2 : preload("res://assets/sprite_frames/2-F.tres"),
 	3 : preload("res://assets/sprite_frames/3-G.tres"),

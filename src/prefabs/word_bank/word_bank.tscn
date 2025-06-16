@@ -94,7 +94,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 675
 theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 80
+theme_override_constants/margin_right = 65
 theme_override_constants/margin_bottom = 40
 
 [node name="HFlowContainer" type="HFlowContainer" parent="Vowels"]
