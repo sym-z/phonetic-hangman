@@ -5,7 +5,7 @@ var mouse_hovering : bool = false
 @export var label_anchor : Marker2D
 # What does this tooth do when it's clicked? Defaults to printing a string
 var on_click : Callable = debug_click
-
+var clickable : bool = true
 
 # To prevent animation interuption, animations can only change when one loops or finishes
 func _ready():
@@ -49,5 +49,5 @@ func center_label():
 
 
 func _on_clickable_input_event(viewport, event, shape_idx):
-	if(event is InputEventMouseButton and event.button_index == 1 and event.pressed == true):
+	if(event is InputEventMouseButton and event.button_index == 1 and event.pressed == true and clickable == true):
 		on_click.call()

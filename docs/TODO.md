@@ -20,6 +20,8 @@
 - [ ] Create and crop filtered versions
 - [ ] Teeth in the main menu change words on the monitor in the mouth
 - [ ] Start up animation with the VHS
+- [x] Menu buttons are triggering behind word bank
+- [ ] Add new tooth buttons to guesser
 
 #  Scenes to make
 - Single Player

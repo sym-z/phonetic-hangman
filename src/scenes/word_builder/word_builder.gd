@@ -15,6 +15,7 @@ extends Control
 @export var tb_cancel : Node2D
 @export var tb_add_sound : Node2D
 
+@export var button_parent : Control
 const PHONEME_QUEUE_SIZE : int = 5
 # How many phonemes can be indexed without falling out of array
 var buffer_size : int = floor(PHONEME_QUEUE_SIZE/2)
@@ -61,6 +62,7 @@ func _on_selection_added(id):
 		selection_changed()
 		#selection_speaker.play()
 		word_bank.visible = false
+		change_clickable(true)
 
 func _on_previous_sound_pressed():
 	if(current_selection > 0 && current_selection != NO_SELECTION && !playing_whole_word):
@@ -93,9 +95,11 @@ func _on_delete_pressed():
 		
 func _on_add_pressed() -> void:
 	word_bank.visible = true
+	change_clickable(false)
 
 func _on_hide_pressed() -> void:
 	word_bank.visible = false
+	change_clickable(true)
 	
 #endregion
 
@@ -170,4 +174,9 @@ func initialize_tooth(tooth_button : Node2D, clicked : Callable, text : String):
 	tooth_button.on_click = clicked
 	tooth_button.label.text = text
 	tooth_button.center_label()
+
+func change_clickable(new_value : bool):
+	for button in button_parent.get_children():
+		button.clickable = new_value
+
 #endregion
