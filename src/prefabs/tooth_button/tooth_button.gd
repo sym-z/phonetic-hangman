@@ -3,6 +3,7 @@ extends Node2D
 var mouse_hovering : bool = false
 @export var label : Label
 @export var label_anchor : Marker2D
+@export var hover_circle : CollisionShape2D
 # What does this tooth do when it's clicked? Defaults to printing a string
 var on_click : Callable = debug_click
 var clickable : bool = true
@@ -12,27 +13,39 @@ func _ready():
 	anim.play()
 	label.visible = false
 
+func _process(_delta):
+	if mouse_hovering:
+		print(get_viewport().get_mouse_position().distance_to(global_position))
+		var i_lerp : float =  inverse_lerp(0.0,hover_circle.shape.radius,get_viewport().get_mouse_position().distance_to(global_position) )
+		print("I LERP: ", i_lerp)
+		var num_frames : int = anim.sprite_frames.get_frame_count(anim.animation)
+		var lerpy : float = lerp(0,num_frames, i_lerp)
+		print("LERP: ", lerpy)
+		print("FRAME TO DISPLAY: ", num_frames - ceil(lerpy))
+		anim.frame = num_frames - ceil(lerpy)
+		if anim.frame == num_frames-1:
+			label.visible = true
 func _on_area_2d_mouse_entered():
 	mouse_hovering = true
 	center_label()
 
 func _on_area_2d_mouse_exited():
 	mouse_hovering = false
-	anim.animation = "retract"
+	#anim.animation = "retract"
 	label.visible = false
-	anim.play()
-
-func _on_animated_sprite_2d_animation_finished():
-	if anim.animation == "retract":
-		anim.animation = "default"
-		anim.play()
-	elif anim.animation == "extend":
-		label.visible = true
-
-func _on_animated_sprite_2d_animation_looped():
-	if mouse_hovering == true:
-		anim.animation = "extend"
-		anim.play()
+	#anim.play()
+#
+#func _on_animated_sprite_2d_animation_finished():
+	#if anim.animation == "retract":
+		#anim.animation = "default"
+		#anim.play()
+	#elif anim.animation == "extend":
+		#label.visible = true
+#
+#func _on_animated_sprite_2d_animation_looped():
+	#if mouse_hovering == true:
+		#anim.animation = "extend"
+		#anim.play()
 
 
 func debug_click():

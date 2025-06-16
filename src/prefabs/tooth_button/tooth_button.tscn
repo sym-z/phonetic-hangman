@@ -15,6 +15,10 @@ region = Rect2(100, 0, 100, 150)
 atlas = ExtResource("1_edi1c")
 region = Rect2(200, 0, 100, 150)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fm5r"]
+atlas = ExtResource("1_edi1c")
+region = Rect2(400, 0, 100, 150)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6qs4"]
 atlas = ExtResource("1_edi1c")
 region = Rect2(0, 0, 100, 150)
@@ -30,10 +34,6 @@ region = Rect2(200, 0, 100, 150)
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4tt3"]
 atlas = ExtResource("1_edi1c")
 region = Rect2(300, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fm5r"]
-atlas = ExtResource("1_edi1c")
-region = Rect2(400, 0, 100, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2oqm5"]
 atlas = ExtResource("1_edi1c")
@@ -68,10 +68,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_uh4dv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3bgh2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ri0u")
+"texture": SubResource("AtlasTexture_7fm5r")
 }],
 "loop": true,
 "name": &"default",
@@ -124,11 +121,13 @@ radius = 375.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ri0u"]
 size = Vector2(87, 153)
 
-[node name="Tooth Button" type="Node2D" node_paths=PackedStringArray("anim", "label", "label_anchor")]
+[node name="Tooth Button" type="Node2D" node_paths=PackedStringArray("anim", "label", "label_anchor", "hover_circle")]
+position = Vector2(403, 240)
 script = ExtResource("1_1ri0u")
 anim = NodePath("AnimatedSprite2D")
 label = NodePath("Label")
 label_anchor = NodePath("Label Anchor")
+hover_circle = NodePath("Area2D/Mouse Detection")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s8oo4")
