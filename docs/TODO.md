@@ -23,7 +23,7 @@
 - [x] Menu buttons are triggering behind word bank
 - [ ] Add new tooth buttons to guesser
 - [ ] Apply tint to buttons that are not idling
-
+- [ ] For added mixed up ness, make the seed sound array length + word length!
 #  Scenes to make
 - Single Player
 
