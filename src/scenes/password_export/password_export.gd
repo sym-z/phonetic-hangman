@@ -12,7 +12,7 @@ func _process(delta):
 	pass
 
 func encode_password():
-	seed(Globals.player_typed_word.length())
+	seed(Globals.player_typed_word.length() + Globals.player_built_word.size())
 	for sound in Globals.player_built_word:
 		sound += randi() % 100
 		password_holder.text += str(sound)

@@ -14,18 +14,18 @@ func decode_password() -> bool:
 	if DEBUG == false:
 		password = password_entry.text.rsplit("#")
 	else:
-		password = "53,64,34,39,73,57,108,58#102,83,119,79,94,100,145,170,81,77".rsplit("#")
+		password = "28,48,36,44,74,27,76,47#157,84,94,80,91,176,92,146,167,132".rsplit("#")
 	if(password.size() < 2):
 		return false
 	#Globals.decoded_typed_word = password[1]
 	var crypt_string : String = password[1]
 	var crypt_arr  = crypt_string.rsplit(",")
+	var built_string = password[0].rsplit(",")
 	# Seed randomizer
-	print("SEED IS ", crypt_arr.size())
-	seed(crypt_arr.size())
+	print("SEED IS ", crypt_arr.size() + built_string.size())
+	seed(crypt_arr.size() + built_string.size())
 	
 	# Sounds
-	var built_string = password[0].rsplit(",")
 	var built_int : Array[int]
 	for sound in built_string:
 		#print(sound)
