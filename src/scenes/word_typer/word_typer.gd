@@ -2,6 +2,10 @@ extends Control
 
 @export var typed_word : LineEdit
 
+func _input(event):
+	if event.is_action("submit"):
+		_on_finished_pressed()
+
 func _on_cancel_pressed():
 	Globals.reset_player_word()
 	SceneTransition.main_menu()

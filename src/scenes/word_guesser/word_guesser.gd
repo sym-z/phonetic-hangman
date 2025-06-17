@@ -29,7 +29,10 @@ var selected_anim : AnimatedSprite2D
 var correct_guesses : Array[int]
 
 #TODO: Fill container of guesses with question marks = to the number of sounds in the word
-
+func _input(event):
+	if event.is_action("submit") and type_submission_parent.visible == true:
+		_on_submit_pressed()
+		
 func _ready() -> void:
 	if(debug):
 		Globals.decoded_built_word = [5,24,6]
@@ -170,8 +173,8 @@ func _on_exit_pressed():
 	#CHECK: Do I need to reset player word?
 	SceneTransition.main_menu()
 
-
 #region Final Submission
+		
 func _on_guess_whole_word_pressed() -> void:
 	type_submission_parent.visible = true
 	submission_field.grab_focus()
