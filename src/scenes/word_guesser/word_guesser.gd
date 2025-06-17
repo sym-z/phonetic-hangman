@@ -55,7 +55,7 @@ func _ready() -> void:
 			
 #region Initialization
 func count_letters():
-	num_letters.text = ""
+	num_letters.text = "LETTERS: "
 	for letter in Globals.decoded_typed_word.length():
 		num_letters.text += "? "
 	if(num_letters.text.length() > 0):
@@ -111,10 +111,17 @@ func guess(guess_id : int):
 		guesses -= 1
 		guesses_changed()
 	word_bank.remove(guess_id)
-
+	
 func _on_guess_sound_pressed() -> void:
 	if current_selection != NO_SELECTION:
 		guess(current_selection)
+
+# See if all sounds have been guessed
+func check_total_guessed() -> bool:
+	for child in guess_container.get_children():
+		if child.id == -1:
+			return false
+	return true
 #endregion
 
 func _on_hear_sound_pressed() -> void:
@@ -186,7 +193,8 @@ func _on_submit_pressed():
 
 #region Word Bank
 func _on_open_bank_pressed():
-	word_bank.visible = true
+	if check_total_guessed() == false:
+		word_bank.visible = true
 	pass # Replace with function body.
 
 

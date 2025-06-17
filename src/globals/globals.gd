@@ -22,8 +22,11 @@ func reset_decoded_word():
 #Randomly fill the container with only the necessary sounds, then add incorrect sounds (Assure it is not a duplicate) (Do a set subtraction), then shuffle
 # Use decoded built word and a certain number of fake inputs to generate the puzzle
 func puzzle_bank_initialize():
-	puzzle_bank.append_array(decoded_built_word)
-	
+	# Handle duplicate sounds in a word as I insert the correct sounds into the puzzle
+	for sound in decoded_built_word:
+		if puzzle_bank.has(sound) == false:
+			puzzle_bank.append(sound)
+			
 	# Take all available id's
 	var available_additions : Array[int] = Libraries.letter_lib.keys()
 	

@@ -24,7 +24,6 @@ func _ready():
 	consonant_assembler.scale_mult = scale_items
 	vowel_assembler.scale_mult = scale_items
 	total_assembler.scale_mult = scale_items
-	pass # Replace with function body.
 
 func get_scale_items() -> float:
 	return scale_items

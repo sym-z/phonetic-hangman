@@ -1,6 +1,6 @@
 ## Goals
-- [ ] Add a division between consonants and vowels
-- [ ] Label consonants and vowels
+- [x] Add a division between consonants and vowels
+- [x] Label consonants and vowels
 - [x] Make word preview
 - [x] Add text entry
 - [x] Identify the difference between the word builder menu, and the guessing menu.
@@ -13,8 +13,16 @@
 - [x] Implement word bank in builder
 - [x] Better progress bar in builder that shows 5 anims
 - [x] Queue Children need to have labels
-- [ ] When all sounds have been guessed correctly, do not allow the word bank to open
+- [x] When all sounds have been guessed correctly, do not allow the word bank to open
 - [ ] Sound effect plays after sound when guess has been made
+- [x] Handle duplicate sounds
+- [ ] Better instructions of how to use tooth buttons
+- [ ] Create and crop filtered versions
+- [ ] Teeth in the main menu change words on the monitor in the mouth
+- [ ] Start up animation with the VHS
+- [x] Menu buttons are triggering behind word bank
+- [ ] Add new tooth buttons to guesser
+- [ ] Apply tint to buttons that are not idling
 
 #  Scenes to make
 - Single Player
@@ -46,7 +54,11 @@
   - Lose Game
   - Music
   - Final Guess Music
+- Final Tooth Buttons
+- VHS Tearing
 
 ## UI Changes
 - Selections need to display word, letter and animation clearly
 - Buttons to add and listen should be symbols, not words
+- Menus need style
+- Create styleboxes and custom fonts
