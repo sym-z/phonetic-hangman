@@ -24,6 +24,10 @@
 - [ ] Add new tooth buttons to guesser
 - [ ] Apply tint to buttons that are not idling
 - [ ] For added mixed up ness, make the seed sound array length + word length!
+- [ ] Make instructions that appear that tell the player to use the teeth to control the menus
+- [ ] VHS Shader randomly brightens and dims pixels at a given rate
+- [ ] Teeth break for incorrect guesses?
+
 #  Scenes to make
 - Single Player
 
