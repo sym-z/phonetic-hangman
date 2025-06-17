@@ -1,20 +1,31 @@
 extends Control
 
 @export var password_holder : TextEdit
-
+const DEBUG : bool = false
 func _ready():
+	if DEBUG == true:
+		Globals.player_built_word = [0,6,2,4,1,9,9,7]
+		Globals.player_typed_word = "JACKISCOOL"
 	encode_password()
 
 func _process(delta):
 	pass
 
 func encode_password():
+	seed(Globals.player_typed_word.length())
 	for sound in Globals.player_built_word:
+		sound += randi() % 100
 		password_holder.text += str(sound)
 		password_holder.text += ","
 	password_holder.text[password_holder.text.length()-1] = ""
 	password_holder.text += "#"
-	password_holder.text += Globals.player_typed_word
+	for letter in Globals.player_typed_word:
+		var ascii = letter.unicode_at(0)
+		ascii += randi() % 100
+		password_holder.text += str(ascii)
+		password_holder.text += ","
+	password_holder.text[password_holder.text.length()-1] = ""
+	#password_holder.text += Globals.player_typed_word
 	print(password_holder.text)
 	## TODO: Create a button for copying to clipboard
 	# Learned about Display server from here:
