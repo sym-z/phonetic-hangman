@@ -27,7 +27,8 @@
 - [ ] Make instructions that appear that tell the player to use the teeth to control the menus
 - [ ] VHS Shader randomly brightens and dims pixels at a given rate
 - [ ] Teeth break for incorrect guesses?
-
+- [ ] Make password invisible
+- [ ] Add Copy to Clipboard button
 #  Scenes to make
 - Single Player
 
