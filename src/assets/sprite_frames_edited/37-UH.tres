@@ -1,0 +1,144 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://dqdcl2cx8237u"]
+
+[ext_resource type="Texture2D" uid="uid://bg6oq4obj814k" path="res://assets/phoneme_sheets_edited/37-UH-Sheet.png" id="1_6bmtu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alcjh"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(0, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxfs5"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(276, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7v2i"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(552, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kncsn"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(828, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81yuf"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(1104, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0vk3"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(1380, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adwdb"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(1656, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1i6i"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(1932, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae22c"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(2208, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dupib"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(2484, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdnvt"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(2760, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cittp"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(3036, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tyg1"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(3312, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsnsg"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(3588, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3igl"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(3864, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7gf2"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(4140, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkfmx"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(4416, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgbms"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(4692, 0, 276, 225)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbxx1"]
+atlas = ExtResource("1_6bmtu")
+region = Rect2(4968, 0, 276, 225)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alcjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxfs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7v2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kncsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81yuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0vk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adwdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1i6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae22c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dupib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdnvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cittp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tyg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsnsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3igl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7gf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkfmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgbms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbxx1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
