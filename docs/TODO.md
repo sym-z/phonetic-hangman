@@ -29,6 +29,9 @@
 - [ ] Teeth break for incorrect guesses?
 - [ ] Make password invisible
 - [ ] Add Copy to Clipboard button
+- [ ] On Hover for buttons, change the font file
+- [ ] Create themes for buttons
+- [ ] Tweak these letters (C, D)
 #  Scenes to make
 - Single Player
 

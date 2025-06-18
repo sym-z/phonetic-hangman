@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3y7s18uwane8"]
+[gd_scene load_steps=3 format=3 uid="uid://b3y7s18uwane8"]
 
 [ext_resource type="Script" uid="uid://cf0ki61yxg4fr" path="res://scenes/word_typer/word_typer.gd" id="1_ce1km"]
+[ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_imgg6"]
 
 [node name="Word Typer" type="Control" node_paths=PackedStringArray("typed_word")]
 layout_mode = 3
@@ -35,14 +36,20 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_imgg6")
+theme_override_font_sizes/font_size = 56
 text = "FINISHED"
+flat = true
 
 [node name="Cancel" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_imgg6")
+theme_override_font_sizes/font_size = 56
 text = "CANCEL
 "
+flat = true
 
 [connection signal="pressed" from="VBoxContainer/Finished" to="." method="_on_finished_pressed"]
 [connection signal="pressed" from="VBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
