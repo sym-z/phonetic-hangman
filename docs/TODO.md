@@ -5,7 +5,7 @@
 - [x] Add text entry
 - [x] Identify the difference between the word builder menu, and the guessing menu.
 - [x] Put in temporary gifs and get all SpriteFrames created so they can just be remade easily.
-- [ ] Better password creation algorithm
+- [x] Better password creation algorithm
 - [x] If someone uses all guesses, pull up type guess menu and do not allow them to close it
 - [ ] Make Mystery Default sprite frame for phoneme selection
 - [x] Guess Phoneme shows selection animation Big Style, NEED A CONTROL THAT CLIPS CHILDREN FOR NORMALIZED SIZES
@@ -28,10 +28,12 @@
 - [ ] VHS Shader randomly brightens and dims pixels at a given rate
 - [ ] Teeth break for incorrect guesses?
 - [ ] Make password invisible
+  - Requires a change from a TextEdit node to a LineEdit node
 - [ ] Add Copy to Clipboard button
 - [ ] On Hover for buttons, change the font file
 - [ ] Create themes for buttons
 - [ ] Tweak these letters (C, D)
+
 #  Scenes to make
 - Single Player
 
