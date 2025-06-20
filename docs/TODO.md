@@ -22,7 +22,7 @@
 - [ ] Teeth in the main menu change words on the monitor in the mouth
 - [ ] Start up animation with the VHS
 - [x] Menu buttons are triggering behind word bank
-- [ ] Add new tooth buttons to guesser
+- [x] Add new tooth buttons to guesser
 - [ ] Apply tint to buttons that are not idling
 - [x] For added mixed up ness, make the seed sound array length + word length!
 - [ ] Make instructions that appear that tell the player to use the teeth to control the menus
@@ -35,7 +35,7 @@
 - [x] Create themes for buttons
 - [x] Tweak these letters (C, D)
 - [x] Add space character to fonts
-- [ ] Add way to center buttons or create theme to preview how it centers on page
+- [x] Add way to center buttons or create theme to preview how it centers on page
 - [ ] When whole word is played in builder, change frames to match word that is being played
 - [ ] Edit voice to be creepy
 - [ ] Change Click behavior of stylebox
@@ -75,6 +75,7 @@
   - Final Guess Music
 - Final Tooth Buttons
 - VHS Tearing
+- Instructions
 
 ## UI Changes
 - Selections need to display word, letter and animation clearly
