@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3y7s18uwane8"]
+[gd_scene load_steps=7 format=3 uid="uid://b3y7s18uwane8"]
 
 [ext_resource type="Script" uid="uid://cf0ki61yxg4fr" path="res://scenes/word_typer/word_typer.gd" id="1_ce1km"]
+[ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_5rsvw"]
 [ext_resource type="FontFile" uid="uid://c1y44x3ugxkyb" path="res://assets/fonts/vhs_font_blue_bg_sheet.png" id="2_bc72v"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_imgg6"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="3_bnccx"]
+[ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="4_vawwe"]
 
 [node name="Word Typer" type="Control" node_paths=PackedStringArray("typed_word")]
 layout_mode = 3
@@ -14,6 +16,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ce1km")
 typed_word = NodePath("VBoxContainer/LineEdit")
+
+[node name="Mouth-prototype" type="Sprite2D" parent="."]
+texture = ExtResource("2_5rsvw")
+centered = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -39,21 +45,21 @@ flat = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("4_vawwe")
 theme_override_fonts/font = ExtResource("2_imgg6")
 theme_override_font_sizes/font_size = 56
 text = "FINISHED"
-flat = true
 script = ExtResource("3_bnccx")
 
 [node name="Cancel" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("4_vawwe")
 theme_override_fonts/font = ExtResource("2_imgg6")
 theme_override_font_sizes/font_size = 56
 text = "CANCEL
 "
-flat = true
 script = ExtResource("3_bnccx")
 
 [connection signal="pressed" from="VBoxContainer/Finished" to="." method="_on_finished_pressed"]

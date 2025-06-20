@@ -9,17 +9,14 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var num_guesses : Label
 # Use similar tactic as Phoneme Assembler
 @export var guess_container : HFlowContainer
-@export var selected_letters : Label
-@export var selected_example : Label
 @export var word_bank : Control
 @export var speaker : AudioStreamPlayer
 @export var type_submission_parent : Control
 @export var submission_field : LineEdit
-@export var big_animation : AnimatedSprite2D
-@export var animation_marker : Marker2D
 
 
-var debug := true
+
+var debug := false
 
 var guesses : int = 3
 const NO_SELECTION : int = -1
@@ -73,21 +70,9 @@ func initialize_guess_container():
 #endregion
 
 #region Phoneme Selection
-func phoneme_selected():
-	if current_selection != NO_SELECTION:
-		# Assign sound, frames and text on click
-		selected_letters.text = Libraries.letter_lib[current_selection]
-		selected_example.text = Libraries.word_lib[current_selection]
-		selected_sound = Libraries.sound_lib[current_selection]
-		# CODE FOR BIG ANIMATION
-		#big_animation.sprite_frames = Libraries.frame_lib[current_selection]
-		#big_animation.position = animation_marker.position
-		#big_animation.play()
 
 # When add is clicked, guess is automatically made
 func _on_selection_chosen(id):
-	current_selection = id
-	phoneme_selected()
 	#TODO: BUZZER OR DING FOR GUESS CORRECTNESS
 	_on_hear_sound_pressed()
 	guess(id)
@@ -127,6 +112,7 @@ func check_total_guessed() -> bool:
 	return true
 #endregion
 
+# Plays sound when phoneme is chosen
 func _on_hear_sound_pressed() -> void:
 	if(!playing_guesses):
 		speaker.stream = selected_sound
@@ -142,7 +128,6 @@ func _on_hear_correct_guesses_pressed() -> void:
 	for i in range(0, guess_container.get_children().size()):
 		if guess_container.get_children()[i].id != -1:
 			speaker.stream = guess_container.get_children()[i].sound
-			#print(speaker.stream, guess_container.get_children()[i].id)
 			guess_index = i
 			speaker.play()
 			break
@@ -198,10 +183,7 @@ func _on_submit_pressed():
 func _on_open_bank_pressed():
 	if check_total_guessed() == false:
 		word_bank.visible = true
-	pass # Replace with function body.
-
 
 func _on_close_bank_pressed():
 	word_bank.visible = false
-	pass # Replace with function body.
 #endregion

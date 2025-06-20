@@ -8,6 +8,7 @@
 - [x] Better password creation algorithm
 - [x] If someone uses all guesses, pull up type guess menu and do not allow them to close it
 - [ ] Make Mystery Default sprite frame for phoneme selection
+  - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
 - [x] Guess Phoneme shows selection animation Big Style, NEED A CONTROL THAT CLIPS CHILDREN FOR NORMALIZED SIZES
 - [x] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
 - [x] Implement word bank in builder
@@ -17,7 +18,7 @@
 - [ ] Sound effect plays after sound when guess has been made
 - [x] Handle duplicate sounds
 - [ ] Better instructions of how to use tooth buttons
-- [ ] Create and crop filtered versions
+- [x] Create and crop filtered versions
 - [ ] Teeth in the main menu change words on the monitor in the mouth
 - [ ] Start up animation with the VHS
 - [x] Menu buttons are triggering behind word bank
@@ -30,11 +31,13 @@
 - [ ] Make password invisible
   - Requires a change from a TextEdit node to a LineEdit node
 - [ ] Add Copy to Clipboard button
-- [ ] On Hover for buttons, change the font file
-- [ ] Create themes for buttons
-- [ ] Tweak these letters (C, D)
-- [ ] Add space character to fonts
+- [x] On Hover for buttons, change the font file
+- [x] Create themes for buttons
+- [x] Tweak these letters (C, D)
+- [x] Add space character to fonts
 - [ ] Add way to center buttons or create theme to preview how it centers on page
+- [ ] When whole word is played in builder, change frames to match word that is being played
+- [ ] Edit voice to be creepy
 
 #  Scenes to make
 - Single Player
@@ -78,3 +81,4 @@
 ## To Test
 - Huge amount of sounds in guesser
 - Improper passwords
+- More than 44 sounds?
