@@ -22,7 +22,7 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var button_parent : Node2D
 
 
-@export var debug := true
+@export var debug := false
 
 var guesses : int = 3
 const NO_SELECTION : int = -1
