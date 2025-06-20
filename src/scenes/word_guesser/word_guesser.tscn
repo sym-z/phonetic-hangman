@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=12 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_510jw"]
 [ext_resource type="Texture2D" uid="uid://cejtpw318ss2f" path="res://assets/prototyping/tooth-prototype-Sheet.png" id="3_6l4u6"]
+[ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_s8tt6"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8tt6"]
@@ -69,9 +70,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_510jw")
-num_letters = NodePath("Guess State/Number of Letters")
-num_guesses = NodePath("Guess State/Guesses Left")
-guess_container = NodePath("Guess State/Current Guesses Container")
+num_letters = NodePath("Guess State/Guesses Container/Number of Letters")
+num_guesses = NodePath("Guess State/Guesses Container/Guesses Left")
+guess_container = NodePath("Guess State/Guesses Container/Current Guesses Container")
 selected_letters = NodePath("Guessing Window/Phoeneme Sound")
 selected_example = NodePath("Guessing Window/Word Example")
 word_bank = NodePath("Word Bank")
@@ -87,26 +88,28 @@ centered = false
 
 [node name="Guess State" type="Node2D" parent="."]
 
-[node name="Number of Letters" type="Label" parent="Guess State"]
-offset_left = 588.0
-offset_top = 118.0
-offset_right = 687.0
-offset_bottom = 141.0
+[node name="Guesses Container" type="VBoxContainer" parent="Guess State"]
+offset_left = 271.0
+offset_top = 131.0
+offset_right = 1013.0
+offset_bottom = 524.0
+
+[node name="Number of Letters" type="Label" parent="Guess State/Guesses Container"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_s8tt6")
 text = "? ? ? ? ? ? ? ? ?"
 horizontal_alignment = 1
 
-[node name="Guesses Left" type="Label" parent="Guess State"]
-offset_left = 526.0
-offset_top = 139.0
-offset_right = 744.0
-offset_bottom = 162.0
+[node name="Guesses Left" type="Label" parent="Guess State/Guesses Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_s8tt6")
 text = "INCORRECT GUESSES LEFT: 3"
+horizontal_alignment = 1
 
-[node name="Current Guesses Container" type="HFlowContainer" parent="Guess State"]
-offset_left = 357.0
-offset_top = 164.0
-offset_right = 930.0
-offset_bottom = 365.0
+[node name="Current Guesses Container" type="HFlowContainer" parent="Guess State/Guesses Container"]
+custom_minimum_size = Vector2(0, 353.1)
+layout_mode = 2
 alignment = 1
 
 [node name="Hear Correct Guesses" type="Button" parent="Guess State"]

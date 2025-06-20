@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3y7s18uwane8"]
+[gd_scene load_steps=5 format=3 uid="uid://b3y7s18uwane8"]
 
 [ext_resource type="Script" uid="uid://cf0ki61yxg4fr" path="res://scenes/word_typer/word_typer.gd" id="1_ce1km"]
+[ext_resource type="FontFile" uid="uid://c1y44x3ugxkyb" path="res://assets/fonts/vhs_font_blue_bg_sheet.png" id="2_bc72v"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_imgg6"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="3_bnccx"]
 
@@ -20,18 +21,19 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 160.0
-offset_top = -36.0
-offset_right = -187.0
-offset_bottom = 4.0
+offset_top = -83.5
+offset_bottom = 83.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc72v")
+theme_override_font_sizes/font_size = 16
 placeholder_text = "ENTER THE WORD YOU WOULD LIKE TO ENCODE (NO SPACES, NUMBERS, OR SYMBOLS)"
 alignment = 1
+flat = true
 
 [node name="Finished" type="Button" parent="VBoxContainer"]
 layout_mode = 2
