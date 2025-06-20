@@ -1,7 +1,7 @@
 extends Control
 
 @export var password_holder : TextEdit
-const DEBUG : bool = false
+const DEBUG : bool = true
 func _ready():
 	if DEBUG == true:
 		Globals.player_built_word = [0,6,2,4,1,9,9,7]

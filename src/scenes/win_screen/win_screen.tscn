@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://kfxcn8dt6tbx"]
+[gd_scene load_steps=6 format=3 uid="uid://kfxcn8dt6tbx"]
 
 [ext_resource type="Script" uid="uid://b400iv4pqfjn1" path="res://scenes/win_screen/win_screen.gd" id="1_2yi6y"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_1d1ta"]
+[ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_70qtx"]
+[ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="3_1gpf6"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="3_8vb36"]
 
 [node name="Win Screen" type="Control"]
@@ -13,23 +15,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2yi6y")
 
-[node name="You Win Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 597.0
-offset_top = 146.0
-offset_right = 637.0
-offset_bottom = 169.0
-text = "YOU WIN!"
+[node name="Mouth-prototype" type="Sprite2D" parent="."]
+texture = ExtResource("2_70qtx")
+centered = false
 
-[node name="Back to Main Menu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 615.0
-offset_top = 202.0
-offset_right = 623.0
-offset_bottom = 210.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.207
+anchor_top = 0.149
+anchor_right = 0.791
+anchor_bottom = 0.853
+offset_left = 0.039978
+offset_top = -0.280006
+offset_right = -0.47998
+offset_bottom = -0.160034
+alignment = 1
+
+[node name="You Win Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1d1ta")
+theme_override_font_sizes/font_size = 85
+text = "YOU WIN!"
+horizontal_alignment = 1
+
+[node name="Back to Main Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_1gpf6")
 theme_override_fonts/font = ExtResource("2_1d1ta")
 text = "BACK TO MAIN MENU"
-flat = true
 script = ExtResource("3_8vb36")
 
-[connection signal="pressed" from="Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]
