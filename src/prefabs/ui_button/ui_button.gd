@@ -1,0 +1,16 @@
+extends Button
+
+var selected_font : Font = preload("uid://c1y44x3ugxkyb")
+var unselected_font : Font = preload("uid://bmwluxh4jec4a")
+func _ready() -> void:
+	self.mouse_entered.connect(_on_hover)
+	self.mouse_exited.connect(_stop_hover)
+	_stop_hover()
+	
+func _on_hover():
+	self.add_theme_font_override("font", selected_font)
+	pass
+
+func _stop_hover():
+	self.add_theme_font_override("font", unselected_font)
+	pass

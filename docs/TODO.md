@@ -33,6 +33,8 @@
 - [ ] On Hover for buttons, change the font file
 - [ ] Create themes for buttons
 - [ ] Tweak these letters (C, D)
+- [ ] Add space character to fonts
+- [ ] Add way to center buttons or create theme to preview how it centers on page
 
 #  Scenes to make
 - Single Player
