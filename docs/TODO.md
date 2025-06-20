@@ -74,3 +74,7 @@
 - Buttons to add and listen should be symbols, not words
 - Menus need style
 - Create styleboxes and custom fonts
+
+## To Test
+- Huge amount of sounds in guesser
+- Improper passwords

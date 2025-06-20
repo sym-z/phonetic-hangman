@@ -12,9 +12,9 @@ dest_files=["res://.godot/imported/vhs_font_bg_sheet.png-ddb9534610b619821412733
 
 [params]
 
-character_ranges=PackedStringArray("\'A\'-\'Z\'", "\'0\'-\'9\'")
+character_ranges=PackedStringArray("\'A\'-\'Z\'", "\'0\'-\'9\'", "\'>\'", "\' \'")
 kerning_pairs=PackedStringArray()
-columns=36
+columns=38
 rows=1
 image_margin=Rect2i(0, 0, 0, 0)
 character_margin=Rect2i(0, 0, 0, 0)

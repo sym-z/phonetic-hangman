@@ -19,7 +19,7 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var animation_marker : Marker2D
 
 
-var debug := false
+var debug := true
 
 var guesses : int = 3
 const NO_SELECTION : int = -1
@@ -35,7 +35,7 @@ func _input(event):
 		
 func _ready() -> void:
 	if(debug):
-		Globals.decoded_built_word = [5,24,6]
+		Globals.decoded_built_word = [5,24,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]
 		Globals.decoded_typed_word = "JACK"
 	Globals.puzzle_bank_initialize()
 	# Make ? for each typed letter

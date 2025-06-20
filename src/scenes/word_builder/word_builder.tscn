@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cerariugi700o"]
+[gd_scene load_steps=14 format=3 uid="uid://cerariugi700o"]
 
 [ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder/word_builder.gd" id="1_b2vsm"]
 [ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_8jq4x"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_8jq4x"]
 [ext_resource type="PackedScene" uid="uid://bcjst2l1ryhdg" path="res://prefabs/tooth_button/tooth_button.tscn" id="4_856pw"]
 [ext_resource type="Texture2D" uid="uid://cveejf37js506" path="res://icon.svg" id="4_b2vsm"]
+[ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="6_1gyaw"]
+[ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="7_abi5u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7nyya"]
 animations = [{
@@ -235,7 +237,10 @@ offset_left = 871.0
 offset_top = 635.0
 offset_right = 1031.0
 offset_bottom = 666.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
 text = "CLOSE WORD BANK"
+flat = true
+script = ExtResource("7_abi5u")
 
 [node name="Label" type="Label" parent="Word Bank"]
 layout_mode = 0
