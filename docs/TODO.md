@@ -40,6 +40,8 @@
 - [ ] Edit voice to be creepy
 - [ ] Change Click behavior of stylebox
 - [ ] Add some kind of border or mask to phoneme selections
+- [ ] Phoneme Piece prefab for phoneme queue in builder
+  - Or just make the phoneme queue itself a prefab
 
 #  Scenes to make
 - Single Player
