@@ -38,6 +38,8 @@
 - [ ] Add way to center buttons or create theme to preview how it centers on page
 - [ ] When whole word is played in builder, change frames to match word that is being played
 - [ ] Edit voice to be creepy
+- [ ] Change Click behavior of stylebox
+- [ ] Add some kind of border or mask to phoneme selections
 
 #  Scenes to make
 - Single Player

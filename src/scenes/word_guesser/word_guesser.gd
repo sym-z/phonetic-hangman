@@ -14,9 +14,15 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var type_submission_parent : Control
 @export var submission_field : LineEdit
 
+@export_category("Tooth Buttons")
+@export var tb_exit : Node2D
+@export var tb_word_bank : Node2D
+@export var tb_hear_guesses : Node2D
+@export var tb_guess_word : Node2D
+@export var button_parent : Node2D
 
 
-var debug := false
+@export var debug := true
 
 var guesses : int = 3
 const NO_SELECTION : int = -1
@@ -52,6 +58,7 @@ func _ready() -> void:
 	else:
 		for child in word_bank.total_container.get_children():
 			child.added.connect(_on_selection_chosen)
+	initialize_tooth_buttons()
 			
 #region Initialization
 func count_letters():
@@ -76,6 +83,7 @@ func _on_selection_chosen(id):
 	#TODO: BUZZER OR DING FOR GUESS CORRECTNESS
 	_on_hear_sound_pressed()
 	guess(id)
+	change_clickable(true)
 	word_bank.visible = false
 #endregion
 
@@ -183,7 +191,27 @@ func _on_submit_pressed():
 func _on_open_bank_pressed():
 	if check_total_guessed() == false:
 		word_bank.visible = true
+		change_clickable(false)
 
 func _on_close_bank_pressed():
 	word_bank.visible = false
+	change_clickable(true)
+#endregion
+
+#region Tooth Buttons
+func initialize_tooth_buttons():
+	initialize_tooth(tb_exit, _on_exit_pressed, "EXIT")
+	initialize_tooth(tb_word_bank, _on_open_bank_pressed, "WORD BANK")
+	initialize_tooth(tb_hear_guesses, _on_hear_correct_guesses_pressed, "HEAR CORRECT GUESSES")
+	initialize_tooth(tb_guess_word, _on_submit_pressed, "SUBMIT FINAL GUESS")
+
+func initialize_tooth(tooth_button : Node2D, clicked : Callable, text : String):
+	tooth_button.on_click = clicked
+	tooth_button.label.text = text
+	tooth_button.center_label()
+
+func change_clickable(new_value : bool):
+	for button in button_parent.get_children():
+		button.clickable = new_value
+
 #endregion

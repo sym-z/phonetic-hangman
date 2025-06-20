@@ -2,7 +2,7 @@ extends Control
 
 @export var password_entry : LineEdit
 
-const DEBUG : bool = false
+@export var DEBUG : bool = false
 
 func _input(event):
 	if event.is_action("submit"):

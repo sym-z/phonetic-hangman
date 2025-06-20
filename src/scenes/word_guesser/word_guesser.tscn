@@ -1,69 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=8 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_510jw"]
-[ext_resource type="Texture2D" uid="uid://cejtpw318ss2f" path="res://assets/prototyping/tooth-prototype-Sheet.png" id="3_6l4u6"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_s8tt6"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
+[ext_resource type="PackedScene" uid="uid://bcjst2l1ryhdg" path="res://prefabs/tooth_button/tooth_button.tscn" id="4_xw28t"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="6_s8tt6"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="6_xw28t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8tt6"]
-atlas = ExtResource("3_6l4u6")
-region = Rect2(0, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xw28t"]
-atlas = ExtResource("3_6l4u6")
-region = Rect2(100, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yawx5"]
-atlas = ExtResource("3_6l4u6")
-region = Rect2(200, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1jr7e"]
-atlas = ExtResource("3_6l4u6")
-region = Rect2(300, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bdecb"]
-atlas = ExtResource("3_6l4u6")
-region = Rect2(400, 0, 100, 150)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7hfr5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s8tt6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xw28t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yawx5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1jr7e")
-}, {
-"duration": 15.0,
-"texture": SubResource("AtlasTexture_bdecb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1jr7e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yawx5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xw28t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s8tt6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
-
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field", "tb_exit", "tb_word_bank", "tb_hear_guesses", "tb_guess_word", "button_parent")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,6 +24,11 @@ word_bank = NodePath("Word Bank")
 speaker = NodePath("AudioStreamPlayer")
 type_submission_parent = NodePath("Type Submission")
 submission_field = NodePath("Type Submission/LineEdit")
+tb_exit = NodePath("Buttons/Exit")
+tb_word_bank = NodePath("Buttons/Open Bank")
+tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
+tb_guess_word = NodePath("Buttons/Guess Whole Word")
+button_parent = NodePath("Buttons")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("2_510jw")
@@ -111,46 +61,21 @@ layout_mode = 2
 alignment = 1
 
 [node name="Buttons" type="Node2D" parent="."]
-position = Vector2(966, 536)
 scale = Vector2(1.39758, 1.30159)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons"]
-position = Vector2(-450.064, 39.1828)
-rotation = 0.154562
-scale = Vector2(0.71665, 0.76724)
-skew = -0.0202384
-sprite_frames = SubResource("SpriteFrames_7hfr5")
-autoplay = "default"
-frame_progress = 0.808534
+[node name="Open Bank" parent="Buttons" instance=ExtResource("4_xw28t")]
+position = Vector2(333.434, 445.609)
 
-[node name="Open Bank" type="Button" parent="Buttons"]
-offset_left = -389.244
-offset_top = 26.1219
-offset_right = -283.244
-offset_bottom = 57.1219
-text = "WORD BANK"
+[node name="Guess Whole Word" parent="Buttons" instance=ExtResource("4_xw28t")]
+position = Vector2(721.962, 344.963)
+rotation = -1.15513
 
-[node name="Guess Whole Word" type="Button" parent="Buttons"]
-offset_left = -69.4057
-offset_top = 28.4268
-offset_right = 104.594
-offset_bottom = 59.4268
-text = "GUESS WHOLE WORD"
+[node name="Hear Correct Guesses" parent="Buttons" instance=ExtResource("4_xw28t")]
+position = Vector2(585.297, 444.072)
 
-[node name="Hear Correct Guesses" type="Button" parent="Buttons"]
-offset_left = -284.778
-offset_top = 23.0487
-offset_right = -86.778
-offset_bottom = 54.0487
-text = "HEAR CORRECT GUESSES"
-
-[node name="Exit" type="Button" parent="Buttons"]
-offset_left = -482.978
-offset_top = 89.1218
-offset_right = -363.978
-offset_bottom = 120.122
-rotation = -1.19082
-text = "EXIT TO MENU"
+[node name="Exit" parent="Buttons" instance=ExtResource("4_xw28t")]
+position = Vector2(183.889, 329.597)
+rotation = 1.16784
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -163,10 +88,10 @@ puzzle_mode = true
 
 [node name="Close Bank" type="Button" parent="Word Bank"]
 layout_mode = 0
-offset_left = 791.0
-offset_top = 594.0
-offset_right = 1187.0
-offset_bottom = 628.0
+offset_left = 673.0
+offset_top = 635.0
+offset_right = 1069.0
+offset_bottom = 669.0
 theme = ExtResource("6_xw28t")
 theme_override_fonts/font = ExtResource("3_s8tt6")
 text = "CLOSE WORD BANK"
@@ -214,10 +139,6 @@ offset_right = 671.0
 offset_bottom = 456.0
 text = "BACK"
 
-[connection signal="pressed" from="Buttons/Open Bank" to="." method="_on_open_bank_pressed"]
-[connection signal="pressed" from="Buttons/Guess Whole Word" to="." method="_on_guess_whole_word_pressed"]
-[connection signal="pressed" from="Buttons/Hear Correct Guesses" to="." method="_on_hear_correct_guesses_pressed"]
-[connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]
 [connection signal="pressed" from="Type Submission/Submit" to="." method="_on_submit_pressed"]
