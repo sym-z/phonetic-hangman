@@ -42,7 +42,8 @@
 - [ ] Add some kind of border or mask to phoneme selections
 - [ ] Phoneme Piece prefab for phoneme queue in builder
   - Or just make the phoneme queue itself a prefab
-
+- [ ] Make square/4:3 monitor for the screen
+  - Change containers to fit new monitor
 #  Scenes to make
 - Single Player
 
