@@ -44,6 +44,7 @@
   - Or just make the phoneme queue itself a prefab
 - [ ] Make square/4:3 monitor for the screen
   - Change containers to fit new monitor
+- [ ] Duplicate phonemes shouldn't increase random pool, just new sounds
 #  Scenes to make
 - Single Player
 

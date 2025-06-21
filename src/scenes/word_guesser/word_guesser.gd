@@ -38,7 +38,7 @@ func _input(event):
 		
 func _ready() -> void:
 	if(debug):
-		Globals.decoded_built_word = [5,24,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]
+		Globals.decoded_built_word = [5,24,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 		Globals.decoded_typed_word = "JACK"
 	Globals.puzzle_bank_initialize()
 	# Make ? for each typed letter

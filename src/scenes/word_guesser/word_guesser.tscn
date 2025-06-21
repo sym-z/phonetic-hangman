@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=9 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_510jw"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_s8tt6"]
+[ext_resource type="Texture2D" uid="uid://cln3v05vkoxy2" path="res://assets/prototyping/term.png" id="3_yawx5"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 [ext_resource type="PackedScene" uid="uid://bcjst2l1ryhdg" path="res://prefabs/tooth_button/tooth_button.tscn" id="4_xw28t"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="6_s8tt6"]
@@ -29,17 +30,22 @@ tb_word_bank = NodePath("Buttons/Open Bank")
 tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
 tb_guess_word = NodePath("Buttons/Guess Whole Word")
 button_parent = NodePath("Buttons")
+debug = true
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("2_510jw")
 centered = false
 
+[node name="Term" type="Sprite2D" parent="."]
+position = Vector2(640, 344)
+texture = ExtResource("3_yawx5")
+
 [node name="Guess Window" type="Node2D" parent="."]
 
 [node name="Guesses Container" type="VBoxContainer" parent="Guess Window"]
-offset_left = 271.0
+offset_left = 338.0
 offset_top = 131.0
-offset_right = 1013.0
+offset_right = 937.0
 offset_bottom = 524.0
 
 [node name="Number of Letters" type="Label" parent="Guess Window/Guesses Container"]
