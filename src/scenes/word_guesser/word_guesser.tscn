@@ -30,7 +30,6 @@ tb_word_bank = NodePath("Buttons/Open Bank")
 tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
 tb_guess_word = NodePath("Buttons/Guess Whole Word")
 button_parent = NodePath("Buttons")
-debug = true
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("2_510jw")
