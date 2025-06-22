@@ -40,12 +40,13 @@
 - [ ] Edit voice to be creepy
 - [ ] Change Click behavior of stylebox
 - [ ] Add some kind of border or mask to phoneme selections
-- [ ] Phoneme Piece prefab for phoneme queue in builder
+- [x] Phoneme Piece prefab for phoneme queue in builder
   - Or just make the phoneme queue itself a prefab
-- [ ] Make square/4:3 monitor for the screen
+- [x] Make square/4:3 monitor for the screen
   - Change containers to fit new monitor
 - [ ] Duplicate phonemes shouldn't increase random pool, just new sounds
 - [ ] Add text below current phoneme choice in word builder
+- [ ] Make label theme for tooth buttons so you can have a nice border
 
 #  Scenes to make
 - Single Player
