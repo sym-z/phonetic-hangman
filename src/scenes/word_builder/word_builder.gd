@@ -152,7 +152,6 @@ func refresh_phoneme_queue():
 			child.visible = true
 			child.sprite_frames = Libraries.frame_lib[selections[current_selection+index]]
 			var center_int : Vector2 = child.sprite_frames.get_frame_texture("default", 0).get_size()
-			print(center_int)
 			child.play()
 			# Make label show alphabetical representation
 			var child_label = child.get_node("Label")
