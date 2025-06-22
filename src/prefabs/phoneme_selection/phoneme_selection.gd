@@ -10,9 +10,16 @@ extends Control
 @export var animation : AnimatedSprite2D
 @export var anim_marker : Marker2D
 @export var anim_control : Control
-
+@export var tip_control : Control
 # Customization
 @export var add_text : String = "ADD"
+
+var normal_font : Font = preload("uid://bmwluxh4jec4a")
+var selected_font : Font = preload("uid://c1y44x3ugxkyb")
+
+@export var font_size : int = 9
+@export var selected_font_size : int = 12
+
 # Initialize these before instantiation
 var letters : String = ""
 var word : String = ""
@@ -37,6 +44,7 @@ func _ready():
 		word_example.text = "???"
 		self.id = -1
 		#SET MYSTERY SPRITE FRAMES HERE
+	reset_font()
 
 func set_phoneme_by_id(id : int):
 	letters = Libraries.letter_lib[id]
@@ -65,6 +73,7 @@ func _on_mouse_detector_mouse_entered():
 		print("Mouse entered: ", letter_representation.text)
 		play_button.visible = true
 		add_button.visible = true
+		highlight_font()
 
 
 
@@ -73,6 +82,7 @@ func _on_mouse_detector_mouse_exited():
 		print("Mouse exited: ", letter_representation.text)
 		play_button.visible = false
 		add_button.visible = false
+		reset_font()
 
 
 func _on_add_pressed():
@@ -82,3 +92,17 @@ func _on_add_pressed():
 
 func _on_play_pressed():
 	speaker.play()
+
+func reset_font():
+	letter_representation.add_theme_font_override("font", normal_font)
+	letter_representation.add_theme_font_size_override("font_size", font_size)
+	word_example.add_theme_font_override("font", normal_font)
+	word_example.add_theme_font_size_override("font_size", font_size)
+	pass
+
+func highlight_font():
+	letter_representation.add_theme_font_override("font", selected_font)
+	letter_representation.add_theme_font_size_override("font_size", selected_font_size)
+	word_example.add_theme_font_override("font", selected_font)
+	word_example.add_theme_font_size_override("font_size", selected_font_size)
+	pass

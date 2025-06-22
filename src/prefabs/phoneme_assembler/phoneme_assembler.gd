@@ -1,8 +1,8 @@
 extends Node
 
 const TOTAL_PHONEMES : int = 44
-const HORIZ_SPACING = 40
-const VERT_SPACING = 30
+const HORIZ_SPACING = 30
+const VERT_SPACING = 25
 @export var container_to_fill : Container
 @export var vowels_only : bool
 @export var cons_only : bool
@@ -48,6 +48,7 @@ func add_phoneme(id):
 	curr_select.frames = Libraries.frame_lib[id]
 	container_to_fill.add_child(curr_select)
 	curr_select.anim_control.scale *= scale_mult
+	curr_select.tip_control.scale *= scale_mult
 	container_to_fill.add_theme_constant_override("h_separation", HORIZ_SPACING*scale_mult)
 	container_to_fill.add_theme_constant_override("v_separation", VERT_SPACING*scale_mult)
 

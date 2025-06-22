@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="1_0hpp7"]
 [ext_resource type="Script" uid="uid://bw0cuftbbl4ow" path="res://prefabs/word_bank/word_bank.gd" id="1_7kiyc"]
-[ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_kkt4e"]
+[ext_resource type="Texture2D" uid="uid://yy60jb5fn24n" path="res://assets/prototyping/mouth-prototype2.png" id="2_kkt4e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wjod"]
 texture = ExtResource("2_kkt4e")
@@ -32,13 +32,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -373.0
-offset_top = -223.0
-offset_right = -373.0
-offset_bottom = -223.0
+offset_left = -617.0
+offset_top = -364.0
+offset_right = -617.0
+offset_bottom = -364.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.57785, 1.61982)
+scale = Vector2(1.963, 2.015)
 theme = SubResource("Theme_6shj8")
 
 [node name="Vowel Assembler" parent="." node_paths=PackedStringArray("container_to_fill") instance=ExtResource("1_0hpp7")]
@@ -59,13 +59,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 150
-theme_override_constants/margin_top = 150
-theme_override_constants/margin_right = 150
-theme_override_constants/margin_bottom = 150
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 195
 
 [node name="HFlowContainer" type="HFlowContainer" parent="All Sounds"]
 layout_mode = 2
+alignment = 1
 
 [node name="Consonants" type="MarginContainer" parent="."]
 layout_mode = 1

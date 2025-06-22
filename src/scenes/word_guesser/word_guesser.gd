@@ -38,7 +38,7 @@ func _input(event):
 		
 func _ready() -> void:
 	if(debug):
-		Globals.decoded_built_word = [5,24,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+		Globals.decoded_built_word = [5,24,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 		Globals.decoded_typed_word = "JACK"
 	Globals.puzzle_bank_initialize()
 	# Make ? for each typed letter
@@ -81,7 +81,7 @@ func initialize_guess_container():
 # When add is clicked, guess is automatically made
 func _on_selection_chosen(id):
 	#TODO: BUZZER OR DING FOR GUESS CORRECTNESS
-	_on_hear_sound_pressed()
+	_on_hear_sound_pressed(id)
 	guess(id)
 	change_clickable(true)
 	word_bank.visible = false
@@ -121,9 +121,10 @@ func check_total_guessed() -> bool:
 #endregion
 
 # Plays sound when phoneme is chosen
-func _on_hear_sound_pressed() -> void:
+func _on_hear_sound_pressed(id : int) -> void:
 	if(!playing_guesses):
-		speaker.stream = selected_sound
+		print("POOPOO")
+		speaker.stream = Libraries.sound_lib[id]
 		speaker.play()
 	
 #region Hearing Correct Guesses
@@ -203,7 +204,7 @@ func initialize_tooth_buttons():
 	initialize_tooth(tb_exit, _on_exit_pressed, "EXIT")
 	initialize_tooth(tb_word_bank, _on_open_bank_pressed, "WORD BANK")
 	initialize_tooth(tb_hear_guesses, _on_hear_correct_guesses_pressed, "HEAR CORRECT GUESSES")
-	initialize_tooth(tb_guess_word, _on_submit_pressed, "SUBMIT FINAL GUESS")
+	initialize_tooth(tb_guess_word, _on_guess_whole_word_pressed, "SUBMIT FINAL GUESS")
 
 func initialize_tooth(tooth_button : Node2D, clicked : Callable, text : String):
 	tooth_button.on_click = clicked

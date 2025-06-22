@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=8 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
-[ext_resource type="Texture2D" uid="uid://chwo2f261i7wf" path="res://assets/prototyping/mouth-prototype.png" id="2_510jw"]
+[ext_resource type="Texture2D" uid="uid://yy60jb5fn24n" path="res://assets/prototyping/mouth-prototype2.png" id="2_xw28t"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_s8tt6"]
-[ext_resource type="Texture2D" uid="uid://cln3v05vkoxy2" path="res://assets/prototyping/term.png" id="3_yawx5"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 [ext_resource type="PackedScene" uid="uid://bcjst2l1ryhdg" path="res://prefabs/tooth_button/tooth_button.tscn" id="4_xw28t"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="6_s8tt6"]
@@ -18,9 +17,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_510jw")
-num_letters = NodePath("Guess Window/Guesses Container/Number of Letters")
-num_guesses = NodePath("Guess Window/Guesses Container/Guesses Left")
-guess_container = NodePath("Guess Window/Guesses Container/Current Guesses Container")
+num_letters = NodePath("Guess Window/Guess Information/Number of Letters")
+num_guesses = NodePath("Guess Window/Guess Information/Guesses Left")
+guess_container = NodePath("Guess Window/Current Guesses Container")
 word_bank = NodePath("Word Bank")
 speaker = NodePath("AudioStreamPlayer")
 type_submission_parent = NodePath("Type Submission")
@@ -32,37 +31,36 @@ tb_guess_word = NodePath("Buttons/Guess Whole Word")
 button_parent = NodePath("Buttons")
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
-texture = ExtResource("2_510jw")
+texture = ExtResource("2_xw28t")
 centered = false
-
-[node name="Term" type="Sprite2D" parent="."]
-position = Vector2(640, 344)
-texture = ExtResource("3_yawx5")
 
 [node name="Guess Window" type="Node2D" parent="."]
 
-[node name="Guesses Container" type="VBoxContainer" parent="Guess Window"]
-offset_left = 338.0
-offset_top = 131.0
-offset_right = 937.0
-offset_bottom = 524.0
+[node name="Guess Information" type="VBoxContainer" parent="Guess Window"]
+offset_left = 340.0
+offset_top = 150.0
+offset_right = 939.0
+offset_bottom = 186.0
 
-[node name="Number of Letters" type="Label" parent="Guess Window/Guesses Container"]
+[node name="Number of Letters" type="Label" parent="Guess Window/Guess Information"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("3_s8tt6")
 text = "? ? ? ? ? ? ? ? ?"
 horizontal_alignment = 1
 
-[node name="Guesses Left" type="Label" parent="Guess Window/Guesses Container"]
+[node name="Guesses Left" type="Label" parent="Guess Window/Guess Information"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_s8tt6")
 text = "INCORRECT GUESSES LEFT: 3"
 horizontal_alignment = 1
 
-[node name="Current Guesses Container" type="HFlowContainer" parent="Guess Window/Guesses Container"]
+[node name="Current Guesses Container" type="HFlowContainer" parent="Guess Window"]
 custom_minimum_size = Vector2(0, 353.1)
-layout_mode = 2
+offset_left = 340.0
+offset_top = 202.0
+offset_right = 939.0
+offset_bottom = 555.1
 alignment = 1
 
 [node name="Buttons" type="Node2D" parent="."]
@@ -86,9 +84,10 @@ rotation = 1.16784
 
 [node name="Word Bank" parent="." instance=ExtResource("4_510jw")]
 visible = false
+z_index = 1
 layout_mode = 1
 split = false
-scale_items = 1.2
+scale_items = 1.3
 puzzle_mode = true
 
 [node name="Close Bank" type="Button" parent="Word Bank"]
