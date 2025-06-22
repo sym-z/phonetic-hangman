@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bcjst2l1ryhdg"]
+[gd_scene load_steps=20 format=3 uid="uid://bcjst2l1ryhdg"]
 
 [ext_resource type="Script" uid="uid://7e2uoofk2vjw" path="res://prefabs/tooth_button/tooth_button.gd" id="1_1ri0u"]
 [ext_resource type="Texture2D" uid="uid://cejtpw318ss2f" path="res://assets/prototyping/tooth-prototype-Sheet.png" id="1_edi1c"]
+[ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_3bgh2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ri0u"]
 atlas = ExtResource("1_edi1c")
@@ -140,7 +141,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.121569)
 [node name="Label" type="Label" parent="."]
 offset_right = 47.0
 offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3bgh2")
 text = "PRESS"
 horizontal_alignment = 1
 
