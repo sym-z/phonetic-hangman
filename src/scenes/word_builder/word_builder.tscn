@@ -108,12 +108,6 @@ texture = ExtResource("2_abi5u")
 position = Vector2(637, 374)
 sprite_frames = SubResource("SpriteFrames_7nyya")
 
-[node name="Progress Through Selections" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(640, 146)
-scale = Vector2(4.44585, 0.416008)
-sprite_frames = SubResource("SpriteFrames_7nyya")
-
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -156,6 +150,7 @@ position = Vector2(812, 599)
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
 
 [node name="Phoneme Queue" type="Node2D" parent="."]
+position = Vector2(0, 21)
 
 [node name="Phoneme Piece" type="AnimatedSprite2D" parent="Phoneme Queue"]
 position = Vector2(378, 180)
@@ -163,10 +158,9 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_8jq4x")
 
 [node name="Label" type="Label" parent="Phoneme Queue/Phoneme Piece"]
-offset_left = -60.0
-offset_top = -216.0
-offset_right = 65.0
-offset_bottom = -149.0
+offset_right = 125.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
 theme_override_font_sizes/font_size = 48
 text = "BLAH"
 horizontal_alignment = 1
@@ -177,10 +171,9 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_856pw")
 
 [node name="Label" type="Label" parent="Phoneme Queue/Phoneme Piece2"]
-offset_left = -60.0
-offset_top = -212.0
-offset_right = 65.0
-offset_bottom = -145.0
+offset_right = 192.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
 theme_override_font_sizes/font_size = 48
 text = "BLAH"
 horizontal_alignment = 1
@@ -191,10 +184,9 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_txtty")
 
 [node name="Label" type="Label" parent="Phoneme Queue/Phoneme Piece3"]
-offset_left = -48.0
-offset_top = -208.0
-offset_right = 77.0
-offset_bottom = -141.0
+offset_right = 125.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
 theme_override_font_sizes/font_size = 48
 text = "BLAH"
 horizontal_alignment = 1
@@ -205,24 +197,22 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_1gyaw")
 
 [node name="Label" type="Label" parent="Phoneme Queue/Phoneme Piece4"]
-offset_left = -68.0
-offset_top = -228.0
-offset_right = 57.0
-offset_bottom = -161.0
+offset_right = 125.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
 theme_override_font_sizes/font_size = 48
 text = "BLAH"
 horizontal_alignment = 1
 
 [node name="Phoneme Piece5" type="AnimatedSprite2D" parent="Phoneme Queue"]
-position = Vector2(908, 184)
+position = Vector2(894, 180)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_abi5u")
 
 [node name="Label" type="Label" parent="Phoneme Queue/Phoneme Piece5"]
-offset_left = -64.0
-offset_top = -232.0
-offset_right = 61.0
-offset_bottom = -165.0
+offset_right = 125.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
 theme_override_font_sizes/font_size = 48
 text = "BLAH"
 horizontal_alignment = 1

@@ -151,9 +151,16 @@ func refresh_phoneme_queue():
 		if current_selection + index >= 0 and current_selection + index < selections.size():
 			child.visible = true
 			child.sprite_frames = Libraries.frame_lib[selections[current_selection+index]]
+			var center_int : Vector2 = child.sprite_frames.get_frame_texture("default", 0).get_size()
+			print(center_int)
 			child.play()
 			# Make label show alphabetical representation
-			child.get_node("Label").text = Libraries.letter_lib[selections[current_selection+index]]
+			var child_label = child.get_node("Label")
+			child_label.text = Libraries.letter_lib[selections[current_selection+index]]
+			#child_label.pivot_offset.x = child_label.size.x/2
+			child_label.position = Vector2(0,0)
+			child_label.position -= child_label.size/2
+			child_label.position.y -= center_int.y/2 + child_label.size.y/2
 		else:
 			child.visible = false
 		index += 1

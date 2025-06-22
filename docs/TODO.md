@@ -45,6 +45,8 @@
 - [ ] Make square/4:3 monitor for the screen
   - Change containers to fit new monitor
 - [ ] Duplicate phonemes shouldn't increase random pool, just new sounds
+- [ ] Add text below current phoneme choice in word builder
+
 #  Scenes to make
 - Single Player
 
