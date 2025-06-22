@@ -47,7 +47,7 @@
 - [ ] Duplicate phonemes shouldn't increase random pool, just new sounds
 - [ ] Add text below current phoneme choice in word builder
 - [ ] Make label theme for tooth buttons so you can have a nice border
-
+- [ ] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
 #  Scenes to make
 - Single Player
 
