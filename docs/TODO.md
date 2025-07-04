@@ -67,8 +67,8 @@
 ## Scenes done, but needing polish
 
 ## Art Needed
-- Font
-- Finalize choice for how I want to animate the mouths
+- [x] Font
+- [x] Finalize choice for how I want to animate the mouths
 - Button Icons
 - Backgrounds
 - UI Sounds
@@ -81,10 +81,13 @@
 - Final Tooth Buttons
 - VHS Tearing
 - Instructions
+- Tooth Life Indicators
+
 
 ## UI Changes
 - Selections need to display word, letter and animation clearly
 - Buttons to add and listen should be symbols, not words
+  - Add to font?
 - Menus need style
 - Create styleboxes and custom fonts
 
