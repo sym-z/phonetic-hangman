@@ -7,6 +7,7 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 
 @export var num_letters : Label
 @export var num_guesses : Label
+@export var num_sounds : Label
 # Use similar tactic as Phoneme Assembler
 @export var guess_container : HFlowContainer
 @export var word_bank : Control
@@ -62,9 +63,10 @@ func _ready() -> void:
 			
 #region Initialization
 func count_letters():
-	num_letters.text = "LETTERS: "
-	for letter in Globals.decoded_typed_word.length():
-		num_letters.text += "? "
+	num_letters.text = "LETTERS: " + str(Globals.decoded_typed_word.length())
+	num_sounds.text = "SOUNDS: " + str(Globals.decoded_built_word.size())
+	#for letter in Globals.decoded_typed_word.length():
+		#num_letters.text += "? "
 	if(num_letters.text.length() > 0):
 		num_letters.text.erase(num_letters.text.length()-1,1)
 
