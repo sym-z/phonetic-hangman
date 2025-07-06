@@ -37,8 +37,9 @@ func puzzle_bank_initialize():
 	# Add a number of them proportional to the decoded word, removing from available additions as you go to prevent duplicates and reprocessing
 	# For now, I am adding 2*decoded_word.size()
 	# Check for overflow with sound amounts that are greater than max
-	print(decoded_built_word.size())
-	for i in range(2*decoded_built_word.size()):
+	print(puzzle_bank.size())
+	var original_pb_size = puzzle_bank.size()
+	for i in range(2*original_pb_size):
 		if available_additions.size() > 0:
 			var random_index = randi_range(0,available_additions.size()-1)
 			puzzle_bank.append(available_additions[random_index])
