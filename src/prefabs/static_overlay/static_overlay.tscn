@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://bei477ws0cgex"]
+
+[ext_resource type="Texture2D" uid="uid://dl33fyge44yp" path="res://assets/ui/static_frames/static (1).png" id="1_klfmg"]
+[ext_resource type="Texture2D" uid="uid://b3knwovwd35k4" path="res://assets/ui/static_frames/static-big (1).png" id="1_n24fr"]
+[ext_resource type="Texture2D" uid="uid://qvemyvplay4y" path="res://assets/ui/static_frames/static-big (2).png" id="2_ami8j"]
+[ext_resource type="Texture2D" uid="uid://dj3h047cfj3qe" path="res://assets/ui/static_frames/static (2).png" id="2_wmbav"]
+[ext_resource type="Texture2D" uid="uid://c3pmeqc30dpj2" path="res://assets/ui/static_frames/static (3).png" id="3_m3qx3"]
+[ext_resource type="Texture2D" uid="uid://3de6yo6q0tlw" path="res://assets/ui/static_frames/static-big (3).png" id="3_n4816"]
+[ext_resource type="Texture2D" uid="uid://brntqcye50cgq" path="res://assets/ui/static_frames/static-big (4).png" id="4_fdp5g"]
+[ext_resource type="Texture2D" uid="uid://xx1dt5o4jt87" path="res://assets/ui/static_frames/static (4).png" id="4_tk6qp"]
+[ext_resource type="Texture2D" uid="uid://2stw1yg35b6l" path="res://assets/ui/static_frames/static-big.png" id="5_bmjro"]
+[ext_resource type="Texture2D" uid="uid://dgvn21f5vufrm" path="res://assets/ui/static_frames/static.png" id="5_egt57"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n24fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n24fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ami8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n4816")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fdp5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bmjro")
+}],
+"loop": true,
+"name": &"big",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_klfmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wmbav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m3qx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tk6qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_egt57")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="Static Overlay" type="AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0.0784314)
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_n24fr")
+animation = &"big"
+autoplay = "default"
+centered = false

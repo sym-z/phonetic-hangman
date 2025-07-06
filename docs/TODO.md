@@ -17,7 +17,7 @@
 - [x] When all sounds have been guessed correctly, do not allow the word bank to open
 - [ ] Sound effect plays after sound when guess has been made
 - [x] Handle duplicate sounds
-- [ ] Better instructions of how to use tooth buttons
+### - [ ] Better instructions of how to use tooth buttons
 - [x] Create and crop filtered versions
 - [ ] Teeth in the main menu change words on the monitor in the mouth
 - [ ] Start up animation with the VHS
@@ -25,12 +25,12 @@
 - [x] Add new tooth buttons to guesser
 - [ ] Apply tint to buttons that are not idling
 - [x] For added mixed up ness, make the seed sound array length + word length!
-- [ ] Make instructions that appear that tell the player to use the teeth to control the menus
-- [ ] VHS Shader randomly brightens and dims pixels at a given rate
+### - [ ] Make instructions that appear that tell the player to use the teeth to control the menus
+### - [ ] VHS Shader randomly brightens and dims pixels at a given rate
 - [ ] Teeth break for incorrect guesses?
-- [ ] Make password invisible
-  - Requires a change from a TextEdit node to a LineEdit node
-- [ ] Add Copy to Clipboard button
+### - [ ] Make password invisible
+  ### - Requires a change from a TextEdit node to a LineEdit node
+### - [ ] Add Copy to Clipboard button
 - [x] On Hover for buttons, change the font file
 - [x] Create themes for buttons
 - [x] Tweak these letters (C, D)
@@ -45,9 +45,12 @@
 - [x] Make square/4:3 monitor for the screen
   - Change containers to fit new monitor
 - [ ] Duplicate phonemes shouldn't increase random pool, just new sounds
-- [ ] Add text below current phoneme choice in word builder
+### - [ ] Add text below current phoneme choice in word builder
 - [ ] Make label theme for tooth buttons so you can have a nice border
-- [ ] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
+### - [ ] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
+### - [ ] Change all backgrounds to be new background
+### - [ ] Import new button animation
+- [ ] CRT Shader
 #  Scenes to make
 - Single Player
 

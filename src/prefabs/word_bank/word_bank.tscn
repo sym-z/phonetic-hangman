@@ -1,16 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bymrqbk1dvbjv"]
+[gd_scene load_steps=7 format=3 uid="uid://bymrqbk1dvbjv"]
 
 [ext_resource type="PackedScene" uid="uid://dg1gefmtbt4ao" path="res://prefabs/phoneme_assembler/phoneme_assembler.tscn" id="1_0hpp7"]
 [ext_resource type="Script" uid="uid://bw0cuftbbl4ow" path="res://prefabs/word_bank/word_bank.gd" id="1_7kiyc"]
-[ext_resource type="Texture2D" uid="uid://yy60jb5fn24n" path="res://assets/prototyping/mouth-prototype2.png" id="2_kkt4e"]
+[ext_resource type="Texture2D" uid="uid://bna4gs7kkha01" path="res://assets/ui/mouth_framing.png" id="2_0wjod"]
+[ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="4_6shj8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wjod"]
-texture = ExtResource("2_kkt4e")
+texture = ExtResource("2_0wjod")
 
 [sub_resource type="Theme" id="Theme_6shj8"]
 Panel/styles/panel = SubResource("StyleBoxTexture_0wjod")
 
 [node name="Word Bank" type="Control" node_paths=PackedStringArray("consonant_container", "consonant_assembler", "vowel_container", "vowel_assembler", "total_container", "total_assembler")]
+z_index = 5
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,6 +31,8 @@ total_assembler = NodePath("Total Assembler")
 split = true
 
 [node name="Panel" type="Panel" parent="."]
+z_index = 5
+z_as_relative = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,3 +106,8 @@ theme_override_constants/margin_bottom = 40
 [node name="HFlowContainer" type="HFlowContainer" parent="Vowels"]
 layout_mode = 2
 alignment = 1
+
+[node name="Static Overlay" parent="." instance=ExtResource("4_6shj8")]
+position = Vector2(40, -382)
+animation = &"big"
+autoplay = "big"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=9 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="Texture2D" uid="uid://bna4gs7kkha01" path="res://assets/ui/mouth_framing.png" id="2_xw28t"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_s8tt6"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 [ext_resource type="PackedScene" uid="uid://bcjst2l1ryhdg" path="res://prefabs/tooth_button/tooth_button.tscn" id="4_xw28t"]
+[ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="5_yawx5"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="6_s8tt6"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="6_xw28t"]
 
@@ -29,6 +30,7 @@ tb_word_bank = NodePath("Buttons/Open Bank")
 tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
 tb_guess_word = NodePath("Buttons/Guess Whole Word")
 button_parent = NodePath("Buttons")
+debug = true
 
 [node name="BackgroundReference" type="Sprite2D" parent="."]
 texture = ExtResource("2_xw28t")
@@ -82,9 +84,11 @@ rotation = 1.16784
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="Static Overlay" parent="." instance=ExtResource("5_yawx5")]
+position = Vector2(340, 135)
+
 [node name="Word Bank" parent="." instance=ExtResource("4_510jw")]
 visible = false
-z_index = 1
 layout_mode = 1
 split = false
 scale_items = 1.3
