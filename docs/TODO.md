@@ -17,7 +17,7 @@
 - [x] When all sounds have been guessed correctly, do not allow the word bank to open
 - [ ] Sound effect plays after sound when guess has been made
 - [x] Handle duplicate sounds
-### - [ ] Better instructions of how to use tooth buttons
+### - [ ] Better instructions of how to use tooth buttons in word guesser and word typer
 - [x] Create and crop filtered versions
 - [ ] Teeth in the main menu change words on the monitor in the mouth
 - [ ] Start up animation with the VHS
@@ -26,7 +26,7 @@
 - [ ] Apply tint to buttons that are not idling
 - [x] For added mixed up ness, make the seed sound array length + word length!
 ### - [ ] Make instructions that appear that tell the player to use the teeth to control the menus
-### - [ ] VHS Shader randomly brightens and dims pixels at a given rate
+- [x] VHS Shader randomly brightens and dims pixels at a given rate
 - [ ] Teeth break for incorrect guesses?
 ### - [ ] Make password invisible
   ### - Requires a change from a TextEdit node to a LineEdit node
@@ -52,8 +52,9 @@
 ### - [ ] Import new button animation
 - [ ] CRT Shader
 - [ ] Quit Game
+### - [ ] Add headers to label scenes, "PASSWORD EXPORTED!" etc.
 - [ ] Single player
-- [ ] For number of letters in word guesser, change to a number instead of repeated '?'s
+### - [ ] For number of letters in word guesser, change to a number instead of repeated '?'s
 #  Scenes to make
 - Single Player
 
