@@ -260,5 +260,9 @@ offset_bottom = 604.0
 theme_override_fonts/font = ExtResource("6_1gyaw")
 text = "VOWELS"
 
-[connection signal="finished" from="Selection Speaker" to="." method="_on_selection_speaker_finished"]
+[node name="Buffer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="animation_looped" from="Current Phoneme Choice" to="." method="_on_current_phoneme_choice_animation_looped"]
 [connection signal="pressed" from="Word Bank/Hide" to="." method="_on_hide_pressed"]

@@ -16,6 +16,8 @@ extends Control
 @export var tb_add_sound : Node2D
 
 @export var button_parent : Control
+
+
 const PHONEME_QUEUE_SIZE : int = 5
 # How many phonemes can be indexed without falling out of array
 var buffer_size : int = floor(PHONEME_QUEUE_SIZE/2)
@@ -125,21 +127,31 @@ func _on_play_whole_word_pressed():
 	if(current_selection != NO_SELECTION && !playing_whole_word):
 		current_selection_backup = current_selection
 		current_selection = 0
+		anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
+		anim.play()
 		playing_whole_word = true
 		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 		selection_speaker.play()
 
-func _on_selection_speaker_finished():
+func _on_current_phoneme_choice_animation_looped():
 	if(playing_whole_word):
 		if(current_selection < selections.size()-1):
 			current_selection += 1
+			anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
+			anim.play()
 			selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 			selection_speaker.play()
 		else:
 			playing_whole_word = false
 			# Reset speaker to be selecting the current selection
 			current_selection = current_selection_backup
+			print(playing_whole_word)
+			anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
+			anim.play()
 			selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
+
+
+
 #endregion
 
 func refresh_phoneme_queue():

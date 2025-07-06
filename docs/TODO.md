@@ -41,7 +41,7 @@
 - [x] Tweak these letters (C, D)
 - [x] Add space character to fonts
 - [x] Add way to center buttons or create theme to preview how it centers on page
-### - [ ] When whole word is played in builder, change frames to match word that is being played
+- [x] When whole word is played in builder, change frames to match word that is being played
 - [ ] Edit voice to be creepy
 - [x] Change Click behavior of stylebox
 - [ ] Add some kind of border or mask to phoneme selections
