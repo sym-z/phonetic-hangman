@@ -51,6 +51,9 @@
 ### - [ ] Change all backgrounds to be new background
 ### - [ ] Import new button animation
 - [ ] CRT Shader
+- [ ] Quit Game
+- [ ] Single player
+- [ ] For number of letters in word guesser, change to a number instead of repeated '?'s
 #  Scenes to make
 - Single Player
 
