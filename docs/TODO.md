@@ -1,3 +1,9 @@
+# Overall
+- [ ] Layout Overhaul
+- [ ] Single Player
+- [ ] Tutorials and Labeling
+- [ ] Sound and art refine
+
 ## Goals
 - [x] Add a division between consonants and vowels
 - [x] Label consonants and vowels
@@ -19,42 +25,43 @@
 - [x] Handle duplicate sounds
 ### - [ ] Better instructions of how to use tooth buttons in word guesser and word typer
 - [x] Create and crop filtered versions
-- [ ] Teeth in the main menu change words on the monitor in the mouth
 - [ ] Start up animation with the VHS
 - [x] Menu buttons are triggering behind word bank
 - [x] Add new tooth buttons to guesser
-- [ ] Apply tint to buttons that are not idling
+### - [ ] Apply tint to buttons that are not idling
 - [x] For added mixed up ness, make the seed sound array length + word length!
 ### - [ ] Make instructions that appear that tell the player to use the teeth to control the menus
 - [x] VHS Shader randomly brightens and dims pixels at a given rate
 - [ ] Teeth break for incorrect guesses?
-### - [ ] Make password invisible
-  ### - Requires a change from a TextEdit node to a LineEdit node
-### - [ ] Add Copy to Clipboard button
+- [x] Make password invisible
+  - Requires a change from a TextEdit node to a LineEdit node
+- [x] Add Copy to Clipboard button
 - [x] On Hover for buttons, change the font file
 - [x] Create themes for buttons
 - [x] Tweak these letters (C, D)
 - [x] Add space character to fonts
 - [x] Add way to center buttons or create theme to preview how it centers on page
-- [ ] When whole word is played in builder, change frames to match word that is being played
+### - [ ] When whole word is played in builder, change frames to match word that is being played
 - [ ] Edit voice to be creepy
-- [ ] Change Click behavior of stylebox
+- [x] Change Click behavior of stylebox
 - [ ] Add some kind of border or mask to phoneme selections
 - [x] Phoneme Piece prefab for phoneme queue in builder
   - Or just make the phoneme queue itself a prefab
 - [x] Make square/4:3 monitor for the screen
   - Change containers to fit new monitor
-- [ ] Duplicate phonemes shouldn't increase random pool, just new sounds
+### - [ ] Duplicate phonemes shouldn't increase random pool, just new sounds
 ### - [ ] Add text below current phoneme choice in word builder
 - [ ] Make label theme for tooth buttons so you can have a nice border
-### - [ ] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
-### - [ ] Change all backgrounds to be new background
+### - [x] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
+### - [x] Change all backgrounds to be new background
 ### - [ ] Import new button animation
 - [ ] CRT Shader
-- [ ] Quit Game
+### - [ ] Quit Game
 ### - [ ] Add headers to label scenes, "PASSWORD EXPORTED!" etc.
 - [ ] Single player
 ### - [ ] For number of letters in word guesser, change to a number instead of repeated '?'s
+- [ ] Notifications and labels for everything
+
 #  Scenes to make
 - Single Player
 
