@@ -58,6 +58,5 @@ animations = [{
 modulate = Color(1, 1, 1, 0.0784314)
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_n24fr")
-animation = &"big"
 autoplay = "default"
 centered = false

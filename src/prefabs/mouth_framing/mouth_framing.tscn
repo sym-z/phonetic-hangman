@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://vjgpusb16i6u"]
+
+[ext_resource type="Texture2D" uid="uid://bna4gs7kkha01" path="res://assets/ui/mouth_framing.png" id="1_ob5p0"]
+
+[node name="Mouth Framing" type="Sprite2D"]
+texture = ExtResource("1_ob5p0")
+centered = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://mu1h0xpxq6v0" path="res://themes/full_screen_button_margin_container.tres" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://crsmlman418qm" path="res://scenes/main_menu/main_menu.gd" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://bna4gs7kkha01" path="res://assets/ui/mouth_framing.png" id="3_5seab"]
+[ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="3_5seab"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_uqeha"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="4_3ovsr"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="4_wem23"]
@@ -18,9 +18,10 @@ grow_vertical = 2
 theme = ExtResource("1_l6cm7")
 script = ExtResource("2_ekxnf")
 
-[node name="Mouth-prototype" type="Sprite2D" parent="."]
-texture = ExtResource("3_5seab")
-centered = false
+[node name="Mouth Framing" parent="." instance=ExtResource("3_5seab")]
+
+[node name="Static Overlay" parent="." instance=ExtResource("7_5seab")]
+position = Vector2(340, 135)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -61,8 +62,5 @@ theme = ExtResource("4_3ovsr")
 theme_override_fonts/font = ExtResource("3_uqeha")
 text = "QUIT GAME"
 script = ExtResource("4_wem23")
-
-[node name="Static Overlay" parent="." instance=ExtResource("7_5seab")]
-position = Vector2(340, 135)
 
 [connection signal="pressed" from="VBoxContainer/Create" to="." method="_on_create_pressed"]

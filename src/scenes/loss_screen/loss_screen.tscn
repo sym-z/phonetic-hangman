@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d221d5cugjyy2"]
+[gd_scene load_steps=7 format=3 uid="uid://d221d5cugjyy2"]
 
 [ext_resource type="Script" uid="uid://dtos87grfo2sl" path="res://scenes/loss_screen/loss_screen.gd" id="1_4ggvd"]
+[ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_bkoa0"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_d4hrk"]
-[ext_resource type="Texture2D" uid="uid://yy60jb5fn24n" path="res://assets/prototyping/mouth-prototype2.png" id="2_oirta"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="3_aqbds"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="3_bkoa0"]
+[ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="3_fdrxj"]
 
 [node name="Loss Screen" type="Control"]
 layout_mode = 3
@@ -15,9 +16,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4ggvd")
 
-[node name="Mouth-prototype" type="Sprite2D" parent="."]
-texture = ExtResource("2_oirta")
-centered = false
+[node name="Mouth Framing" parent="." instance=ExtResource("2_bkoa0")]
+
+[node name="Static Overlay" parent="." instance=ExtResource("3_fdrxj")]
+position = Vector2(340, 135)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
