@@ -54,12 +54,12 @@
 - [ ] Make label theme for tooth buttons so you can have a nice border
 - [x] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
 - [x] Change all backgrounds to be new background
-### - [ ] Import new button animation
+### - [ ] Import new tooth button animation
 - [ ] CRT Shader
-### - [ ] Quit Game
+- [x] Quit Game
 ### - [ ] Add headers to label scenes, "PASSWORD EXPORTED!" etc.
 - [ ] Single player
-### - [ ] For number of letters in word guesser, change to a number instead of repeated '?'s
+- [x] For number of letters in word guesser, change to a number instead of repeated '?'s
 - [ ] Notifications and labels for everything
 
 #  Scenes to make

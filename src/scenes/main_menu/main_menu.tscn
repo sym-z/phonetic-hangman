@@ -64,3 +64,4 @@ text = "QUIT GAME"
 script = ExtResource("4_wem23")
 
 [connection signal="pressed" from="VBoxContainer/Create" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
