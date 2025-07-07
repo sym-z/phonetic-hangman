@@ -4,12 +4,16 @@ var mouse_hovering : bool = false
 @export var label : Label
 @export var label_anchor : Marker2D
 @export var hover_circle : CollisionShape2D
+
+@export var selected_tint : Color
+var default_modulation : Color
 # What does this tooth do when it's clicked? Defaults to printing a string
 var on_click : Callable = debug_click
 var clickable : bool = true
 
 # To prevent animation interuption, animations can only change when one loops or finishes
 func _ready():
+	default_modulation = anim.modulate
 	anim.play()
 	label.visible = false
 
@@ -34,26 +38,15 @@ func tooth_creep():
 
 func _on_area_2d_mouse_entered():
 	mouse_hovering = true
+	anim.modulate = selected_tint
 	center_label()
 
 func _on_area_2d_mouse_exited():
 	mouse_hovering = false
+	anim.modulate = default_modulation
 	#anim.animation = "retract"
 	label.visible = false
 	#anim.play()
-#
-#func _on_animated_sprite_2d_animation_finished():
-	#if anim.animation == "retract":
-		#anim.animation = "default"
-		#anim.play()
-	#elif anim.animation == "extend":
-		#label.visible = true
-#
-#func _on_animated_sprite_2d_animation_looped():
-	#if mouse_hovering == true:
-		#anim.animation = "extend"
-		#anim.play()
-
 
 func debug_click():
 	print("YA CLICKED ME")
