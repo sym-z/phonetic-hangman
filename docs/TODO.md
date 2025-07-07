@@ -28,7 +28,7 @@
 - [ ] Start up animation with the VHS
 - [x] Menu buttons are triggering behind word bank
 - [x] Add new tooth buttons to guesser
-### - [ ] Apply tint to buttons that are not idling
+- [x] Apply tint to buttons that are not idling
 - [x] For added mixed up ness, make the seed sound array length + word length!
 ### - [ ] Make instructions that appear that tell the player to use the teeth to control the menus
 - [x] VHS Shader randomly brightens and dims pixels at a given rate
@@ -50,7 +50,7 @@
 - [x] Make square/4:3 monitor for the screen
   - Change containers to fit new monitor
 - [x] Duplicate phonemes shouldn't increase random pool, just new sounds
-### - [ ] Add text below current phoneme choice in word builder
+- [x] Add text below current phoneme choice in word builder
 - [ ] Make label theme for tooth buttons so you can have a nice border
 - [x] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
 - [x] Change all backgrounds to be new background

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjgxtks4ntivg"]
+[gd_scene load_steps=11 format=3 uid="uid://bjgxtks4ntivg"]
 
 [ext_resource type="Script" uid="uid://dnwjtlg0iyy1h" path="res://prefabs/phoneme_selection/phoneme_selection.gd" id="1_mi4rm"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_eacn2"]
@@ -7,7 +7,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi4rm"]
 size = Vector2(80, 80)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7tkgr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eacn2"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_181jr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw3hh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eynje"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmfrk"]
 
@@ -96,6 +104,8 @@ size_flags_horizontal = 4
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_eacn2")
 theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7tkgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eacn2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_181jr")
 text = "ADD"
 flat = true
@@ -108,6 +118,8 @@ size_flags_horizontal = 4
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_eacn2")
 theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xw3hh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eynje")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_pmfrk")
 text = "PLAY"
 script = ExtResource("3_eacn2")

@@ -3,6 +3,7 @@ extends Control
 @export var word_bank : Control
 @export var selection_speaker : AudioStreamPlayer
 @export var anim : AnimatedSprite2D
+@export var anim_label : Label
 @export var phoneme_queue_parent : Node2D
 
 @export_category("Tooth Buttons")
@@ -40,6 +41,7 @@ func _ready():
 	#refresh_phoneme_queue()
 	selection_changed()
 	initialize_tooth_buttons()
+	reset_label()
 #region Modifying Selections
 
 #WARNING: Make sure that the player cannot modify the word while the whole word is being played.
@@ -52,6 +54,7 @@ func selection_changed():
 		anim.play()
 		selection_speaker.play()
 		refresh_phoneme_queue()
+		reset_label()
 	if current_selection == NO_SELECTION:
 		anim.visible = false
 		refresh_phoneme_queue()
@@ -129,6 +132,8 @@ func _on_play_whole_word_pressed():
 		current_selection = 0
 		anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
 		anim.play()
+		reset_label()
+		refresh_phoneme_queue()
 		playing_whole_word = true
 		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 		selection_speaker.play()
@@ -139,6 +144,8 @@ func _on_current_phoneme_choice_animation_looped():
 			current_selection += 1
 			anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
 			anim.play()
+			reset_label()
+			refresh_phoneme_queue()
 			selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 			selection_speaker.play()
 		else:
@@ -148,6 +155,8 @@ func _on_current_phoneme_choice_animation_looped():
 			print(playing_whole_word)
 			anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
 			anim.play()
+			reset_label()
+			refresh_phoneme_queue()
 			selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 
 
@@ -197,4 +206,20 @@ func change_clickable(new_value : bool):
 	for button in button_parent.get_children():
 		button.clickable = new_value
 
+#endregion
+
+#region Anim Label
+func reset_label():
+	# Reset position
+	anim_label.position = Vector2.ZERO
+	# Center H
+	anim_label.position.x -= anim_label.size.x / 2
+	# Drop below animation
+	anim_label.position.y += anim.sprite_frames.get_frame_texture(anim.animation,0).get_size().y /2
+	# Add Vertical Offset
+	anim_label.position.y += anim_label.size.y/2
+	# Set correct text
+	if(current_selection != NO_SELECTION):
+		anim_label.text = Libraries.letter_lib[selections[current_selection]]
+	pass
 #endregion

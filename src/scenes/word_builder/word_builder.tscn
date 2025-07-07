@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cerariugi700o"]
+[gd_scene load_steps=17 format=3 uid="uid://cerariugi700o"]
 
 [ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder/word_builder.gd" id="1_b2vsm"]
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_wmqn6"]
@@ -20,6 +20,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Theme" id="Theme_wmqn6"]
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("6_1gyaw")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jq4x"]
 animations = [{
@@ -76,7 +80,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Word Builder" type="Control" node_paths=PackedStringArray("word_bank", "selection_speaker", "anim", "phoneme_queue_parent", "tb_prev_sound", "tb_next_sound", "tb_play_sound", "tb_play_word", "tb_del_sound", "tb_done", "tb_cancel", "tb_add_sound", "button_parent")]
+[node name="Word Builder" type="Control" node_paths=PackedStringArray("word_bank", "selection_speaker", "anim", "anim_label", "phoneme_queue_parent", "tb_prev_sound", "tb_next_sound", "tb_play_sound", "tb_play_word", "tb_del_sound", "tb_done", "tb_cancel", "tb_add_sound", "button_parent")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,6 +93,7 @@ script = ExtResource("1_b2vsm")
 word_bank = NodePath("Word Bank")
 selection_speaker = NodePath("Selection Speaker")
 anim = NodePath("Current Phoneme Choice")
+anim_label = NodePath("Current Phoneme Choice/Current Phoneme Label")
 phoneme_queue_parent = NodePath("Phoneme Queue")
 tb_prev_sound = NodePath("Buttons/Prev Sound2")
 tb_next_sound = NodePath("Buttons/Next Sound2")
@@ -106,6 +111,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Current Phoneme Choice" type="AnimatedSprite2D" parent="."]
 position = Vector2(637, 374)
 sprite_frames = SubResource("SpriteFrames_7nyya")
+
+[node name="Current Phoneme Label" type="Label" parent="Current Phoneme Choice"]
+offset_right = 558.0
+offset_bottom = 18.0
+size_flags_horizontal = 4
+theme = SubResource("Theme_wmqn6")
+text = "USE TEETH BUTTONS TO ADD SOUNDS"
+horizontal_alignment = 1
 
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 1
@@ -155,7 +168,7 @@ position = Vector2(340, 135)
 position = Vector2(0, 21)
 
 [node name="Phoneme Piece" type="AnimatedSprite2D" parent="Phoneme Queue"]
-position = Vector2(378, 180)
+position = Vector2(397, 165)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_8jq4x")
 
@@ -168,7 +181,7 @@ text = "BLAH"
 horizontal_alignment = 1
 
 [node name="Phoneme Piece2" type="AnimatedSprite2D" parent="Phoneme Queue"]
-position = Vector2(503, 179)
+position = Vector2(515.285, 165)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_856pw")
 
@@ -181,7 +194,7 @@ text = "BLAH"
 horizontal_alignment = 1
 
 [node name="Phoneme Piece3" type="AnimatedSprite2D" parent="Phoneme Queue"]
-position = Vector2(634, 178)
+position = Vector2(637.015, 165)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_txtty")
 
@@ -194,7 +207,7 @@ text = "BLAH"
 horizontal_alignment = 1
 
 [node name="Phoneme Piece4" type="AnimatedSprite2D" parent="Phoneme Queue"]
-position = Vector2(792, 183)
+position = Vector2(758.435, 165)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_1gyaw")
 
@@ -207,7 +220,7 @@ text = "BLAH"
 horizontal_alignment = 1
 
 [node name="Phoneme Piece5" type="AnimatedSprite2D" parent="Phoneme Queue"]
-position = Vector2(894, 180)
+position = Vector2(882.27, 165)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_abi5u")
 
