@@ -3,7 +3,8 @@
 ## Single Player
 - [ ] Single player
 ## Tutorials and Labeling
-- [ ] Paste button in password import
+- [ ] Paste button in password import  
+- [ ] Change 'Play' to 'hear' for phoneme selection
 ## Sound and art refine
 - [ ] Sound effect plays after sound when guess has been made
 - [ ] Make Mystery Default sprite frame for phoneme selection
