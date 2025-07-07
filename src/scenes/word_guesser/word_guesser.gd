@@ -39,7 +39,7 @@ func _input(event):
 		
 func _ready() -> void:
 	if(debug):
-		Globals.decoded_built_word = [5,24,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+		Globals.decoded_built_word = [5,24,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
 		Globals.decoded_typed_word = "JACK"
 	Globals.puzzle_bank_initialize()
 	# Make ? for each typed letter
@@ -83,6 +83,7 @@ func initialize_guess_container():
 # When add is clicked, guess is automatically made
 func _on_selection_chosen(id):
 	#TODO: BUZZER OR DING FOR GUESS CORRECTNESS
+	print("HELLO BISCUIT", playing_guesses)
 	_on_hear_sound_pressed(id)
 	guess(id)
 	change_clickable(true)
@@ -136,12 +137,16 @@ var guess_index : int = 0
 func _on_hear_correct_guesses_pressed() -> void:
 	playing_guesses = true
 	#TODO: Make sure someone cant make a word with no sounds
+	var found_guess : bool = false
 	for i in range(0, guess_container.get_children().size()):
 		if guess_container.get_children()[i].id != -1:
+			found_guess = true
 			speaker.stream = guess_container.get_children()[i].sound
 			guess_index = i
 			speaker.play()
 			break
+	if found_guess == false:
+		playing_guesses = false
 			
 # Check if playing guesses, play sound, check if is the last guess, turn playing guesses off
 func _on_audio_stream_player_finished() -> void:
@@ -155,9 +160,11 @@ func _on_audio_stream_player_finished() -> void:
 			else:
 				while(guess_index < guess_container.get_children().size()-1 && guess_container.get_children()[guess_index].id == -1):
 					guess_index += 1
-				if(guess_index < guess_container.get_children().size()):
+				if(guess_index < guess_container.get_children().size() && guess_container.get_children()[guess_index].id != -1):
 					speaker.stream = guess_container.get_children()[guess_index].sound
 					speaker.play()
+				if (guess_index == guess_container.get_children().size()-1):
+					playing_guesses = false
 		else:
 			playing_guesses = false
 			guess_index = 0
