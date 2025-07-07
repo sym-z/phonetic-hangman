@@ -1,8 +1,20 @@
 # Overall
-- [ ] Layout Overhaul
-- [ ] Single Player
-- [x] Tutorials and Labeling
-- [ ] Sound and art refine
+## Layout Overhaul
+## Single Player
+- [ ] Single player
+## Tutorials and Labeling
+- [ ] Paste button in password import
+## Sound and art refine
+- [ ] Sound effect plays after sound when guess has been made
+- [ ] Make Mystery Default sprite frame for phoneme selection
+  - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
+- [ ] Start up animation with the VHS
+- [ ] Teeth break for incorrect guesses?
+- [ ] Edit voice to be creepy
+- [ ] Add some kind of border or mask to phoneme selections
+- [ ] Make label theme for tooth buttons so you can have a nice border
+- [ ] Animated mouth framing
+- [ ] Import new tooth button animation
 
 ## Goals
 - [x] Add a division between consonants and vowels
@@ -13,26 +25,21 @@
 - [x] Put in temporary gifs and get all SpriteFrames created so they can just be remade easily.
 - [x] Better password creation algorithm
 - [x] If someone uses all guesses, pull up type guess menu and do not allow them to close it
-- [ ] Make Mystery Default sprite frame for phoneme selection
-  - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
 - [x] Guess Phoneme shows selection animation Big Style, NEED A CONTROL THAT CLIPS CHILDREN FOR NORMALIZED SIZES
 - [x] Refactor phoneme assembler so that it can do vowels or consonants, then just create 2 containers
 - [x] Implement word bank in builder
 - [x] Better progress bar in builder that shows 5 anims
 - [x] Queue Children need to have labels
 - [x] When all sounds have been guessed correctly, do not allow the word bank to open
-- [ ] Sound effect plays after sound when guess has been made
 - [x] Handle duplicate sounds
 - [x] Better instructions of how to use tooth buttons in word guesser and word typer
 - [x] Create and crop filtered versions
-- [ ] Start up animation with the VHS
 - [x] Menu buttons are triggering behind word bank
 - [x] Add new tooth buttons to guesser
 - [x] Apply tint to buttons that are not idling
 - [x] For added mixed up ness, make the seed sound array length + word length!
 - [x] Make instructions that appear that tell the player to use the teeth to control the menus
 - [x] VHS Shader randomly brightens and dims pixels at a given rate
-- [ ] Teeth break for incorrect guesses?
 - [x] Make password invisible
 - [x] Add Copy to Clipboard button
 - [x] On Hover for buttons, change the font file
@@ -41,27 +48,20 @@
 - [x] Add space character to fonts
 - [x] Add way to center buttons or create theme to preview how it centers on page
 - [x] When whole word is played in builder, change frames to match word that is being played
-- [ ] Edit voice to be creepy
 - [x] Change Click behavior of stylebox
-- [ ] Add some kind of border or mask to phoneme selections
 - [x] Phoneme Piece prefab for phoneme queue in builder
   - Or just make the phoneme queue itself a prefab
 - [x] Make square/4:3 monitor for the screen
   - Change containers to fit new monitor
 - [x] Duplicate phonemes shouldn't increase random pool, just new sounds
 - [x] Add text below current phoneme choice in word builder
-- [ ] Make label theme for tooth buttons so you can have a nice border
 - [x] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
 - [x] Change all backgrounds to be new background
-### - [ ] Import new tooth button animation
 - [x] CRT Shader
 - [x] Quit Game
 - [x] Add headers to label scenes, "PASSWORD EXPORTED!" etc.
-- [ ] Single player
 - [x] For number of letters in word guesser, change to a number instead of repeated '?'s
 - [x] Notifications and labels for everything
-- [ ] Animated mouth framing
-- [ ] Paste button in password import
 
 #  Scenes to make
 - Single Player
