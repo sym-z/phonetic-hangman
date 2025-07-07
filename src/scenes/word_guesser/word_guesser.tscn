@@ -38,7 +38,6 @@ tb_word_bank = NodePath("Buttons/Open Bank")
 tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
 tb_guess_word = NodePath("Buttons/Guess Whole Word")
 button_parent = NodePath("Buttons")
-debug = true
 
 [node name="Mouth Framing" parent="." instance=ExtResource("2_yawx5")]
 
@@ -46,9 +45,9 @@ debug = true
 
 [node name="Guess Information" type="VBoxContainer" parent="Guess Window"]
 offset_left = 340.0
-offset_top = 150.0
+offset_top = 141.63
 offset_right = 939.0
-offset_bottom = 186.0
+offset_bottom = 197.63
 
 [node name="Number of Letters" type="Label" parent="Guess Window/Guess Information"]
 layout_mode = 2
@@ -120,6 +119,7 @@ script = ExtResource("6_s8tt6")
 
 [node name="Type Submission" type="Control" parent="."]
 visible = false
+z_index = 5
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

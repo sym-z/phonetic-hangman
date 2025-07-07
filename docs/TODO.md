@@ -15,6 +15,10 @@
 - [ ] Make label theme for tooth buttons so you can have a nice border
 - [ ] Animated mouth framing
 - [ ] Import new tooth button animation
+## Difficulty Management
+- [ ] Enable the ability to remove random phonemes that arent a part of the word
+- [ ] Correct guesses reveal part of the word?
+
 
 ## Goals
 - [x] Add a division between consonants and vowels
