@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=13 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_yawx5"]
@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="5_yawx5"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="6_s8tt6"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="6_xw28t"]
+[ext_resource type="Script" uid="uid://bl0lhq7d3tv5a" path="res://prefabs/flashing_text/flashing_text.gd" id="9_1jr7e"]
+[ext_resource type="FontFile" uid="uid://c1y44x3ugxkyb" path="res://assets/fonts/vhs_font_blue_bg_sheet.png" id="9_bdecb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hfr5"]
+bg_color = Color(0, 0, 0.32549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bdecb"]
 
 [node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "num_sounds", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field", "tb_exit", "tb_word_bank", "tb_hear_guesses", "tb_guess_word", "button_parent")]
 layout_mode = 3
@@ -31,6 +38,7 @@ tb_word_bank = NodePath("Buttons/Open Bank")
 tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
 tb_guess_word = NodePath("Buttons/Guess Whole Word")
 button_parent = NodePath("Buttons")
+debug = true
 
 [node name="Mouth Framing" parent="." instance=ExtResource("2_yawx5")]
 
@@ -129,28 +137,48 @@ grow_vertical = 2
 
 [node name="LineEdit" type="LineEdit" parent="Type Submission"]
 layout_mode = 0
-offset_left = 341.0
-offset_top = 345.0
-offset_right = 986.0
-offset_bottom = 376.0
-placeholder_text = "TYPE GUESS HERE!"
+offset_left = 457.0
+offset_top = 348.0
+offset_right = 832.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("9_bdecb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7hfr5")
+placeholder_text = "TYPE FINAL GUESS HERE"
 alignment = 1
 
 [node name="Submit" type="Button" parent="Type Submission"]
 layout_mode = 0
-offset_left = 568.0
+offset_left = 416.0
 offset_top = 384.0
-offset_right = 740.0
-offset_bottom = 415.0
+offset_right = 890.0
+offset_bottom = 418.0
+theme = ExtResource("6_xw28t")
 text = "SUBMIT FINAL GUESS"
+script = ExtResource("6_s8tt6")
 
 [node name="Submission Cancel" type="Button" parent="Type Submission"]
 layout_mode = 0
-offset_left = 621.0
-offset_top = 425.0
-offset_right = 671.0
-offset_bottom = 456.0
+offset_left = 596.0
+offset_top = 424.0
+offset_right = 706.0
+offset_bottom = 458.0
+theme = ExtResource("6_xw28t")
 text = "BACK"
+script = ExtResource("6_s8tt6")
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 534.0
+offset_right = 814.0
+offset_bottom = 569.0
+theme_override_fonts/font = ExtResource("3_s8tt6")
+text = "USE TEETH BUTTONS
+GUESS THE MYSTERY WORD"
+label_settings = SubResource("LabelSettings_bdecb")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("9_1jr7e")
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]

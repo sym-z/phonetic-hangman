@@ -1,7 +1,7 @@
 # Overall
 - [ ] Layout Overhaul
 - [ ] Single Player
-- [ ] Tutorials and Labeling
+- [x] Tutorials and Labeling
 - [ ] Sound and art refine
 
 ## Goals
@@ -23,18 +23,17 @@
 - [x] When all sounds have been guessed correctly, do not allow the word bank to open
 - [ ] Sound effect plays after sound when guess has been made
 - [x] Handle duplicate sounds
-### - [ ] Better instructions of how to use tooth buttons in word guesser and word typer
+- [x] Better instructions of how to use tooth buttons in word guesser and word typer
 - [x] Create and crop filtered versions
 - [ ] Start up animation with the VHS
 - [x] Menu buttons are triggering behind word bank
 - [x] Add new tooth buttons to guesser
 - [x] Apply tint to buttons that are not idling
 - [x] For added mixed up ness, make the seed sound array length + word length!
-### - [ ] Make instructions that appear that tell the player to use the teeth to control the menus
+- [x] Make instructions that appear that tell the player to use the teeth to control the menus
 - [x] VHS Shader randomly brightens and dims pixels at a given rate
 - [ ] Teeth break for incorrect guesses?
 - [x] Make password invisible
-  - Requires a change from a TextEdit node to a LineEdit node
 - [x] Add Copy to Clipboard button
 - [x] On Hover for buttons, change the font file
 - [x] Create themes for buttons
@@ -55,12 +54,14 @@
 - [x] Edit mouth_prototype to animate static in the center, this solves the layering problem, but could present new issues with the panel texture that is used in the word bank
 - [x] Change all backgrounds to be new background
 ### - [ ] Import new tooth button animation
-- [ ] CRT Shader
+- [x] CRT Shader
 - [x] Quit Game
-### - [ ] Add headers to label scenes, "PASSWORD EXPORTED!" etc.
+- [x] Add headers to label scenes, "PASSWORD EXPORTED!" etc.
 - [ ] Single player
 - [x] For number of letters in word guesser, change to a number instead of repeated '?'s
-- [ ] Notifications and labels for everything
+- [x] Notifications and labels for everything
+- [ ] Animated mouth framing
+- [ ] Paste button in password import
 
 #  Scenes to make
 - Single Player

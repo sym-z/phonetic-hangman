@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cerariugi700o"]
+[gd_scene load_steps=18 format=3 uid="uid://cerariugi700o"]
 
 [ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder/word_builder.gd" id="1_b2vsm"]
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_wmqn6"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="6_1gyaw"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="6_abi5u"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="7_abi5u"]
+[ext_resource type="Script" uid="uid://bl0lhq7d3tv5a" path="res://prefabs/flashing_text/flashing_text.gd" id="10_3qlml"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7nyya"]
 animations = [{
@@ -276,6 +277,19 @@ text = "VOWELS"
 [node name="Buffer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 219.0
+offset_right = 1026.0
+offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
+theme_override_font_sizes/font_size = 12
+text = "USE THE TOOTH BUTTONS TO BUILD YOUR ENCODED WORD"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_3qlml")
 
 [connection signal="animation_looped" from="Current Phoneme Choice" to="." method="_on_current_phoneme_choice_animation_looped"]
 [connection signal="pressed" from="Word Bank/Hide" to="." method="_on_hide_pressed"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bei477ws0cgex"]
+[gd_scene load_steps=14 format=3 uid="uid://bei477ws0cgex"]
 
+[ext_resource type="Shader" uid="uid://bir3hp2rwcwfy" path="res://shaders/crt.gdshader" id="1_ami8j"]
 [ext_resource type="Texture2D" uid="uid://dl33fyge44yp" path="res://assets/ui/static_frames/static (1).png" id="1_klfmg"]
 [ext_resource type="Texture2D" uid="uid://b3knwovwd35k4" path="res://assets/ui/static_frames/static-big (1).png" id="1_n24fr"]
 [ext_resource type="Texture2D" uid="uid://qvemyvplay4y" path="res://assets/ui/static_frames/static-big (2).png" id="2_ami8j"]
@@ -10,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://xx1dt5o4jt87" path="res://assets/ui/static_frames/static (4).png" id="4_tk6qp"]
 [ext_resource type="Texture2D" uid="uid://2stw1yg35b6l" path="res://assets/ui/static_frames/static-big.png" id="5_bmjro"]
 [ext_resource type="Texture2D" uid="uid://dgvn21f5vufrm" path="res://assets/ui/static_frames/static.png" id="5_egt57"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4816"]
+shader = ExtResource("1_ami8j")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n24fr"]
 animations = [{
@@ -57,6 +61,7 @@ animations = [{
 [node name="Static Overlay" type="AnimatedSprite2D"]
 modulate = Color(1, 1, 1, 0.0784314)
 z_index = 2
+material = SubResource("ShaderMaterial_n4816")
 sprite_frames = SubResource("SpriteFrames_n24fr")
 autoplay = "default"
 centered = false
