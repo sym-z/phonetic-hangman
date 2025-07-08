@@ -189,3 +189,8 @@ var frame_lib : Dictionary[int,SpriteFrames] = {
 	42 : preload("res://assets/sprite_frames_edited/42-EAR.tres"),
 	43 : preload("res://assets/sprite_frames_edited/43-URE.tres"),
 }
+var sample_puzzles : Dictionary[String, Array] = {
+	"CHAIR": [18,38],
+	"BARREN" : [0, 38, 28, 9],
+	"CLASSIC" : [6,7,24,12,28,6],
+}

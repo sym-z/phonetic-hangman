@@ -86,5 +86,6 @@ theme_override_font_sizes/font_size = 21
 text = "INSTANT MESSAGE PHONOGRAPHY"
 horizontal_alignment = 1
 
+[connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="VBoxContainer/Create" to="." method="_on_create_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
