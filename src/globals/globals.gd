@@ -39,7 +39,7 @@ func puzzle_bank_initialize():
 	# Check for overflow with sound amounts that are greater than max
 	print(puzzle_bank.size())
 	var original_pb_size = puzzle_bank.size()
-	for i in range(original_pb_size):
+	for i in range(original_pb_size * 2):
 		if available_additions.size() > 0:
 			var random_index = randi_range(0,available_additions.size()-1)
 			puzzle_bank.append(available_additions[random_index])

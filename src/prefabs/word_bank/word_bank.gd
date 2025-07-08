@@ -33,11 +33,33 @@ func is_puzzle_mode() -> bool:
 ## Refreshes word bank to be the current state of the game
 func add_puzzle():
 	total_assembler.add_puzzle()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 func remove(id):
+	print("REMOVING ", Libraries.letter_lib[id])
 	for child in total_container.get_children():
 		if child.id == id:
 			total_container.remove_child(child)
 			child.queue_free()
+
+# Removes a random phoneme from the bank that isn't part of the solution
+# TODO: Use a parameter to delete multiple sounds so that scanning the arrays multiple times isn't necessary
+func remove_bluff_sound(count: int = 1):
+	# Create a duplicate array of the current word bank, without adding in any phonemes that are a part of the built word
+	var bluff_sounds : Array[int] = []
+	# A flag set if the phoneme can be removed
+	var valid_pick : bool = true
+	for child in total_container.get_children():
+		valid_pick = true
+		for sound in Globals.decoded_built_word:
+			if child.id == sound:
+				valid_pick = false
+		if valid_pick == true:
+			bluff_sounds.append(child.id)
+	# Shuffle the array of bluff sounds to choose a random bluff to delete
+	bluff_sounds.shuffle()
+	print("BLUFFY: ", bluff_sounds)
+	# TEMP: Remove the first sound in the bluff sounds array from the word bank
+	while (bluff_sounds.size() > 0 && count > 0):
+		remove(bluff_sounds[0])
+		bluff_sounds.remove_at(0)
+		count -= 1

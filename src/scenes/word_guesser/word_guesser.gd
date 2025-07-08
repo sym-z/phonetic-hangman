@@ -95,8 +95,7 @@ func guesses_changed():
 	# Force a typed guess if no guesses are left
 	if guesses == 0:
 		_on_guess_whole_word_pressed()
-	else:
-		num_guesses.text = "INCORRECT GUESSES LEFT: " + str(guesses)
+	num_guesses.text = "INCORRECT GUESSES LEFT: " + str(guesses)
 
 func guess(guess_id : int):
 	#TODO: Handle guessing a correct guess multiple times? Does it matter?
@@ -106,9 +105,14 @@ func guess(guess_id : int):
 			# change guess container in the same spot
 			guess_container.get_children()[i].set_phoneme_by_id(guess_id)
 			amount_correct += 1
+	# Incorrect guess
 	if amount_correct == 0:
 		guesses -= 1
 		guesses_changed()
+		word_bank.remove_bluff_sound()
+	# Correct guess
+	else:
+		word_bank.remove_bluff_sound(2)
 	word_bank.remove(guess_id)
 	
 func _on_guess_sound_pressed() -> void:

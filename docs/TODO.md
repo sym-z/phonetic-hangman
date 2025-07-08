@@ -4,9 +4,11 @@
 ### - [ ] Easy medium and hard choice (4)
 ## Tutorials and Labeling
 - [x] Paste button in password import  
+- [ ] Let players know that bluff answers are removed
+- [ ] How to play scene?
 ### - [ ] Change 'Play' to 'hear' for phoneme selection (3)
 ## Difficulty Management
-### - [ ] Enable the ability to remove random phonemes that arent a part of the word (1)
+- [x] Enable the ability to remove random phonemes that arent a part of the word (1)
 ### - [ ] Correct guesses reveal part of the typed word? (2)
 ## Sound and art refine
 - [x] Placement of word bank in guesser and builder should be the same
