@@ -1,15 +1,15 @@
 # Overall
 ## Single Player
 - [x] Single player
-- [ ] Easy medium and hard choice
+### - [ ] Easy medium and hard choice (4)
 ## Tutorials and Labeling
 - [x] Paste button in password import  
-- [ ] Change 'Play' to 'hear' for phoneme selection
+### - [ ] Change 'Play' to 'hear' for phoneme selection (3)
 ## Difficulty Management
-- [ ] Enable the ability to remove random phonemes that arent a part of the word
-- [ ] Correct guesses reveal part of the word?
+### - [ ] Enable the ability to remove random phonemes that arent a part of the word (1)
+### - [ ] Correct guesses reveal part of the typed word? (2)
 ## Sound and art refine
-- [ ] Placement of word bank in guesser and builder should be the same
+- [x] Placement of word bank in guesser and builder should be the same
 - [ ] Sound effect plays after sound when guess has been made
 - [ ] Make Mystery Default sprite frame for phoneme selection
   - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
@@ -19,8 +19,10 @@
 - [ ] Add some kind of border or mask to phoneme selections
 - [ ] Make label theme for tooth buttons so you can have a nice border
 - [ ] Animated mouth framing
-- [ ] Import new tooth button animation
+- [x] Import new tooth button animation
 - [ ] Teeth shake when selected, make shader
+- [ ] Word bank consonant and vowel label placment tweak
+- [ ] Shading around tooth button placement on mouth framing
 ## Code Cleanup
 - [ ] Get rid of print statments
 - [ ] Get rid of commented out code
@@ -73,10 +75,7 @@
 - [x] For number of letters in word guesser, change to a number instead of repeated '?'s
 - [x] Notifications and labels for everything
 
-#  Scenes to make
-- Single Player
-
-## Scenes in Progress
+## Scenes done, but needing polish
 - Word builder
   - Consonant and vowel divider
 - Word guesser
@@ -88,8 +87,6 @@
 - Password Import
 - Win Screen
 - Loss Screen
-
-## Scenes done, but needing polish
 
 ## Art Needed
 - [x] Font
@@ -110,10 +107,8 @@
 
 
 ## UI Changes
-- Selections need to display word, letter and animation clearly
 - Buttons to add and listen should be symbols, not words
   - Add to font?
-- Menus need style
 - Create styleboxes and custom fonts
 
 ## To Test
