@@ -31,7 +31,8 @@ var current_selection :  int = NO_SELECTION
 var selected_sound : AudioStreamMP3
 var selected_anim : AnimatedSprite2D
 var correct_guesses : Array[int]
-
+# Used to slowly reveal word as correct guesses are made
+var letter_reveal : Array[String]
 #TODO: Fill container of guesses with question marks = to the number of sounds in the word
 func _input(event):
 	if event.is_action("submit") and type_submission_parent.visible == true:
@@ -42,6 +43,7 @@ func _ready() -> void:
 		Globals.decoded_built_word = [5,24,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
 		Globals.decoded_typed_word = "JACK"
 	Globals.puzzle_bank_initialize()
+	initialize_letter_reveal()
 	# Make ? for each typed letter
 	count_letters()
 	# Initialize guess count
@@ -63,10 +65,13 @@ func _ready() -> void:
 			
 #region Initialization
 func count_letters():
-	num_letters.text = "LETTERS: " + str(Globals.decoded_typed_word.length())
-	num_sounds.text = "SOUNDS: " + str(Globals.decoded_built_word.size())
-	#for letter in Globals.decoded_typed_word.length():
-		#num_letters.text += "? "
+	#num_letters.text = "LETTERS: " + str(Globals.decoded_typed_word.length())
+	num_sounds.text = "SOUNDS: " + str(Globals.decoded_built_word.size()) +  " LETTERS: " + str(Globals.decoded_typed_word.length())
+	
+	num_letters.text = "WORD: "
+	for letter in letter_reveal:
+		num_letters.text += letter
+		
 	if(num_letters.text.length() > 0):
 		num_letters.text.erase(num_letters.text.length()-1,1)
 
@@ -76,6 +81,10 @@ func initialize_guess_container():
 		var mystery_sound = mystery_guess.instantiate()
 		mystery_sound.is_guess = true
 		guess_container.add_child(mystery_sound)
+
+func initialize_letter_reveal():
+	for letter in Globals.decoded_typed_word:
+		letter_reveal.append("?")
 #endregion
 
 #region Phoneme Selection
@@ -110,9 +119,11 @@ func guess(guess_id : int):
 		guesses -= 1
 		guesses_changed()
 		word_bank.remove_bluff_sound()
+		reveal_letter()
 	# Correct guess
 	else:
 		word_bank.remove_bluff_sound(2)
+		reveal_letter()
 	word_bank.remove(guess_id)
 	
 func _on_guess_sound_pressed() -> void:
@@ -228,4 +239,19 @@ func change_clickable(new_value : bool):
 	for button in button_parent.get_children():
 		button.clickable = new_value
 
+#endregion
+
+#region Letter Reveal
+func reveal_letter():
+	# Make a list of indices in the letter reveal array that contain ?, shuffle them, and reveal the letter in the typed word at that index
+	var reveal_options : Array[int]
+	for i in range(letter_reveal.size()):
+		if letter_reveal[i] == "?":
+			reveal_options.append(i)
+	reveal_options.shuffle()
+	if reveal_options.size() > 0:
+		letter_reveal[reveal_options[0]] = Globals.decoded_typed_word[reveal_options[0]]
+	num_letters.text = "WORD: "
+	for letter in letter_reveal:
+		num_letters.text += letter
 #endregion

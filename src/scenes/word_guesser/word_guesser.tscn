@@ -53,14 +53,14 @@ offset_bottom = 197.63
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("3_s8tt6")
-text = "? ? ? ? ? ? ? ? ?"
+text = "WORD"
 horizontal_alignment = 1
 
 [node name="Number of Sounds" type="Label" parent="Guess Window/Guess Information"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("3_s8tt6")
-text = "? ? ? ? ? ? ? ? ?"
+text = "SOUNDS: X LETTERS: Y"
 horizontal_alignment = 1
 
 [node name="Guesses Left" type="Label" parent="Guess Window/Guess Information"]

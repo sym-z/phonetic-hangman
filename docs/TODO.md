@@ -9,7 +9,8 @@
 ### - [ ] Change 'Play' to 'hear' for phoneme selection (3)
 ## Difficulty Management
 - [x] Enable the ability to remove random phonemes that arent a part of the word (1)
-### - [ ] Correct guesses reveal part of the typed word? (2)
+- [ ] Tune and find the right phoneme pool amount! Keep in mind maximums.
+- [x] Correct guesses reveal part of the typed word? (2)
 ## Sound and art refine
 - [x] Placement of word bank in guesser and builder should be the same
 - [ ] Sound effect plays after sound when guess has been made
