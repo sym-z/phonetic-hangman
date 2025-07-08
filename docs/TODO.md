@@ -1,16 +1,16 @@
 # Overall
 ## Single Player
 - [x] Single player
-### - [ ] Easy medium and hard choice (4)
+- [x] Easy medium and hard choice
 ## Tutorials and Labeling
 - [x] Paste button in password import  
 - [ ] Let players know that bluff answers are removed
 - [ ] How to play scene?
-- [x] Change 'Play' to 'hear' for phoneme selection (3)
+- [x] Change 'Play' to 'hear' for phoneme selection
 ## Difficulty Management
-- [x] Enable the ability to remove random phonemes that arent a part of the word (1)
+- [x] Enable the ability to remove random phonemes that arent a part of the word
 - [ ] Tune and find the right phoneme pool amount! Keep in mind maximums.
-- [x] Correct guesses reveal part of the typed word? (2)
+- [x] Correct guesses reveal part of the typed word?
 ## Sound and art refine
 - [x] Placement of word bank in guesser and builder should be the same
 - [ ] Sound effect plays after sound when guess has been made

@@ -194,3 +194,12 @@ var sample_puzzles : Dictionary[String, Array] = {
 	"BARREN" : [0, 38, 28, 9],
 	"CLASSIC" : [6,7,24,12,28,6],
 }
+var easy_puzzles : Dictionary[String, Array] = {
+	"CHAIR": [18,38],
+}
+var medium_puzzles : Dictionary[String, Array] = {
+	"BARREN" : [0, 38, 28, 9],
+}
+var hard_puzzles : Dictionary[String, Array] = {
+	"CLASSIC" : [6,7,24,12,28,6],
+}

@@ -8,6 +8,7 @@ var win_screen_scene : String = "uid://kfxcn8dt6tbx"
 var loss_screen_scene : String = "uid://d221d5cugjyy2"
 var password_export_scene : String = "uid://bgglhgm3wyfwx"
 var password_import_scene : String = "uid://cwoe7myyv72bh"
+var difficulty_selection_scene : String = "uid://cuxm7ytwopqyk"
 
 func main_menu():
 	call_deferred("change_scene", main_menu_scene)
@@ -25,6 +26,8 @@ func password_export():
 	call_deferred("change_scene", password_export_scene)
 func password_import():
 	call_deferred("change_scene", password_import_scene)
-
+func difficulty_selection():
+	call_deferred("change_scene", difficulty_selection_scene)
+	
 func change_scene(scene : String):
 	get_tree().change_scene_to_file(scene)

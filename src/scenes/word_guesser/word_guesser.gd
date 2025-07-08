@@ -66,7 +66,7 @@ func _ready() -> void:
 #region Initialization
 func count_letters():
 	#num_letters.text = "LETTERS: " + str(Globals.decoded_typed_word.length())
-	num_sounds.text = "SOUNDS: " + str(Globals.decoded_built_word.size()) +  " LETTERS: " + str(Globals.decoded_typed_word.length())
+	num_sounds.text = "SOUNDS: " + str(Globals.decoded_built_word.size()) +  ", LETTERS: " + str(Globals.decoded_typed_word.length())
 	
 	num_letters.text = "WORD: "
 	for letter in letter_reveal:
