@@ -60,3 +60,7 @@ func _on_begin_decoding_pressed():
 func _on_back_pressed():
 	Globals.reset_decoded_word()
 	SceneTransition.main_menu()
+
+
+func _on_paste_pressed():
+	password_entry.text = DisplayServer.clipboard_get()
