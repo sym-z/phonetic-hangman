@@ -11,6 +11,7 @@ var default_modulation : Color
 var on_click : Callable = debug_click
 var clickable : bool = true
 
+var shake_material = preload("uid://cf2h0cn3ospok")
 # To prevent animation interuption, animations can only change when one loops or finishes
 func _ready():
 	default_modulation = anim.modulate
@@ -39,11 +40,13 @@ func tooth_creep():
 func _on_area_2d_mouse_entered():
 	mouse_hovering = true
 	anim.modulate = selected_tint
+	anim.material = shake_material
 	center_label()
 
 func _on_area_2d_mouse_exited():
 	mouse_hovering = false
 	anim.modulate = default_modulation
+	anim.material = null
 	#anim.animation = "retract"
 	label.visible = false
 	#anim.play()

@@ -1,10 +1,8 @@
 # Overall
-## Single Player
-- [x] Single player
-- [x] Easy medium and hard choice
 ## Tutorials and Labeling
 - [x] Paste button in password import  
 - [ ] Let players know that bluff answers are removed
+ - Maybe make notification label type that removes itself after a bit of time
 - [ ] How to play scene?
 - [x] Change 'Play' to 'hear' for phoneme selection
 ## Difficulty Management
@@ -17,14 +15,15 @@
 - [ ] Make Mystery Default sprite frame for phoneme selection
   - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
 - [ ] Start up animation with the VHS
-- [ ] Teeth break for incorrect guesses?
-- [ ] Edit voice to be creepy
+- [ ] Make teeth that break when incorrect guesses are made
+### - [ ] Edit voice to be creepy (Pitch)
+### - [ ] Edit voice to be creepy (Bitcrush)
 - [ ] Add some kind of border or mask to phoneme selections
-- [ ] Make label theme for tooth buttons so you can have a nice border
+### - [ ] Make label theme for tooth buttons so you can have a nice border
 - [ ] Animated mouth framing
 - [x] Import new tooth button animation
-- [ ] Teeth shake when selected, make shader
-- [ ] Word bank consonant and vowel label placment tweak
+- [x] Teeth shake when selected, make shader
+### - [ ] Word bank consonant and vowel label placment tweak
 - [ ] Shading around tooth button placement on mouth framing
 ## Code Cleanup
 - [ ] Get rid of print statments
