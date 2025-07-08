@@ -81,18 +81,20 @@ alignment = 1
 scale = Vector2(1.39758, 1.30159)
 
 [node name="Open Bank" parent="Buttons" instance=ExtResource("4_xw28t")]
-position = Vector2(333.434, 445.609)
+position = Vector2(685.471, 370.316)
+rotation = -0.852493
 
 [node name="Guess Whole Word" parent="Buttons" instance=ExtResource("4_xw28t")]
-position = Vector2(721.962, 344.963)
-rotation = -1.15513
+position = Vector2(646.117, 158.268)
+rotation = -2.30023
 
 [node name="Hear Correct Guesses" parent="Buttons" instance=ExtResource("4_xw28t")]
-position = Vector2(585.297, 444.072)
+position = Vector2(237.553, 379.536)
+rotation = 0.883962
 
 [node name="Exit" parent="Buttons" instance=ExtResource("4_xw28t")]
-position = Vector2(183.889, 329.597)
-rotation = 1.16784
+position = Vector2(249.717, 195.914)
+rotation = 2.11523
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

@@ -1,24 +1,77 @@
-[gd_scene load_steps=20 format=3 uid="uid://bcjst2l1ryhdg"]
+[gd_scene load_steps=35 format=3 uid="uid://bcjst2l1ryhdg"]
 
 [ext_resource type="Script" uid="uid://7e2uoofk2vjw" path="res://prefabs/tooth_button/tooth_button.gd" id="1_1ri0u"]
 [ext_resource type="Texture2D" uid="uid://cejtpw318ss2f" path="res://assets/prototyping/tooth-prototype-Sheet.png" id="1_edi1c"]
+[ext_resource type="Texture2D" uid="uid://dyrlkry7ct7r" path="res://assets/ui/tooth_button_green.png" id="2_uh4dv"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_3bgh2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ri0u"]
-atlas = ExtResource("1_edi1c")
-region = Rect2(0, 0, 100, 150)
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8oo4"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(0, 0, 80, 165)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bgh2"]
-atlas = ExtResource("1_edi1c")
-region = Rect2(100, 0, 100, 150)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcxab"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(80, 0, 80, 165)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uh4dv"]
-atlas = ExtResource("1_edi1c")
-region = Rect2(200, 0, 100, 150)
+[sub_resource type="AtlasTexture" id="AtlasTexture_eglek"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(160, 0, 80, 165)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fm5r"]
-atlas = ExtResource("1_edi1c")
-region = Rect2(400, 0, 100, 150)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvl7x"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(240, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0qka"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(320, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fxdc"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(400, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_patby"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(480, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jhj5"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(560, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofs55"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(640, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1psgm"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(720, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a88ml"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(800, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkt6i"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(880, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j530o"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(960, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ns7y"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(1040, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3uyk"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(1120, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2agv"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(1200, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbuga"]
+atlas = ExtResource("2_uh4dv")
+region = Rect2(1280, 0, 80, 165)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6qs4"]
 atlas = ExtResource("1_edi1c")
@@ -35,6 +88,10 @@ region = Rect2(200, 0, 100, 150)
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4tt3"]
 atlas = ExtResource("1_edi1c")
 region = Rect2(300, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fm5r"]
+atlas = ExtResource("1_edi1c")
+region = Rect2(400, 0, 100, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2oqm5"]
 atlas = ExtResource("1_edi1c")
@@ -60,20 +117,59 @@ region = Rect2(0, 0, 100, 150)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ri0u")
+"texture": SubResource("AtlasTexture_s8oo4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3bgh2")
+"texture": SubResource("AtlasTexture_hcxab")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uh4dv")
+"texture": SubResource("AtlasTexture_eglek")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7fm5r")
+"texture": SubResource("AtlasTexture_lvl7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0qka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fxdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_patby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jhj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofs55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1psgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a88ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkt6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j530o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ns7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3uyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2agv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbuga")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -117,7 +213,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ri0u"]
-radius = 375.0
+radius = 150.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ri0u"]
 size = Vector2(87, 153)
@@ -157,7 +253,6 @@ shape = SubResource("RectangleShape2D_1ri0u")
 debug_color = Color(0.190234, 0.639553, 0.161103, 0.42)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="Clickable" to="." method="_on_clickable_input_event"]

@@ -20,6 +20,10 @@
 - [ ] Make label theme for tooth buttons so you can have a nice border
 - [ ] Animated mouth framing
 - [ ] Import new tooth button animation
+- [ ] Teeth shake when selected, make shader
+## Code Cleanup
+- [ ] Get rid of print statments
+- [ ] Get rid of commented out code
 
 
 ## Goals
