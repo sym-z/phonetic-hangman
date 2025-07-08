@@ -6,7 +6,7 @@
 - [x] Paste button in password import  
 - [ ] Let players know that bluff answers are removed
 - [ ] How to play scene?
-### - [ ] Change 'Play' to 'hear' for phoneme selection (3)
+- [x] Change 'Play' to 'hear' for phoneme selection (3)
 ## Difficulty Management
 - [x] Enable the ability to remove random phonemes that arent a part of the word (1)
 - [ ] Tune and find the right phoneme pool amount! Keep in mind maximums.
