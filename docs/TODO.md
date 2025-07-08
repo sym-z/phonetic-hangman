@@ -1,7 +1,8 @@
 # Overall
 ## Layout Overhaul
 ## Single Player
-- [ ] Single player
+- [x] Single player
+- [ ] Easy medium and hard choice
 ## Tutorials and Labeling
 - [ ] Paste button in password import  
 - [ ] Change 'Play' to 'hear' for phoneme selection
