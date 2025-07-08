@@ -1,12 +1,15 @@
 # Overall
-## Layout Overhaul
 ## Single Player
 - [x] Single player
 - [ ] Easy medium and hard choice
 ## Tutorials and Labeling
 - [ ] Paste button in password import  
 - [ ] Change 'Play' to 'hear' for phoneme selection
+## Difficulty Management
+- [ ] Enable the ability to remove random phonemes that arent a part of the word
+- [ ] Correct guesses reveal part of the word?
 ## Sound and art refine
+- [ ] Placement of word bank in guesser and builder should be the same
 - [ ] Sound effect plays after sound when guess has been made
 - [ ] Make Mystery Default sprite frame for phoneme selection
   - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
@@ -17,9 +20,6 @@
 - [ ] Make label theme for tooth buttons so you can have a nice border
 - [ ] Animated mouth framing
 - [ ] Import new tooth button animation
-## Difficulty Management
-- [ ] Enable the ability to remove random phonemes that arent a part of the word
-- [ ] Correct guesses reveal part of the word?
 
 
 ## Goals
