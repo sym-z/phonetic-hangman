@@ -91,7 +91,9 @@ func _on_add_pressed():
 
 
 func _on_play_pressed():
-	speaker.play()
+	Globals.play_speech(speaker)
+	#speaker.play()
+
 
 func reset_font():
 	letter_representation.add_theme_font_override("font", normal_font)

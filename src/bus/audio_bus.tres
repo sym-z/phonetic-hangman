@@ -1,0 +1,39 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://caeyndutguquh"]
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_bja0s"]
+resource_name = "Amplify"
+volume_db = 15.0
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_bja0s"]
+resource_name = "Phaser"
+range_min_hz = 1000.0
+rate_hz = 20.0
+feedback = 0.1
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_bja0s"]
+resource_name = "Reverb"
+room_size = 0.3
+damping = 0.2
+wet = 0.4
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_bja0s"]
+resource_name = "Compressor"
+ratio = 30.0
+gain = -2.8
+
+[resource]
+bus/0/volume_db = 1.25825
+bus/1/name = &"Speech"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectAmplify_bja0s")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectPhaser_bja0s")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectReverb_bja0s")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectCompressor_bja0s")
+bus/1/effect/3/enabled = true

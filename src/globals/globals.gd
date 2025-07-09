@@ -18,7 +18,7 @@ func reset_player_word():
 func reset_decoded_word():
 	decoded_typed_word = ""
 	decoded_built_word = []
-
+#region Puzzle Creation
 #Randomly fill the container with only the necessary sounds, then add incorrect sounds (Assure it is not a duplicate) (Do a set subtraction), then shuffle
 # Use decoded built word and a certain number of fake inputs to generate the puzzle
 func puzzle_bank_initialize():
@@ -49,3 +49,8 @@ func puzzle_bank_initialize():
 	puzzle_bank.shuffle()
 func puzzle_bank_clear():
 	puzzle_bank.clear()
+#endregion
+func play_speech(speaker : AudioStreamPlayer):
+	speaker.pitch_scale = randf_range(0.8,0.9)
+	speaker.play()
+	
