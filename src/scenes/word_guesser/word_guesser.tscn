@@ -30,7 +30,7 @@ num_guesses = NodePath("Guess Window/Guess Information/Guesses Left")
 num_sounds = NodePath("Guess Window/Guess Information/Number of Sounds")
 guess_container = NodePath("Guess Window/Current Guesses Container")
 word_bank = NodePath("Word Bank")
-speaker = NodePath("AudioStreamPlayer")
+speaker = NodePath("Selection Speaker")
 type_submission_parent = NodePath("Type Submission")
 submission_field = NodePath("Type Submission/LineEdit")
 tb_exit = NodePath("Buttons/Exit")
@@ -96,7 +96,8 @@ rotation = 0.883962
 position = Vector2(249.717, 195.914)
 rotation = 2.11523
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
+bus = &"Speech"
 
 [node name="Static Overlay" parent="." instance=ExtResource("5_yawx5")]
 position = Vector2(340, 135)
@@ -182,7 +183,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("9_1jr7e")
 
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="Selection Speaker" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]
 [connection signal="pressed" from="Type Submission/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="Type Submission/Submission Cancel" to="." method="_on_submission_cancel_pressed"]

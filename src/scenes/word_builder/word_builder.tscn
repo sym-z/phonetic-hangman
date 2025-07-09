@@ -162,6 +162,7 @@ rotation = 0.868576
 position = Vector2(782, 548)
 
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
+bus = &"Speech"
 
 [node name="Static Overlay" parent="." instance=ExtResource("5_3qlml")]
 position = Vector2(340, 135)

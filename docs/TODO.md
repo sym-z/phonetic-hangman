@@ -16,8 +16,8 @@
   - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
 - [ ] Start up animation with the VHS
 - [ ] Make teeth that break when incorrect guesses are made
-### - [ ] Edit voice to be creepy (Pitch)
-### - [ ] Edit voice to be creepy (Bitcrush)
+- [x] Edit voice to be creepy (Pitch)
+- [x] Edit voice to be creepy (Bitcrush)
 - [ ] Add some kind of border or mask to phoneme selections
 ### - [ ] Make label theme for tooth buttons so you can have a nice border
 - [ ] Animated mouth framing

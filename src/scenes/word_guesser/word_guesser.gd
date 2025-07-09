@@ -123,7 +123,7 @@ func guess(guess_id : int):
 	# Correct guess
 	else:
 		word_bank.remove_bluff_sound(2)
-		reveal_letter()
+		#reveal_letter()
 	word_bank.remove(guess_id)
 	
 func _on_guess_sound_pressed() -> void:
@@ -143,7 +143,8 @@ func _on_hear_sound_pressed(id : int) -> void:
 	if(!playing_guesses):
 		print("POOPOO")
 		speaker.stream = Libraries.sound_lib[id]
-		speaker.play()
+		#speaker.play()
+		Globals.play_speech(speaker)
 	
 #region Hearing Correct Guesses
 var playing_guesses : bool = false
@@ -158,7 +159,8 @@ func _on_hear_correct_guesses_pressed() -> void:
 			found_guess = true
 			speaker.stream = guess_container.get_children()[i].sound
 			guess_index = i
-			speaker.play()
+			#speaker.play()
+			Globals.play_speech(speaker)
 			break
 	if found_guess == false:
 		playing_guesses = false
@@ -171,13 +173,15 @@ func _on_audio_stream_player_finished() -> void:
 			if guess_container.get_children()[guess_index].id != -1:
 				print(guess_container.get_children()[guess_index].id)
 				speaker.stream = guess_container.get_children()[guess_index].sound
-				speaker.play()
+				#speaker.play()
+				Globals.play_speech(speaker)
 			else:
 				while(guess_index < guess_container.get_children().size()-1 && guess_container.get_children()[guess_index].id == -1):
 					guess_index += 1
 				if(guess_index < guess_container.get_children().size() && guess_container.get_children()[guess_index].id != -1):
 					speaker.stream = guess_container.get_children()[guess_index].sound
-					speaker.play()
+					#speaker.play()
+					Globals.play_speech(speaker)
 				if (guess_index == guess_container.get_children().size()-1):
 					playing_guesses = false
 		else:

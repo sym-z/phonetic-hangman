@@ -52,7 +52,8 @@ func selection_changed():
 		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
 		anim.sprite_frames = Libraries.frame_lib[selections[current_selection]]
 		anim.play()
-		selection_speaker.play()
+		#selection_speaker.play()
+		Globals.play_speech(selection_speaker)
 		refresh_phoneme_queue()
 		reset_label()
 	if current_selection == NO_SELECTION:
@@ -122,7 +123,8 @@ func _on_done_pressed():
 #region Sound Playing
 func _on_play_sound_pressed():
 	if(current_selection != NO_SELECTION && !playing_whole_word):
-		selection_speaker.play()
+		#selection_speaker.play()
+		Globals.play_speech(selection_speaker)
 
 var playing_whole_word : bool = false
 var current_selection_backup : int
@@ -136,7 +138,8 @@ func _on_play_whole_word_pressed():
 		refresh_phoneme_queue()
 		playing_whole_word = true
 		selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
-		selection_speaker.play()
+		#selection_speaker.play()
+		Globals.play_speech(selection_speaker)
 
 func _on_current_phoneme_choice_animation_looped():
 	if(playing_whole_word):
@@ -147,7 +150,8 @@ func _on_current_phoneme_choice_animation_looped():
 			reset_label()
 			refresh_phoneme_queue()
 			selection_speaker.stream = Libraries.sound_lib[selections[current_selection]]
-			selection_speaker.play()
+			#selection_speaker.play()
+			Globals.play_speech(selection_speaker)
 		else:
 			playing_whole_word = false
 			# Reset speaker to be selecting the current selection
