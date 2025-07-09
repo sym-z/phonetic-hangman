@@ -1,8 +1,8 @@
 # Overall
 ## Tutorials and Labeling
 - [x] Paste button in password import  
-- [ ] Let players know that bluff answers are removed
- - Maybe make notification label type that removes itself after a bit of time
+### - [ ] Let players know that bluff answers are removed
+  ### - Maybe make notification label type with script that removes itself after a bit of time
 - [ ] How to play scene?
 - [x] Change 'Play' to 'hear' for phoneme selection
 ## Difficulty Management
@@ -10,17 +10,20 @@
 - [ ] Tune and find the right phoneme pool amount! Keep in mind maximums.
 - [x] Correct guesses reveal part of the typed word?
 ## Sound and art refine
+- [ ] Better background for framing
+- [ ] Music
+- [ ] UI Button Sounds
 - [x] Placement of word bank in guesser and builder should be the same
 - [ ] Sound effect plays after sound when guess has been made
-- [ ] Make Mystery Default sprite frame for phoneme selection
-  - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
+### - [ ] Make Mystery Default sprite frame for phoneme selection
+  ### - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
 - [ ] Start up animation with the VHS
-- [ ] Make teeth that break when incorrect guesses are made
+### - [ ] Make teeth that break when incorrect guesses are made
 - [x] Edit voice to be creepy (Pitch)
 - [x] Edit voice to be creepy (Bitcrush)
 - [ ] Add some kind of border or mask to phoneme selections
 - [x] Make label theme for tooth buttons so you can have a nice border
-- [ ] Animated mouth framing
+### - [ ] Animated mouth framing
 - [x] Import new tooth button animation
 - [x] Teeth shake when selected, make shader
 - [x] Word bank consonant and vowel label placment tweak
