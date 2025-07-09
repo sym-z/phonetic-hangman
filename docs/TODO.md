@@ -22,6 +22,7 @@
 - [x] Edit voice to be creepy (Pitch)
 - [x] Edit voice to be creepy (Bitcrush)
 - [ ] Add some kind of border or mask to phoneme selections
+  - Can make a shader that makes the edges blurry using Godot example, and by lowering the transparency if the FRAGCOORD is within a certain range.
 - [x] Make label theme for tooth buttons so you can have a nice border
 ### - [ ] Animated mouth framing
 - [x] Import new tooth button animation
