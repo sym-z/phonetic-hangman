@@ -1,9 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://bcjst2l1ryhdg"]
+[gd_scene load_steps=37 format=3 uid="uid://bcjst2l1ryhdg"]
 
 [ext_resource type="Script" uid="uid://7e2uoofk2vjw" path="res://prefabs/tooth_button/tooth_button.gd" id="1_1ri0u"]
 [ext_resource type="Texture2D" uid="uid://cejtpw318ss2f" path="res://assets/prototyping/tooth-prototype-Sheet.png" id="1_edi1c"]
 [ext_resource type="Texture2D" uid="uid://dyrlkry7ct7r" path="res://assets/ui/tooth_button_green.png" id="2_uh4dv"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_3bgh2"]
+[ext_resource type="StyleBox" uid="uid://bwi5787v050jv" path="res://themes/white_label.tres" id="5_qpxx1"]
+[ext_resource type="Script" uid="uid://bl0lhq7d3tv5a" path="res://prefabs/flashing_text/flashing_text.gd" id="6_dky0a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8oo4"]
 atlas = ExtResource("2_uh4dv")
@@ -240,8 +242,12 @@ debug_color = Color(0, 0.6, 0.701961, 0.121569)
 offset_right = 47.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("3_3bgh2")
+theme_override_styles/normal = ExtResource("5_qpxx1")
 text = "PRESS"
 horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_dky0a")
+is_tooth = true
 
 [node name="Label Anchor" type="Marker2D" parent="."]
 

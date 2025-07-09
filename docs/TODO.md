@@ -19,11 +19,11 @@
 - [x] Edit voice to be creepy (Pitch)
 - [x] Edit voice to be creepy (Bitcrush)
 - [ ] Add some kind of border or mask to phoneme selections
-### - [ ] Make label theme for tooth buttons so you can have a nice border
+- [x] Make label theme for tooth buttons so you can have a nice border
 - [ ] Animated mouth framing
 - [x] Import new tooth button animation
 - [x] Teeth shake when selected, make shader
-### - [ ] Word bank consonant and vowel label placment tweak
+- [x] Word bank consonant and vowel label placment tweak
 - [ ] Shading around tooth button placement on mouth framing
 ## Code Cleanup
 - [ ] Get rid of print statments
