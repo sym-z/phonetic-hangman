@@ -16,7 +16,7 @@ bg_color = Color(0, 0, 0.32549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bdecb"]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "num_sounds", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field", "tb_exit", "tb_word_bank", "tb_hear_guesses", "tb_guess_word", "button_parent")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "num_sounds", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field", "notif_pos", "tb_exit", "tb_word_bank", "tb_hear_guesses", "tb_guess_word", "button_parent")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,6 +33,7 @@ word_bank = NodePath("Word Bank")
 speaker = NodePath("Selection Speaker")
 type_submission_parent = NodePath("Type Submission")
 submission_field = NodePath("Type Submission/LineEdit")
+notif_pos = NodePath("Notification Position")
 tb_exit = NodePath("Buttons/Exit")
 tb_word_bank = NodePath("Buttons/Open Bank")
 tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
@@ -182,6 +183,9 @@ label_settings = SubResource("LabelSettings_bdecb")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("9_1jr7e")
+
+[node name="Notification Position" type="Marker2D" parent="."]
+position = Vector2(640, 360)
 
 [connection signal="finished" from="Selection Speaker" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]

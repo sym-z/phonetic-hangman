@@ -50,7 +50,23 @@ func puzzle_bank_initialize():
 func puzzle_bank_clear():
 	puzzle_bank.clear()
 #endregion
+
+#region Playing Vocal Sounds
 func play_speech(speaker : AudioStreamPlayer):
 	speaker.pitch_scale = randf_range(0.8,0.9)
 	speaker.play()
-	
+#endregion 
+
+#region Displaying Notifications
+var notification_scene : PackedScene = preload("uid://dl71e3n5lmofn")
+func display_notification(parent : Node, text : String, duration : float, flash_time : float, pos: Vector2, centered: bool):
+	var notif = notification_scene.instantiate()
+	notif.msg = text
+	notif.duration = duration
+	notif.position = pos
+	if centered == true:
+		notif.centered = true
+	notif.label.flash_time = flash_time
+	parent.add_child(notif)
+	pass
+#endregion

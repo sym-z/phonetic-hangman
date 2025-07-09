@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dl71e3n5lmofn"]
+
+[ext_resource type="Script" uid="uid://wpw8v7qn6a7a" path="res://prefabs/notification/notification.gd" id="1_qud2j"]
+[ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_jti4h"]
+[ext_resource type="Texture2D" uid="uid://bswv68swko3wp" path="res://assets/ui/creepy_smile.png" id="2_pki0s"]
+[ext_resource type="StyleBox" uid="uid://dih1e1fd3f64w" path="res://themes/blue_label.tres" id="3_pki0s"]
+[ext_resource type="Script" uid="uid://bl0lhq7d3tv5a" path="res://prefabs/flashing_text/flashing_text.gd" id="4_3f8er"]
+
+[node name="Notification" type="Control" node_paths=PackedStringArray("panel", "hbox", "label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_qud2j")
+panel = NodePath("Panel")
+hbox = NodePath("HBoxContainer")
+label = NodePath("HBoxContainer/Text")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 44.0
+theme_override_styles/panel = ExtResource("3_pki0s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 243.0
+offset_bottom = 41.0
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_pki0s")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jti4h")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = ExtResource("3_pki0s")
+text = "asdijjalksdlkajsdaksjd"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_3f8er")
+is_tooth = true

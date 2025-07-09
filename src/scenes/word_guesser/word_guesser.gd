@@ -14,6 +14,7 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var speaker : AudioStreamPlayer
 @export var type_submission_parent : Control
 @export var submission_field : LineEdit
+@export var notif_pos : Marker2D
 
 @export_category("Tooth Buttons")
 @export var tb_exit : Node2D
@@ -120,9 +121,11 @@ func guess(guess_id : int):
 		guesses_changed()
 		word_bank.remove_bluff_sound()
 		reveal_letter()
+		Globals.display_notification(self,"INCORRECT, TYPED WORD PARTIALLY REVEALED ABOVE", 5.0,1.0,notif_pos.position,true)
 	# Correct guess
 	else:
 		word_bank.remove_bluff_sound(2)
+		Globals.display_notification(self,"CORRECT! AN EXTRA BLUFF GUESS HAS BEEN REMOVED!", 5.0,1.0,notif_pos.position,true)
 		#reveal_letter()
 	word_bank.remove(guess_id)
 	
