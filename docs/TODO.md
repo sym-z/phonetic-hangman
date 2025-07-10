@@ -13,6 +13,7 @@
 ## Sound and art refine
 ### - [ ] Improve framing of terminal (5)
 - [ ] CRT bloom and dim
+- [ ] Framing eyes that bulge when lives are taken
 - [ ] Make guesses grow from center in word guesser?
 - [ ] Screenshake on incorrect guess
 - [ ] More icons for notifications 32x32
@@ -24,7 +25,7 @@
 ### - [ ] Make Mystery Default sprite frame for phoneme selection (3) 80x80
   ### - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
 - [ ] Start up animation with the VHS
-### - [ ] Make teeth that break when incorrect guesses are made (2) 80x160
+- [x] Make teeth that break when incorrect guesses are made (2) 80x160
 - [x] Edit voice to be creepy (Pitch)
 - [x] Edit voice to be creepy (Bitcrush)
 - [ ] Add some kind of border or mask to phoneme selections
