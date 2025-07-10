@@ -11,11 +11,14 @@ extends Control
 @export var anim_marker : Marker2D
 @export var anim_control : Control
 @export var tip_control : Control
+@export var sprite_scale : Vector2
 # Customization
 @export var add_text : String = "ADD"
 
 var normal_font : Font = preload("uid://bmwluxh4jec4a")
 var selected_font : Font = preload("uid://c1y44x3ugxkyb")
+
+
 
 @export var font_size : int = 9
 @export var selected_font_size : int = 12
@@ -33,15 +36,19 @@ func _ready():
 	# TODO: This might be replaced with an icon.
 	add_button.text = add_text
 	if !is_guess:
+		animation.scale = sprite_scale
 		letter_representation.text = letters
 		word_example.text = word
 		speaker.stream = sound
 		animation.sprite_frames = frames
 		animation.position = anim_marker.position
 		animation.play()
+		
 	else:
-		letter_representation.text = "???"
-		word_example.text = "???"
+		animation.scale = Vector2(1,1)
+		letter_representation.text = ""
+		word_example.text = ""
+		animation.sprite_frames = Libraries.mystery_sprite_frames
 		self.id = -1
 		#SET MYSTERY SPRITE FRAMES HERE
 	reset_font()
@@ -61,6 +68,7 @@ func set_phoneme_by_id(id : int):
 	animation.position = anim_marker.position
 	animation.play()
 	
+	animation.scale = sprite_scale
 	self.id = id
 	
 

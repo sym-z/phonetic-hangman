@@ -22,8 +22,8 @@
 - [ ] UI Button Sounds
 - [x] Placement of word bank in guesser and builder should be the same
 - [ ] Sound effect plays after sound when guess has been made
-### - [ ] Make Mystery Default sprite frame for phoneme selection (3) 80x80
-  ### - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
+- [x] Make Mystery Default sprite frame for phoneme selection (3) 80x80
+  - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
 - [ ] Start up animation with the VHS
 - [x] Make teeth that break when incorrect guesses are made (2) 80x160
 - [x] Edit voice to be creepy (Pitch)

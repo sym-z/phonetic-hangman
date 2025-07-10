@@ -40,6 +40,7 @@ animation = NodePath("Animation/AnimatedSprite2D")
 anim_marker = NodePath("Animation/Marker2D")
 anim_control = NodePath("Animation")
 tip_control = NodePath("Tips")
+sprite_scale = Vector2(0.34, 0.34)
 
 [node name="Animation" type="Control" parent="."]
 clip_contents = true
