@@ -9,17 +9,22 @@
 - [x] Enable the ability to remove random phonemes that arent a part of the word
 - [ ] Tune and find the right phoneme pool amount! Keep in mind maximums.
 - [x] Correct guesses reveal part of the typed word?
+- [ ] Can Difficulty Selection also affect ruleset? Will have to include difficulty select screen in multiplayer if so.
 ## Sound and art refine
-- [ ] More icons for notifications
+### - [ ] Improve framing of terminal (5)
+- [ ] CRT bloom and dim
+- [ ] Make guesses grow from center in word guesser?
+- [ ] Screenshake on incorrect guess
+- [ ] More icons for notifications 32x32
 - [ ] Better background for framing
 - [ ] Music
 - [ ] UI Button Sounds
 - [x] Placement of word bank in guesser and builder should be the same
 - [ ] Sound effect plays after sound when guess has been made
-### - [ ] Make Mystery Default sprite frame for phoneme selection (3)
+### - [ ] Make Mystery Default sprite frame for phoneme selection (3) 80x80
   ### - Being that you have a setting for a mystery guess for a phoneme selection, make the sprite attach depending on that property being true
 - [ ] Start up animation with the VHS
-### - [ ] Make teeth that break when incorrect guesses are made (2)
+### - [ ] Make teeth that break when incorrect guesses are made (2) 80x160
 - [x] Edit voice to be creepy (Pitch)
 - [x] Edit voice to be creepy (Bitcrush)
 - [ ] Add some kind of border or mask to phoneme selections

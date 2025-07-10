@@ -3,7 +3,7 @@ extends Control
 var phoneme_selection_scene : PackedScene = preload("res://prefabs/phoneme_selection/phoneme_selection.tscn")
 # Will be ? eventually, is phoneme_selection as of right now
 var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phoneme_selection.tscn")
-
+var shake_material : Material = preload("uid://cf2h0cn3ospok")
 
 @export var num_letters : Label
 @export var num_guesses : Label
@@ -15,6 +15,8 @@ var mystery_guess : PackedScene = preload("res://prefabs/phoneme_selection/phone
 @export var type_submission_parent : Control
 @export var submission_field : LineEdit
 @export var notif_pos : Marker2D
+
+@export var lives_parent : Node2D
 
 @export_category("Tooth Buttons")
 @export var tb_exit : Node2D
@@ -122,6 +124,7 @@ func guess(guess_id : int):
 		word_bank.remove_bluff_sound()
 		reveal_letter()
 		Globals.display_notification(self,"INCORRECT, TYPED WORD PARTIALLY REVEALED ABOVE", 5.0,1.0,notif_pos.position,true)
+		break_teeth()
 	# Correct guess
 	else:
 		word_bank.remove_bluff_sound(2)
@@ -139,6 +142,15 @@ func check_total_guessed() -> bool:
 		if child.id == -1:
 			return false
 	return true
+
+func break_teeth():
+	for child in lives_parent.get_children():
+		if(child.frame < child.sprite_frames.get_frame_count("default")-1):
+			child.frame += 1
+			child.modulate = child.modulate * Color(1,0.75,0.75,1)
+		if child.frame >= child.sprite_frames.get_frame_count("default")/2:
+			child.material = shake_material
+	pass
 #endregion
 
 # Plays sound when phoneme is chosen

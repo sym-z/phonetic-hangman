@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6l5tmj3il6qg"]
+
+[ext_resource type="Texture2D" uid="uid://c8stylayvg7as" path="res://assets/ui/tooth_life.png" id="1_fnnef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24ppf"]
+atlas = ExtResource("1_fnnef")
+region = Rect2(0, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7vm0"]
+atlas = ExtResource("1_fnnef")
+region = Rect2(80, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrn1v"]
+atlas = ExtResource("1_fnnef")
+region = Rect2(160, 0, 80, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qa3t"]
+atlas = ExtResource("1_fnnef")
+region = Rect2(240, 0, 80, 165)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uk0jv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24ppf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7vm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrn1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qa3t")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tooth Life" type="AnimatedSprite2D"]
+z_index = 3
+sprite_frames = SubResource("SpriteFrames_uk0jv")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=14 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_yawx5"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_s8tt6"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 [ext_resource type="PackedScene" uid="uid://bcjst2l1ryhdg" path="res://prefabs/tooth_button/tooth_button.tscn" id="4_xw28t"]
+[ext_resource type="PackedScene" uid="uid://c6l5tmj3il6qg" path="res://prefabs/tooth_life/tooth_life.tscn" id="5_7hfr5"]
 [ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="5_yawx5"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="6_s8tt6"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="6_xw28t"]
@@ -16,7 +17,7 @@ bg_color = Color(0, 0, 0.32549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bdecb"]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "num_sounds", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field", "notif_pos", "tb_exit", "tb_word_bank", "tb_hear_guesses", "tb_guess_word", "button_parent")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "num_sounds", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field", "notif_pos", "lives_parent", "tb_exit", "tb_word_bank", "tb_hear_guesses", "tb_guess_word", "button_parent")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,6 +35,7 @@ speaker = NodePath("Selection Speaker")
 type_submission_parent = NodePath("Type Submission")
 submission_field = NodePath("Type Submission/LineEdit")
 notif_pos = NodePath("Notification Position")
+lives_parent = NodePath("Lives")
 tb_exit = NodePath("Buttons/Exit")
 tb_word_bank = NodePath("Buttons/Open Bank")
 tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
@@ -96,6 +98,41 @@ rotation = 0.883962
 [node name="Exit" parent="Buttons" instance=ExtResource("4_xw28t")]
 position = Vector2(249.717, 195.914)
 rotation = 2.11523
+
+[node name="Lives" type="Node2D" parent="."]
+
+[node name="Tooth Life" parent="Lives" instance=ExtResource("5_7hfr5")]
+position = Vector2(964, 571)
+rotation = -0.855771
+scale = Vector2(0.5, 0.5)
+flip_h = true
+
+[node name="Tooth Life2" parent="Lives" instance=ExtResource("5_7hfr5")]
+position = Vector2(322, 579)
+rotation = 0.903603
+scale = Vector2(0.5, 0.5)
+
+[node name="Tooth Life3" parent="Lives" instance=ExtResource("5_7hfr5")]
+position = Vector2(327, 172)
+rotation = 2.17776
+scale = Vector2(0.5, 0.5)
+flip_h = true
+
+[node name="Tooth Life4" parent="Lives" instance=ExtResource("5_7hfr5")]
+position = Vector2(257, 276)
+rotation = 2.04947
+scale = Vector2(0.5, 0.5)
+
+[node name="Tooth Life5" parent="Lives" instance=ExtResource("5_7hfr5")]
+position = Vector2(983, 208)
+rotation = -1.98547
+scale = Vector2(0.5, 0.5)
+flip_h = true
+
+[node name="Tooth Life6" parent="Lives" instance=ExtResource("5_7hfr5")]
+position = Vector2(912, 129)
+rotation = 3.79747
+scale = Vector2(0.5, 0.5)
 
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
 bus = &"Speech"
