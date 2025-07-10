@@ -5,13 +5,14 @@
 - [x] Maybe make notification label type with script that removes itself after a bit of time
 - [ ] How to play scene?
 - [x] Change 'Play' to 'hear' for phoneme selection
+### - [ ] Word typer uses notifications to tell user that word is incorrectly formatted (4)
 ## Difficulty Management
 - [x] Enable the ability to remove random phonemes that arent a part of the word
-- [ ] Tune and find the right phoneme pool amount! Keep in mind maximums.
+### - [ ] Tune and find the right phoneme pool amount! Keep in mind maximums. (3)
 - [x] Correct guesses reveal part of the typed word?
 - [ ] Can Difficulty Selection also affect ruleset? Will have to include difficulty select screen in multiplayer if so.
 ## Sound and art refine
-### - [ ] Improve framing of terminal (5)
+### - [ ] Improve framing of terminal (2)
 - [ ] CRT bloom and dim
 - [ ] Framing eyes that bulge when lives are taken
 - [ ] Make guesses grow from center in word guesser?
@@ -31,7 +32,7 @@
 - [ ] Add some kind of border or mask to phoneme selections
   - Can make a shader that makes the edges blurry using Godot example, and by lowering the transparency if the FRAGCOORD is within a certain range.
 - [x] Make label theme for tooth buttons so you can have a nice border
-### - [ ] Animated mouth framing (4)
+### - [ ] Animated mouth framing (1)
 - [x] Import new tooth button animation
 - [x] Teeth shake when selected, make shader
 - [x] Word bank consonant and vowel label placment tweak
