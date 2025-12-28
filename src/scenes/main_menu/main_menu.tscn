@@ -1,23 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxg5bb4sk08en"]
+[gd_scene load_steps=10 format=3 uid="uid://cxg5bb4sk08en"]
 
 [ext_resource type="Theme" uid="uid://mu1h0xpxq6v0" path="res://themes/full_screen_button_margin_container.tres" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://crsmlman418qm" path="res://scenes/main_menu/main_menu.gd" id="2_ekxnf"]
-[ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="3_5seab"]
+[ext_resource type="PackedScene" uid="uid://d0uq0a68q2nat" path="res://scenes/background_layer.tscn" id="3_thkx5"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_uqeha"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="4_3ovsr"]
-[ext_resource type="Texture2D" uid="uid://cf3k3lx3fb51x" path="res://assets/ui/screen_bg.png" id="4_lqpn7"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="4_wem23"]
-[ext_resource type="Texture2D" uid="uid://bjemrotybopbc" path="res://assets/ui/mouth_framing_2.png" id="5_qel0l"]
 [ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="7_5seab"]
 [ext_resource type="Script" uid="uid://bl0lhq7d3tv5a" path="res://prefabs/flashing_text/flashing_text.gd" id="8_4xg86"]
-[ext_resource type="Shader" uid="uid://bjqme6rikqp7w" path="res://shaders/vhs_cyanone.gdshader" id="9_thkx5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2yjq"]
-shader = ExtResource("9_thkx5")
-shader_parameter/wiggle = 0.03
-shader_parameter/wiggle_speed = 25.0
-shader_parameter/smear = 1.0
-shader_parameter/blur_samples = 15
+[ext_resource type="PackedScene" uid="uid://bvv1ms3kaecmu" path="res://scenes/shader_layer.tscn" id="12_qel0l"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -29,15 +20,7 @@ grow_vertical = 2
 theme = ExtResource("1_l6cm7")
 script = ExtResource("2_ekxnf")
 
-[node name="Background" parent="." instance=ExtResource("3_5seab")]
-position = Vector2(-88, -36)
-texture = ExtResource("4_lqpn7")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="Mouth Framing" parent="CanvasLayer2" instance=ExtResource("3_5seab")]
-texture = ExtResource("5_qel0l")
+[node name="Background Layer" parent="." instance=ExtResource("3_thkx5")]
 
 [node name="Static Overlay" parent="." instance=ExtResource("7_5seab")]
 position = Vector2(340, 135)
@@ -104,16 +87,7 @@ theme_override_font_sizes/font_size = 21
 text = "INSTANT MESSAGE PHONOGRAPHY"
 horizontal_alignment = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="VHS TEARING" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_x2yjq")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="ShaderLayer" parent="." instance=ExtResource("12_qel0l")]
 
 [connection signal="pressed" from="VBoxContainer/Single Player" to="." method="_on_single_player_pressed"]
 [connection signal="pressed" from="VBoxContainer/Create" to="." method="_on_create_pressed"]

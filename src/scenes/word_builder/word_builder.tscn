@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cerariugi700o"]
+[gd_scene load_steps=20 format=3 uid="uid://cerariugi700o"]
 
 [ext_resource type="Script" uid="uid://1jcw50iassid" path="res://scenes/word_builder/word_builder.gd" id="1_b2vsm"]
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_wmqn6"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="5_3qlml"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="6_1gyaw"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="6_abi5u"]
+[ext_resource type="PackedScene" uid="uid://d0uq0a68q2nat" path="res://scenes/background_layer.tscn" id="6_qmlf6"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="7_abi5u"]
 [ext_resource type="Script" uid="uid://bl0lhq7d3tv5a" path="res://prefabs/flashing_text/flashing_text.gd" id="10_3qlml"]
+[ext_resource type="PackedScene" uid="uid://bvv1ms3kaecmu" path="res://scenes/shader_layer.tscn" id="12_gq43f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7nyya"]
 animations = [{
@@ -91,20 +93,20 @@ grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
 script = ExtResource("1_b2vsm")
-word_bank = NodePath("Word Bank")
+word_bank = NodePath("CanvasLayer/Word Bank")
 selection_speaker = NodePath("Selection Speaker")
 anim = NodePath("Current Phoneme Choice")
 anim_label = NodePath("Current Phoneme Choice/Current Phoneme Label")
 phoneme_queue_parent = NodePath("Phoneme Queue")
-tb_prev_sound = NodePath("Buttons/Prev Sound2")
-tb_next_sound = NodePath("Buttons/Next Sound2")
-tb_play_sound = NodePath("Buttons/Play Sound2")
-tb_play_word = NodePath("Buttons/Play Word2")
-tb_del_sound = NodePath("Buttons/Delete Sound2")
-tb_done = NodePath("Buttons/Done2")
-tb_cancel = NodePath("Buttons/Cancel2")
-tb_add_sound = NodePath("Buttons/Add2")
-button_parent = NodePath("Buttons")
+tb_prev_sound = NodePath("Buttonlayer/Buttons/Prev Sound2")
+tb_next_sound = NodePath("Buttonlayer/Buttons/Next Sound2")
+tb_play_sound = NodePath("Buttonlayer/Buttons/Play Sound2")
+tb_play_word = NodePath("Buttonlayer/Buttons/Play Word2")
+tb_del_sound = NodePath("Buttonlayer/Buttons/Delete Sound2")
+tb_done = NodePath("Buttonlayer/Buttons/Done2")
+tb_cancel = NodePath("Buttonlayer/Buttons/Cancel2")
+tb_add_sound = NodePath("Buttonlayer/Buttons/Add2")
+button_parent = NodePath("Buttonlayer/Buttons")
 metadata/_edit_use_anchors_ = true
 
 [node name="Mouth Framing" parent="." instance=ExtResource("2_wmqn6")]
@@ -121,8 +123,11 @@ theme = SubResource("Theme_wmqn6")
 text = "USE TEETH BUTTONS TO ADD SOUNDS"
 horizontal_alignment = 1
 
-[node name="Buttons" type="Control" parent="."]
-layout_mode = 1
+[node name="Buttonlayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Buttons" type="Control" parent="Buttonlayer"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -130,39 +135,41 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Prev Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+[node name="Prev Sound2" parent="Buttonlayer/Buttons" instance=ExtResource("4_856pw")]
 position = Vector2(297, 281)
 rotation = 2.01175
 
-[node name="Next Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+[node name="Next Sound2" parent="Buttonlayer/Buttons" instance=ExtResource("4_856pw")]
 position = Vector2(983, 279)
 rotation = -1.9892
 
-[node name="Play Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+[node name="Play Sound2" parent="Buttonlayer/Buttons" instance=ExtResource("4_856pw")]
 position = Vector2(462, 179)
 rotation = 3.14159
 
-[node name="Play Word2" parent="Buttons" instance=ExtResource("4_856pw")]
+[node name="Play Word2" parent="Buttonlayer/Buttons" instance=ExtResource("4_856pw")]
 position = Vector2(833, 182)
 rotation = 3.14159
 
-[node name="Delete Sound2" parent="Buttons" instance=ExtResource("4_856pw")]
+[node name="Delete Sound2" parent="Buttonlayer/Buttons" instance=ExtResource("4_856pw")]
 position = Vector2(377, 545)
 rotation = 0.290105
 
-[node name="Done2" parent="Buttons" instance=ExtResource("4_856pw")]
+[node name="Done2" parent="Buttonlayer/Buttons" instance=ExtResource("4_856pw")]
 position = Vector2(973, 508)
 rotation = -0.886048
 
-[node name="Cancel2" parent="Buttons" instance=ExtResource("4_856pw")]
+[node name="Cancel2" parent="Buttonlayer/Buttons" instance=ExtResource("4_856pw")]
 position = Vector2(306, 507)
 rotation = 0.868576
 
-[node name="Add2" parent="Buttons" instance=ExtResource("4_856pw")]
+[node name="Add2" parent="Buttonlayer/Buttons" instance=ExtResource("4_856pw")]
 position = Vector2(782, 548)
 
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
 bus = &"Speech"
+
+[node name="Background Layer" parent="." instance=ExtResource("6_qmlf6")]
 
 [node name="Static Overlay" parent="." instance=ExtResource("5_3qlml")]
 position = Vector2(340, 135)
@@ -235,51 +242,6 @@ theme_override_font_sizes/font_size = 48
 text = "BLAH"
 horizontal_alignment = 1
 
-[node name="Word Bank" parent="." instance=ExtResource("4_8jq4x")]
-visible = false
-layout_mode = 1
-scale_items = 1.7
-
-[node name="Hide" type="Button" parent="Word Bank"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -198.0
-offset_top = 298.995
-offset_right = 198.0
-offset_bottom = 332.995
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("6_abi5u")
-theme_override_fonts/font = ExtResource("6_1gyaw")
-text = "CLOSE WORD BANK"
-script = ExtResource("7_abi5u")
-
-[node name="Consonants Label" type="Label" parent="Word Bank"]
-layout_mode = 0
-offset_left = 261.0
-offset_top = 600.0
-offset_right = 481.0
-offset_bottom = 623.0
-theme_override_fonts/font = ExtResource("6_1gyaw")
-theme_override_font_sizes/font_size = 22
-text = "CONSONANTS"
-script = ExtResource("10_3qlml")
-
-[node name="Vowels Label" type="Label" parent="Word Bank"]
-layout_mode = 0
-offset_left = 894.0
-offset_top = 602.0
-offset_right = 1026.0
-offset_bottom = 625.0
-theme_override_fonts/font = ExtResource("6_1gyaw")
-theme_override_font_sizes/font_size = 22
-text = "VOWELS"
-script = ExtResource("10_3qlml")
-
 [node name="Buffer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
@@ -297,5 +259,54 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("10_3qlml")
 
+[node name="ShaderLayer" parent="." instance=ExtResource("12_gq43f")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Word Bank" parent="CanvasLayer" instance=ExtResource("4_8jq4x")]
+visible = false
+scale_items = 1.7
+
+[node name="Hide" type="Button" parent="CanvasLayer/Word Bank"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = 298.995
+offset_right = 198.0
+offset_bottom = 332.995
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_abi5u")
+theme_override_fonts/font = ExtResource("6_1gyaw")
+text = "CLOSE WORD BANK"
+script = ExtResource("7_abi5u")
+
+[node name="Consonants Label" type="Label" parent="CanvasLayer/Word Bank"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 600.0
+offset_right = 481.0
+offset_bottom = 623.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
+theme_override_font_sizes/font_size = 22
+text = "CONSONANTS"
+script = ExtResource("10_3qlml")
+
+[node name="Vowels Label" type="Label" parent="CanvasLayer/Word Bank"]
+layout_mode = 0
+offset_left = 894.0
+offset_top = 602.0
+offset_right = 1026.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("6_1gyaw")
+theme_override_font_sizes/font_size = 22
+text = "VOWELS"
+script = ExtResource("10_3qlml")
+
 [connection signal="animation_looped" from="Current Phoneme Choice" to="." method="_on_current_phoneme_choice_animation_looped"]
-[connection signal="pressed" from="Word Bank/Hide" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="CanvasLayer/Word Bank/Hide" to="." method="_on_hide_pressed"]

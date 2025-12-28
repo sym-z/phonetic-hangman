@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://d221d5cugjyy2"]
+[gd_scene load_steps=9 format=3 uid="uid://d221d5cugjyy2"]
 
-[ext_resource type="Script" uid="uid://dtos87grfo2sl" path="res://scenes/loss_screen/loss_screen.gd" id="1_4ggvd"]
+[ext_resource type="Script" path="res://scenes/loss_screen/loss_screen.gd" id="1_4ggvd"]
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_bkoa0"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_d4hrk"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="3_aqbds"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="3_bkoa0"]
 [ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="3_fdrxj"]
+[ext_resource type="PackedScene" uid="uid://d0uq0a68q2nat" path="res://scenes/background_layer.tscn" id="3_nnm3n"]
+[ext_resource type="PackedScene" uid="uid://bvv1ms3kaecmu" path="res://scenes/shader_layer.tscn" id="8_1hmaa"]
 
 [node name="Loss Screen" type="Control"]
 layout_mode = 3
@@ -17,6 +19,8 @@ grow_vertical = 2
 script = ExtResource("1_4ggvd")
 
 [node name="Mouth Framing" parent="." instance=ExtResource("2_bkoa0")]
+
+[node name="Background Layer" parent="." instance=ExtResource("3_nnm3n")]
 
 [node name="Static Overlay" parent="." instance=ExtResource("3_fdrxj")]
 position = Vector2(340, 135)
@@ -48,5 +52,7 @@ theme = ExtResource("3_bkoa0")
 theme_override_fonts/font = ExtResource("2_d4hrk")
 text = "BACK TO MAIN MENU"
 script = ExtResource("3_aqbds")
+
+[node name="ShaderLayer" parent="." instance=ExtResource("8_1hmaa")]
 
 [connection signal="pressed" from="VBoxContainer/Back to Menu" to="." method="_on_back_to_menu_pressed"]

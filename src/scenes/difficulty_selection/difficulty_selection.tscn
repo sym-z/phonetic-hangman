@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuxm7ytwopqyk"]
+[gd_scene load_steps=11 format=3 uid="uid://cuxm7ytwopqyk"]
 
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="1_187vm"]
 [ext_resource type="Script" uid="uid://dj2fk3qnaggfh" path="res://scenes/difficulty_selection/difficulty_selection.gd" id="1_exdhg"]
 [ext_resource type="PackedScene" uid="uid://bei477ws0cgex" path="res://prefabs/static_overlay/static_overlay.tscn" id="2_exdhg"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="3_nypea"]
+[ext_resource type="PackedScene" uid="uid://d0uq0a68q2nat" path="res://scenes/background_layer.tscn" id="3_x0ael"]
 [ext_resource type="Script" uid="uid://cvmu3tm8o7llm" path="res://prefabs/ui_button/ui_button.gd" id="4_x0ael"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="5_0ceec"]
 [ext_resource type="Script" uid="uid://bl0lhq7d3tv5a" path="res://prefabs/flashing_text/flashing_text.gd" id="6_rbyho"]
+[ext_resource type="PackedScene" uid="uid://bvv1ms3kaecmu" path="res://scenes/shader_layer.tscn" id="9_0ceec"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6w2s7"]
 font = ExtResource("5_0ceec")
@@ -22,6 +24,8 @@ grow_vertical = 2
 script = ExtResource("1_exdhg")
 
 [node name="Mouth Framing" parent="." instance=ExtResource("1_187vm")]
+
+[node name="Background Layer" parent="." instance=ExtResource("3_x0ael")]
 
 [node name="Static Overlay" parent="." instance=ExtResource("2_exdhg")]
 position = Vector2(340, 135)
@@ -74,6 +78,8 @@ text = "SELECT WORD DIFFICULTY"
 label_settings = SubResource("LabelSettings_6w2s7")
 horizontal_alignment = 1
 script = ExtResource("6_rbyho")
+
+[node name="ShaderLayer" parent="." instance=ExtResource("9_0ceec")]
 
 [connection signal="pressed" from="VBoxContainer/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="VBoxContainer/Medium" to="." method="_on_medium_pressed"]

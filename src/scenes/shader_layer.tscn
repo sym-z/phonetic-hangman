@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvv1ms3kaecmu"]
+
+[ext_resource type="Shader" uid="uid://bjqme6rikqp7w" path="res://shaders/vhs_cyanone.gdshader" id="1_8xm16"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2yjq"]
+shader = ExtResource("1_8xm16")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.5
+shader_parameter/blur_samples = 5
+
+[node name="ShaderLayer" type="CanvasLayer"]
+
+[node name="VHS TEARING" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_x2yjq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

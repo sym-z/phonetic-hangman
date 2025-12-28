@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0uq0a68q2nat"]
+
+[ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="1_qgrx8"]
+[ext_resource type="Texture2D" uid="uid://cf3k3lx3fb51x" path="res://assets/ui/screen_bg.png" id="2_ghj2a"]
+[ext_resource type="Texture2D" uid="uid://bjemrotybopbc" path="res://assets/ui/mouth_framing_2.png" id="3_cu4e4"]
+
+[node name="Background Layer" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_qgrx8")]
+position = Vector2(-88, -36)
+texture = ExtResource("2_ghj2a")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Mouth Framing" parent="CanvasLayer2" instance=ExtResource("1_qgrx8")]
+texture = ExtResource("3_cu4e4")

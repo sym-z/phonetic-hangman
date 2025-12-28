@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dt671ex55ahu4"]
+[gd_scene load_steps=16 format=3 uid="uid://dt671ex55ahu4"]
 
 [ext_resource type="Script" uid="uid://d1dc53onxbxxf" path="res://scenes/word_guesser/word_guesser.gd" id="1_510jw"]
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_yawx5"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="3_s8tt6"]
+[ext_resource type="PackedScene" uid="uid://d0uq0a68q2nat" path="res://scenes/background_layer.tscn" id="3_tfy2n"]
 [ext_resource type="PackedScene" uid="uid://bymrqbk1dvbjv" path="res://prefabs/word_bank/word_bank.tscn" id="4_510jw"]
 [ext_resource type="PackedScene" uid="uid://bcjst2l1ryhdg" path="res://prefabs/tooth_button/tooth_button.tscn" id="4_xw28t"]
 [ext_resource type="PackedScene" uid="uid://c6l5tmj3il6qg" path="res://prefabs/tooth_life/tooth_life.tscn" id="5_7hfr5"]
@@ -11,6 +12,7 @@
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="6_xw28t"]
 [ext_resource type="Script" uid="uid://bl0lhq7d3tv5a" path="res://prefabs/flashing_text/flashing_text.gd" id="9_1jr7e"]
 [ext_resource type="FontFile" uid="uid://c1y44x3ugxkyb" path="res://assets/fonts/vhs_font_blue_bg_sheet.png" id="9_bdecb"]
+[ext_resource type="PackedScene" uid="uid://bvv1ms3kaecmu" path="res://scenes/shader_layer.tscn" id="13_q477n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hfr5"]
 bg_color = Color(0, 0, 0.32549, 1)
@@ -30,19 +32,21 @@ num_letters = NodePath("Guess Window/Guess Information/Number of Letters")
 num_guesses = NodePath("Guess Window/Guess Information/Guesses Left")
 num_sounds = NodePath("Guess Window/Guess Information/Number of Sounds")
 guess_container = NodePath("Guess Window/Current Guesses Container")
-word_bank = NodePath("Word Bank")
+word_bank = NodePath("WordBank Layer/Word Bank")
 speaker = NodePath("Selection Speaker")
-type_submission_parent = NodePath("Type Submission")
-submission_field = NodePath("Type Submission/LineEdit")
+type_submission_parent = NodePath("Submission Layer/Type Submission")
+submission_field = NodePath("Submission Layer/Type Submission/LineEdit")
 notif_pos = NodePath("Notification Position")
-lives_parent = NodePath("Lives")
-tb_exit = NodePath("Buttons/Exit")
-tb_word_bank = NodePath("Buttons/Open Bank")
-tb_hear_guesses = NodePath("Buttons/Hear Correct Guesses")
-tb_guess_word = NodePath("Buttons/Guess Whole Word")
-button_parent = NodePath("Buttons")
+lives_parent = NodePath("ButtonLayer/Lives")
+tb_exit = NodePath("ButtonLayer/Buttons/Exit")
+tb_word_bank = NodePath("ButtonLayer/Buttons/Open Bank")
+tb_hear_guesses = NodePath("ButtonLayer/Buttons/Hear Correct Guesses")
+tb_guess_word = NodePath("ButtonLayer/Buttons/Guess Whole Word")
+button_parent = NodePath("ButtonLayer/Buttons")
 
 [node name="Mouth Framing" parent="." instance=ExtResource("2_yawx5")]
+
+[node name="Background Layer" parent="." instance=ExtResource("3_tfy2n")]
 
 [node name="Guess Window" type="Node2D" parent="."]
 
@@ -80,56 +84,59 @@ offset_right = 939.0
 offset_bottom = 555.1
 alignment = 1
 
-[node name="Buttons" type="Node2D" parent="."]
+[node name="ButtonLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Buttons" type="Node2D" parent="ButtonLayer"]
 scale = Vector2(1.39758, 1.30159)
 
-[node name="Open Bank" parent="Buttons" instance=ExtResource("4_xw28t")]
+[node name="Open Bank" parent="ButtonLayer/Buttons" instance=ExtResource("4_xw28t")]
 position = Vector2(685.471, 370.316)
 rotation = -0.852493
 
-[node name="Guess Whole Word" parent="Buttons" instance=ExtResource("4_xw28t")]
+[node name="Guess Whole Word" parent="ButtonLayer/Buttons" instance=ExtResource("4_xw28t")]
 position = Vector2(646.117, 158.268)
 rotation = -2.30023
 
-[node name="Hear Correct Guesses" parent="Buttons" instance=ExtResource("4_xw28t")]
+[node name="Hear Correct Guesses" parent="ButtonLayer/Buttons" instance=ExtResource("4_xw28t")]
 position = Vector2(237.553, 379.536)
 rotation = 0.883962
 
-[node name="Exit" parent="Buttons" instance=ExtResource("4_xw28t")]
+[node name="Exit" parent="ButtonLayer/Buttons" instance=ExtResource("4_xw28t")]
 position = Vector2(249.717, 195.914)
 rotation = 2.11523
 
-[node name="Lives" type="Node2D" parent="."]
+[node name="Lives" type="Node2D" parent="ButtonLayer"]
 
-[node name="Tooth Life" parent="Lives" instance=ExtResource("5_7hfr5")]
+[node name="Tooth Life" parent="ButtonLayer/Lives" instance=ExtResource("5_7hfr5")]
 position = Vector2(964, 571)
 rotation = -0.855771
 scale = Vector2(0.5, 0.5)
 flip_h = true
 
-[node name="Tooth Life2" parent="Lives" instance=ExtResource("5_7hfr5")]
+[node name="Tooth Life2" parent="ButtonLayer/Lives" instance=ExtResource("5_7hfr5")]
 position = Vector2(322, 579)
 rotation = 0.903603
 scale = Vector2(0.5, 0.5)
 
-[node name="Tooth Life3" parent="Lives" instance=ExtResource("5_7hfr5")]
+[node name="Tooth Life3" parent="ButtonLayer/Lives" instance=ExtResource("5_7hfr5")]
 position = Vector2(327, 172)
 rotation = 2.17776
 scale = Vector2(0.5, 0.5)
 flip_h = true
 
-[node name="Tooth Life4" parent="Lives" instance=ExtResource("5_7hfr5")]
+[node name="Tooth Life4" parent="ButtonLayer/Lives" instance=ExtResource("5_7hfr5")]
 position = Vector2(257, 276)
 rotation = 2.04947
 scale = Vector2(0.5, 0.5)
 
-[node name="Tooth Life5" parent="Lives" instance=ExtResource("5_7hfr5")]
+[node name="Tooth Life5" parent="ButtonLayer/Lives" instance=ExtResource("5_7hfr5")]
 position = Vector2(983, 208)
 rotation = -1.98547
 scale = Vector2(0.5, 0.5)
 flip_h = true
 
-[node name="Tooth Life6" parent="Lives" instance=ExtResource("5_7hfr5")]
+[node name="Tooth Life6" parent="ButtonLayer/Lives" instance=ExtResource("5_7hfr5")]
 position = Vector2(912, 129)
 rotation = 3.79747
 scale = Vector2(0.5, 0.5)
@@ -140,14 +147,16 @@ bus = &"Speech"
 [node name="Static Overlay" parent="." instance=ExtResource("5_yawx5")]
 position = Vector2(340, 135)
 
-[node name="Word Bank" parent="." instance=ExtResource("4_510jw")]
+[node name="WordBank Layer" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="Word Bank" parent="WordBank Layer" instance=ExtResource("4_510jw")]
 visible = false
-layout_mode = 1
 split = false
 scale_items = 1.3
 puzzle_mode = true
 
-[node name="Close Bank" type="Button" parent="Word Bank"]
+[node name="Close Bank" type="Button" parent="WordBank Layer/Word Bank"]
 layout_mode = 0
 offset_left = 673.0
 offset_top = 635.0
@@ -158,9 +167,20 @@ theme_override_fonts/font = ExtResource("3_s8tt6")
 text = "CLOSE WORD BANK"
 script = ExtResource("6_s8tt6")
 
-[node name="Type Submission" type="Control" parent="."]
+[node name="Submission Layer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Type Submission" type="Control" parent="Submission Layer"]
 visible = false
 z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Submission Layer/Type Submission"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -168,15 +188,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Type Submission"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LineEdit" type="LineEdit" parent="Type Submission"]
+[node name="LineEdit" type="LineEdit" parent="Submission Layer/Type Submission"]
 layout_mode = 0
 offset_left = 457.0
 offset_top = 348.0
@@ -187,7 +199,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7hfr5")
 placeholder_text = "TYPE FINAL GUESS HERE"
 alignment = 1
 
-[node name="Submit" type="Button" parent="Type Submission"]
+[node name="Submit" type="Button" parent="Submission Layer/Type Submission"]
 layout_mode = 0
 offset_left = 416.0
 offset_top = 384.0
@@ -197,7 +209,7 @@ theme = ExtResource("6_xw28t")
 text = "SUBMIT FINAL GUESS"
 script = ExtResource("6_s8tt6")
 
-[node name="Submission Cancel" type="Button" parent="Type Submission"]
+[node name="Submission Cancel" type="Button" parent="Submission Layer/Type Submission"]
 layout_mode = 0
 offset_left = 596.0
 offset_top = 424.0
@@ -224,7 +236,9 @@ script = ExtResource("9_1jr7e")
 [node name="Notification Position" type="Marker2D" parent="."]
 position = Vector2(640, 360)
 
+[node name="ShaderLayer" parent="." instance=ExtResource("13_q477n")]
+
 [connection signal="finished" from="Selection Speaker" to="." method="_on_audio_stream_player_finished"]
-[connection signal="pressed" from="Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]
-[connection signal="pressed" from="Type Submission/Submit" to="." method="_on_submit_pressed"]
-[connection signal="pressed" from="Type Submission/Submission Cancel" to="." method="_on_submission_cancel_pressed"]
+[connection signal="pressed" from="WordBank Layer/Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]
+[connection signal="pressed" from="Submission Layer/Type Submission/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="Submission Layer/Type Submission/Submission Cancel" to="." method="_on_submission_cancel_pressed"]
