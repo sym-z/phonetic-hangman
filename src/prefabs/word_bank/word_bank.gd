@@ -59,7 +59,20 @@ func remove_bluff_sound(count: int = 1):
 	bluff_sounds.shuffle()
 	print("BLUFFY: ", bluff_sounds)
 	# TEMP: Remove the first sound in the bluff sounds array from the word bank
-	while (bluff_sounds.size() > 0 && count > 0):
+	while (bluff_sounds.size() > 2 && count > 0):
 		remove(bluff_sounds[0])
 		bluff_sounds.remove_at(0)
 		count -= 1
+func get_bluff_count() -> int:
+	var bluff_sounds : Array[int] = []
+	# A flag set if the phoneme can be removed
+	var valid_pick : bool = true
+	for child in total_container.get_children():
+		valid_pick = true
+		for sound in Globals.decoded_built_word:
+			if child.id == sound:
+				valid_pick = false
+		if valid_pick == true:
+			bluff_sounds.append(child.id)
+	return bluff_sounds.size()
+	pass

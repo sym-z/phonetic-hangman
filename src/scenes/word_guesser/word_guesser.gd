@@ -121,15 +121,20 @@ func guess(guess_id : int):
 	if amount_correct == 0:
 		guesses -= 1
 		guesses_changed()
-		word_bank.remove_bluff_sound()
+		if word_bank.get_bluff_count() > 2:
+			word_bank.remove_bluff_sound()
 		reveal_letter()
-		Globals.display_notification(self,"INCORRECT, TYPED WORD PARTIALLY REVEALED ABOVE", 5.0,1.0,notif_pos.position,true)
+		Globals.display_notification(self,"INCORRECT, TYPED WORD PARTIALLY REVEALED ABOVE",4.0,1.0,notif_pos.position,true)
 		break_teeth()
 	# Correct guess
 	else:
-		word_bank.remove_bluff_sound(2)
-		Globals.display_notification(self,"CORRECT! AN EXTRA BLUFF GUESS HAS BEEN REMOVED!", 5.0,1.0,notif_pos.position,true)
+		if word_bank.get_bluff_count() > 2:
+			word_bank.remove_bluff_sound(2)
+			Globals.display_notification(self,"CORRECT! AN EXTRA BLUFF GUESS HAS BEEN REMOVED!", 4.0,1.0,notif_pos.position,true)
+		else:
+			Globals.display_notification(self,"CORRECT!", 4.0,1.0,notif_pos.position,true)
 		#reveal_letter()
+		print(word_bank.total_container.get_children().size())
 	word_bank.remove(guess_id)
 	
 func _on_guess_sound_pressed() -> void:
