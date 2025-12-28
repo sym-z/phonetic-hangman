@@ -9,6 +9,7 @@ func _ready() -> void:
 	self.mouse_entered.connect(_on_hover)
 	self.mouse_exited.connect(_stop_hover)
 	_stop_hover()
+	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	
 func _on_hover():
 	self.add_theme_font_override("font", selected_font)
