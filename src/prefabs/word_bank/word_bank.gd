@@ -59,7 +59,7 @@ func remove_bluff_sound(count: int = 1):
 	bluff_sounds.shuffle()
 	print("BLUFFY: ", bluff_sounds)
 	# TEMP: Remove the first sound in the bluff sounds array from the word bank
-	while (bluff_sounds.size() > 2 && count > 0):
+	while (bluff_sounds.size() > Globals.minimum_bluffs && count > 0):
 		remove(bluff_sounds[0])
 		bluff_sounds.remove_at(0)
 		count -= 1

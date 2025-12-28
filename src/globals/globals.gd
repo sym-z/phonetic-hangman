@@ -18,6 +18,8 @@ func reset_player_word():
 func reset_decoded_word():
 	decoded_typed_word = ""
 	decoded_built_word = []
+	
+var minimum_bluffs : int = 2
 #region Puzzle Creation
 #Randomly fill the container with only the necessary sounds, then add incorrect sounds (Assure it is not a duplicate) (Do a set subtraction), then shuffle
 # Use decoded built word and a certain number of fake inputs to generate the puzzle

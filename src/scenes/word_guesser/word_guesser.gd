@@ -121,14 +121,14 @@ func guess(guess_id : int):
 	if amount_correct == 0:
 		guesses -= 1
 		guesses_changed()
-		if word_bank.get_bluff_count() > 2:
+		if word_bank.get_bluff_count() > Globals.minimum_bluffs:
 			word_bank.remove_bluff_sound()
 		reveal_letter()
 		Globals.display_notification(self,"INCORRECT, TYPED WORD PARTIALLY REVEALED ABOVE",4.0,1.0,notif_pos.position,true)
 		break_teeth()
 	# Correct guess
 	else:
-		if word_bank.get_bluff_count() > 2:
+		if word_bank.get_bluff_count() > Globals.minimum_bluffs:
 			word_bank.remove_bluff_sound(2)
 			Globals.display_notification(self,"CORRECT! AN EXTRA BLUFF GUESS HAS BEEN REMOVED!", 4.0,1.0,notif_pos.position,true)
 		else:
