@@ -12,5 +12,6 @@ func _on_hard_pressed():
 func grab_puzzle(puzzle_bank : Dictionary[String, Array]):
 	var random_index = randi() % puzzle_bank.size()
 	Globals.decoded_typed_word = puzzle_bank.keys()[random_index]
+	Globals.decoded_built_word.clear()
 	Globals.decoded_built_word.append_array(puzzle_bank[Globals.decoded_typed_word])
 	SceneTransition.word_guesser()
