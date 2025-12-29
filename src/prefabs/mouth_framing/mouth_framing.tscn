@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://vjgpusb16i6u"]
+[gd_scene load_steps=5 format=3 uid="uid://vjgpusb16i6u"]
 
-[ext_resource type="Texture2D" uid="uid://bna4gs7kkha01" path="res://assets/ui/mouth_framing.png" id="1_ob5p0"]
+[ext_resource type="Texture2D" uid="uid://c84i7px60l6sk" path="res://assets/mouth_framing_fg.png" id="1_qllkk"]
+[ext_resource type="Shader" uid="uid://drpxq7l8eihrq" path="res://shaders/mouth_framing_bg.gdshader" id="2_xo7wk"]
+[ext_resource type="Texture2D" uid="uid://d386viutdnfot" path="res://assets/mouth_framing_bg.png" id="3_75hgs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mebr0"]
+shader = ExtResource("2_xo7wk")
 
 [node name="Mouth Framing" type="Sprite2D"]
-texture = ExtResource("1_ob5p0")
+texture = ExtResource("1_qllkk")
+centered = false
+
+[node name="Background" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mebr0")
+texture = ExtResource("3_75hgs")
 centered = false
