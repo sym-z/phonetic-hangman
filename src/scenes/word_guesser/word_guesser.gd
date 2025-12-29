@@ -37,6 +37,7 @@ var correct_guesses : Array[int]
 # Used to slowly reveal word as correct guesses are made
 var letter_reveal : Array[String]
 #TODO: Fill container of guesses with question marks = to the number of sounds in the word
+@export var sting_speaker : AudioStreamPlayer
 func _input(event):
 	if event.is_action("submit") and type_submission_parent.visible == true:
 		_on_submit_pressed()
@@ -124,6 +125,7 @@ func guess(guess_id : int):
 		if word_bank.get_bluff_count() > Globals.minimum_bluffs:
 			word_bank.remove_bluff_sound()
 		reveal_letter()
+		#SoundSystem.play_incorrect(sting_speaker)
 		Globals.display_notification(self,"INCORRECT, TYPED WORD PARTIALLY REVEALED ABOVE",4.0,1.0,notif_pos.position,true)
 		break_teeth()
 	# Correct guess
@@ -134,6 +136,7 @@ func guess(guess_id : int):
 		else:
 			Globals.display_notification(self,"CORRECT!", 4.0,1.0,notif_pos.position,true)
 		#reveal_letter()
+		#SoundSystem.play_correct(sting_speaker)
 		print(word_bank.total_container.get_children().size())
 	word_bank.remove(guess_id)
 	

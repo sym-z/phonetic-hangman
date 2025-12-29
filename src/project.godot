@@ -25,6 +25,7 @@ buses/default_bus_layout="uid://caeyndutguquh"
 Libraries="*res://globals/libraries.gd"
 Globals="*res://globals/globals.gd"
 SceneTransition="*res://globals/scene_transition.gd"
+SoundSystem="*res://globals/sound_system.gd"
 
 [display]
 

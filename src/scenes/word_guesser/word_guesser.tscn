@@ -19,7 +19,7 @@ bg_color = Color(0, 0, 0.32549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bdecb"]
 
-[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "num_sounds", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field", "notif_pos", "lives_parent", "tb_exit", "tb_word_bank", "tb_hear_guesses", "tb_guess_word", "button_parent")]
+[node name="Word Guesser" type="Control" node_paths=PackedStringArray("num_letters", "num_guesses", "num_sounds", "guess_container", "word_bank", "speaker", "type_submission_parent", "submission_field", "notif_pos", "lives_parent", "tb_exit", "tb_word_bank", "tb_hear_guesses", "tb_guess_word", "button_parent", "sting_speaker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,6 +43,7 @@ tb_word_bank = NodePath("ButtonLayer/Buttons/Open Bank")
 tb_hear_guesses = NodePath("ButtonLayer/Buttons/Hear Correct Guesses")
 tb_guess_word = NodePath("ButtonLayer/Buttons/Guess Whole Word")
 button_parent = NodePath("ButtonLayer/Buttons")
+sting_speaker = NodePath("AudioStreamPlayer")
 
 [node name="Mouth Framing" parent="." instance=ExtResource("2_yawx5")]
 
@@ -237,6 +238,9 @@ script = ExtResource("9_1jr7e")
 position = Vector2(640, 360)
 
 [node name="ShaderLayer" parent="." instance=ExtResource("13_q477n")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music & Stings"
 
 [connection signal="finished" from="Selection Speaker" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="WordBank Layer/Word Bank/Close Bank" to="." method="_on_close_bank_pressed"]

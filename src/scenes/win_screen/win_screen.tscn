@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://kfxcn8dt6tbx"]
 
-[ext_resource type="Script" path="res://scenes/win_screen/win_screen.gd" id="1_2yi6y"]
+[ext_resource type="Script" uid="uid://b400iv4pqfjn1" path="res://scenes/win_screen/win_screen.gd" id="1_2yi6y"]
 [ext_resource type="FontFile" uid="uid://bmwluxh4jec4a" path="res://assets/fonts/vhs_font_bg_sheet.png" id="2_1d1ta"]
 [ext_resource type="PackedScene" uid="uid://vjgpusb16i6u" path="res://prefabs/mouth_framing/mouth_framing.tscn" id="2_70qtx"]
 [ext_resource type="Theme" uid="uid://cjeiud64pxehj" path="res://prefabs/ui_button/ui_button.tres" id="3_1gpf6"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d0uq0a68q2nat" path="res://scenes/background_layer.tscn" id="3_h14ad"]
 [ext_resource type="PackedScene" uid="uid://bvv1ms3kaecmu" path="res://scenes/shader_layer.tscn" id="8_85x5u"]
 
-[node name="Win Screen" type="Control"]
+[node name="Win Screen" type="Control" node_paths=PackedStringArray("speaker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2yi6y")
+speaker = NodePath("AudioStreamPlayer")
 
 [node name="Mouth Framing" parent="." instance=ExtResource("2_70qtx")]
 
@@ -55,5 +56,8 @@ text = "BACK TO MAIN MENU"
 script = ExtResource("3_8vb36")
 
 [node name="ShaderLayer" parent="." instance=ExtResource("8_85x5u")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music & Stings"
 
 [connection signal="pressed" from="VBoxContainer/Back to Main Menu" to="." method="_on_back_to_main_menu_pressed"]

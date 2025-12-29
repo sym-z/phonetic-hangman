@@ -4,6 +4,7 @@ extends Control
 
 @export var DEBUG : bool = false
 
+@export var speaker : AudioStreamPlayer
 func _input(event):
 	if event.is_action("submit"):
 		_on_begin_decoding_pressed()
@@ -55,6 +56,8 @@ func _on_begin_decoding_pressed():
 		SceneTransition.word_guesser()
 	else:
 		print("ERROR")
+		SoundSystem.play_incorrect(speaker)
+		
 		#TODO: Make actual visual indicator
 
 func _on_back_pressed():
