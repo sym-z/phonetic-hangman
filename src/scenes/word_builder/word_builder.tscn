@@ -110,6 +110,9 @@ button_parent = NodePath("Buttonlayer/Buttons")
 metadata/_edit_use_anchors_ = true
 
 [node name="Mouth Framing" parent="." instance=ExtResource("2_wmqn6")]
+visible = false
+
+[node name="Background Layer" parent="." instance=ExtResource("6_qmlf6")]
 
 [node name="Current Phoneme Choice" type="AnimatedSprite2D" parent="."]
 position = Vector2(637, 374)
@@ -168,8 +171,6 @@ position = Vector2(782, 548)
 
 [node name="Selection Speaker" type="AudioStreamPlayer" parent="."]
 bus = &"Speech"
-
-[node name="Background Layer" parent="." instance=ExtResource("6_qmlf6")]
 
 [node name="Static Overlay" parent="." instance=ExtResource("5_3qlml")]
 position = Vector2(340, 135)
